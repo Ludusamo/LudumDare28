@@ -1,18 +1,263 @@
 # depslib dependency file v1.0
-1385943298 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/main.cpp
+1387042802 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/main.cpp
 	<iostream>
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	"ScreenManager.h"
+	"TileData.h"
+	"MapGenerator.h"
+	"Node.h"
+	"Charger.h"
 
-1385943467 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/ScreenManager.h
+1387034566 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/ScreenManager.h
 	<SFML/Graphics.hpp>
 	"Screen.h"
 	"MainMenuScreen.h"
 	"SplashScreen.h"
+	"GameScreen.h"
 	"FadeTransition.h"
 	"FileManager.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Screen.h
+	"SFML/Graphics.hpp"
+	"InputManager.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/InputManager.h
+	<vector>
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
+	"Screen.h"
+	"ScreenManager.h"
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/SplashScreen.h
+	"Screen.h"
+	"ScreenManager.h"
+	"MainMenuScreen.h"
+	<SFML/Graphics.hpp>
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/GameScreen.h
+	"Screen.h"
+	"ScreenManager.h"
+	"Level.h"
+	<SFML/Graphics.hpp>
+
+1387041442 D
+
+1387044214 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Level.h
+
+1387041442 4f07a41b9b55b17b2c37a86072a40802129ed
+	<string>
+	<SFML/Graphics.hpp>
+	"TileData.h"
+	<Tilemap.h>
+	<Player.h>
+	"Rock.h"
+	"MapGenerator.h"
+	<vector>
+	<fstream>
+	<iostream>
+	"InputManager.h"
+	"Level.h"
+	"Player.h"
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/TileData.h
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Tilemap.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<iostream>
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Player.h
+	<SFML/Graphics.hpp>
+	<Mob.h>
+	"Rock.h"
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Mob.h
+	<SFML/Graphics.hpp>
+	<Entity.h>
+	<Animation.h>
+	<iostream>
+	<math.h>
+
+1386995234 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Entity.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1387031110 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Animation.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Rock.h
+	"Mob.h"
+
+1386995633 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/MapGenerator.h
+	<stdlib.h>
+	<stdint.h>
+	<string>
+	<vector>
+	<fstream>
+	<utility>
+	<assert.h>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/FadeTransition.h
+	"Transition.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Transition.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/FileManager.h
+	<vector>
+	<string>
+	<fstream>
+	<algorithm>
+	<iostream>
+	<sstream>
+
+1387035749 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Node.h
+	<stdint.h>
+
+1386993522 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Charger.h
+	<SFML/Graphics.hpp>
+	<Enemy.h>
+
+1387042784 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Enemy.h
+	<SFML/Graphics.hpp>
+	<Mob.h>
+	<cmath>
+	"Node.h"
+
+1387031110 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Animation.cpp
+	"Animation.h"
+
+1387041442 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Button.cpp
+	"Button.h"
+
+1387041442 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Button.h
+	"SFML/Graphics.hpp"
+	"Entity.h"
+
+1386994348 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Charger.cpp
+	"Charger.h"
+
+1387042830 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Enemy.cpp
+	"Enemy.h"
+	<iostream>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Entity.cpp
+	"Entity.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/FadeTransition.cpp
+	"FadeTransition.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/FileManager.cpp
+	"FileManager.h"
+
+1387041442 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/GameScreen.cpp
+	"GameScreen.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/InputManager.cpp
+	"InputManager.h"
+
+1387048745 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
+	"Level.h"
+
+1387041489 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Level.cpp
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Light.cpp
+	"Light.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Light.h
+	<Entity.h>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/MainMenuScreen.cpp
+	<iostream>
+	"MainMenuScreen.h"
+
+1387035597 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
+	"MapGenerator.h"
+	<stdlib.h>
+	<stdint.h>
+	<string>
+	<vector>
+	<fstream>
+	<utility>
+	<assert.h>
+
+1387041442 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Mob.cpp
+	"Mob.h"
+
+1387048034 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Player.cpp
+	"Player.h"
+
+1387035737 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Node.cpp
+	"Node.h"
+
+1387041442 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Player.cpp
+
+1387041442 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Rock.cpp
+	"Rock.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Screen.cpp
+	"Screen.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/ScreenManager.cpp
+	"ScreenManager.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/SplashScreen.cpp
+	<iostream>
+	"SplashScreen.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/TileData.cpp
+	"TileData.h"
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Tilemap.cpp
+	"Tilemap.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Transition.cpp
+	"Transition.h"
+
+1386994012 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Animation.cpp
+	"Animation.h"
+
+1386993591 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Animation.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1385847422 /usr/local/include/SFML/Graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/View.hpp>
 
 1385847422 /usr/local/include/SFML/Window.hpp
 	<SFML/System.hpp>
@@ -175,33 +420,6 @@
 
 1385847422 /usr/local/include/SFML/Window/WindowStyle.hpp
 
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/Screen.h
-	"SFML/Graphics.hpp"
-	"InputManager.h"
-
-1385847422 /usr/local/include/SFML/Graphics.hpp
-	<SFML/Window.hpp>
-	<SFML/Graphics/BlendMode.hpp>
-	<SFML/Graphics/Color.hpp>
-	<SFML/Graphics/Font.hpp>
-	<SFML/Graphics/Glyph.hpp>
-	<SFML/Graphics/Image.hpp>
-	<SFML/Graphics/RenderStates.hpp>
-	<SFML/Graphics/RenderTexture.hpp>
-	<SFML/Graphics/RenderWindow.hpp>
-	<SFML/Graphics/Shader.hpp>
-	<SFML/Graphics/Shape.hpp>
-	<SFML/Graphics/CircleShape.hpp>
-	<SFML/Graphics/RectangleShape.hpp>
-	<SFML/Graphics/ConvexShape.hpp>
-	<SFML/Graphics/Sprite.hpp>
-	<SFML/Graphics/Text.hpp>
-	<SFML/Graphics/Texture.hpp>
-	<SFML/Graphics/Transform.hpp>
-	<SFML/Graphics/Vertex.hpp>
-	<SFML/Graphics/VertexArray.hpp>
-	<SFML/Graphics/View.hpp>
-
 1385847422 /usr/local/include/SFML/Graphics/BlendMode.hpp
 
 1385847422 /usr/local/include/SFML/Graphics/Color.hpp
@@ -356,467 +574,57 @@
 	<string>
 	<vector>
 
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/SplashScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	<SFML/Graphics.hpp>
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/MainMenuScreen.cpp
-	<iostream>
-	"MainMenuScreen.h"
-
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/MainMenuScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	<SFML/Graphics.hpp>
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/Screen.cpp
-	"Screen.h"
-
-1385936728 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/ScreenManager.cpp
-	"ScreenManager.h"
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/SplashScreen.cpp
-	<iostream>
-	"SplashScreen.h"
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/InputManager.cpp
-	"InputManager.h"
-
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/InputManager.h
-	<vector>
-	<SFML/Graphics.hpp>
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/FadeTransition.cpp
-	"FadeTransition.h"
-
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/FadeTransition.h
-	"Transition.h"
-
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/Transition.h
-	<SFML/Graphics.hpp>
-	<string>
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/Transition.cpp
-	"Transition.h"
-
-1385941518 /home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/include/FileManager.h
-	<vector>
-	<string>
-	<fstream>
-	<algorithm>
-	<iostream>
-	<sstream>
-
-1385941518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/Platformer/src/FileManager.cpp
-	"FileManager.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/FadeTransition.cpp
-	"FadeTransition.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/FadeTransition.h
-	"Transition.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Transition.h
-	<SFML/Graphics.hpp>
-	<string>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/FileManager.cpp
-	"FileManager.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/FileManager.h
-	<vector>
-	<string>
-	<fstream>
-	<algorithm>
-	<iostream>
-	<sstream>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/MainMenuScreen.cpp
-	<iostream>
-	"MainMenuScreen.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/MainMenuScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	<SFML/Graphics.hpp>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Screen.h
-	"SFML/Graphics.hpp"
-	"InputManager.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/InputManager.h
-	<vector>
-	<SFML/Graphics.hpp>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/ScreenManager.h
-	<SFML/Graphics.hpp>
-	"Screen.h"
-	"MainMenuScreen.h"
-	"SplashScreen.h"
-	"GameScreen.h"
-	"FadeTransition.h"
-	"FileManager.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/SplashScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	"MainMenuScreen.h"
-	<SFML/Graphics.hpp>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Screen.cpp
-	"Screen.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/ScreenManager.cpp
-	"ScreenManager.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/SplashScreen.cpp
-	<iostream>
-	"SplashScreen.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Transition.cpp
-	"Transition.h"
-
-1386637244 D
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/main.cpp
-	<iostream>
-	<SFML/Window.hpp>
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	"ScreenManager.h"
-	"TileData.h"
-	"MapGenerator.h"
-
-1386781776 d9920ab566c335ca385414cc5c1e370499f06
-	<iostream>
-	<SFML/Window.hpp>
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	"ScreenManager.h"
-	"TileData.h"
-	<string>
-	<SFML/Graphics.hpp>
-	"TileData.h"
-	<Tilemap.h>
-	<Player.h>
-	<vector>
-	<fstream>
-	<iostream>
-	<stdlib.h>
-	<stdint.h>
-	<stdbool.h>
-	<SFML/Graphics.hpp>
-	<Entity.h>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/InputManager.cpp
-	"InputManager.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/GameScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	"Level.h"
-	<SFML/Graphics.hpp>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/GameScreen.cpp
-	"GameScreen.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Entity.cpp
-	"Entity.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Entity.h
-	<SFML/Graphics.hpp>
-	<iostream>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Level.cpp
-	"Level.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Level.h
-	<string>
-	<SFML/Graphics.hpp>
-	"TileData.h"
-	<Tilemap.h>
-	<Player.h>
-	"MapGenerator.h"
-	<vector>
-	<fstream>
-	<iostream>
-
-1386349700 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Tile.cpp
-	"Tile.h"
-
-1386349701 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Tile.h
-	<SFML/Graphics.hpp>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/TileData.cpp
-	"TileData.h"
-	<stdlib.h>
-	<stdint.h>
-	<stdbool.h>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/TileData.h
-	<stdlib.h>
-	<stdint.h>
-	<stdbool.h>
-	<SFML/Graphics.hpp>
-
-1386208250 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Assets.cpp
-	"Assets.h"
-	"TileData.h"
-
-1386208265 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Assets.h
-	<SFML/Graphics.hpp>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Tilemap.cpp
-	"Tilemap.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Tilemap.h
-	<SFML/Graphics.hpp>
-	<vector>
-	<iostream>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Mob.cpp
-	"Mob.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Mob.h
-	<SFML/Graphics.hpp>
-	<Entity.h>
-	<Animation.h>
-	<iostream>
-	<math.h>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Player.h
-	<SFML/Graphics.hpp>
-	<Mob.h>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Player.cpp
-	"Player.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Animation.cpp
-	"Animation.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Animation.h
-	<SFML/Graphics.hpp>
-	<iostream>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Light.cpp
-	"Light.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Light.h
-	<Entity.h>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Animation.cpp
-	"Animation.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Animation.h
-	<SFML/Graphics.hpp>
-	<iostream>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Entity.cpp
-	"Entity.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Entity.h
-	<SFML/Graphics.hpp>
-	<iostream>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/FadeTransition.cpp
-	"FadeTransition.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/FadeTransition.h
-	"Transition.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Transition.h
-	<SFML/Graphics.hpp>
-	<string>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/FileManager.cpp
-	"FileManager.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/FileManager.h
-	<vector>
-	<string>
-	<fstream>
-	<algorithm>
-	<iostream>
-	<sstream>
-
-1386984883 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/GameScreen.cpp
-	"GameScreen.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/GameScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	"Level.h"
-	<SFML/Graphics.hpp>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Screen.h
-	"SFML/Graphics.hpp"
-	"InputManager.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/InputManager.h
-	<vector>
-	<SFML/Graphics.hpp>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/ScreenManager.h
-	<SFML/Graphics.hpp>
-	"Screen.h"
-	"MainMenuScreen.h"
-	"SplashScreen.h"
-	"GameScreen.h"
-	"FadeTransition.h"
-	"FileManager.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/MainMenuScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	<SFML/Graphics.hpp>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/SplashScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	"MainMenuScreen.h"
-	<SFML/Graphics.hpp>
-
-1386909759 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Level.h
-	<string>
-	<SFML/Graphics.hpp>
-	"TileData.h"
-	<Tilemap.h>
-	<Player.h>
-	"MapGenerator.h"
-	<vector>
-	<fstream>
-	<iostream>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/TileData.h
-	<stdlib.h>
-	<stdint.h>
-	<stdbool.h>
-	<SFML/Graphics.hpp>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Tilemap.h
-	<SFML/Graphics.hpp>
-	<vector>
-	<iostream>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Player.h
-	<SFML/Graphics.hpp>
-	<Mob.h>
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Mob.h
-	<SFML/Graphics.hpp>
-	<Entity.h>
-	<Animation.h>
-	<iostream>
-	<math.h>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/InputManager.cpp
-	"InputManager.h"
-
-1386984895 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Level.cpp
-	"Level.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Light.cpp
-	"Light.h"
-
-1386820352 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/Light.h
-	<Entity.h>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/MainMenuScreen.cpp
-	<iostream>
-	"MainMenuScreen.h"
-
-1386984800 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/MapGenerator.cpp
-	"MapGenerator.h"
-	<iostream>
-	<stdlib.h>
-	<stdint.h>
-	<string>
-	<vector>
-	<fstream>
-	<utility>
-	<assert.h>
-
-1386983853 /home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/include/MapGenerator.h
-	<stdlib.h>
-	<stdint.h>
-	<string>
-	<vector>
-	<fstream>
-	<utility>
-	<assert.h>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Mob.cpp
-	"Mob.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Player.cpp
-	"Player.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Screen.cpp
-	"Screen.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/ScreenManager.cpp
-	"ScreenManager.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/SplashScreen.cpp
-	<iostream>
-	"SplashScreen.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/TileData.cpp
-	"TileData.h"
-	<stdlib.h>
-	<stdint.h>
-	<stdbool.h>
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Tilemap.cpp
-	"Tilemap.h"
-
-1386820352 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/src/Transition.cpp
-	"Transition.h"
-
-1386984425 source:/home/alesta/Projects/Games/SFML/SFML-CodeBase/Platformer/main.cpp
-	<iostream>
-	<SFML/Window.hpp>
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	"ScreenManager.h"
-	"TileData.h"
-	"MapGenerator.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/MapGenerator.h
-	<stdlib.h>
-	<stdint.h>
-	<string>
-	<vector>
-	<fstream>
-	<utility>
-	<assert.h>
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/MapGenerator.cpp
-	"MapGenerator.h"
-	<stdlib.h>
-	<stdint.h>
-	<string>
-	<vector>
-	<fstream>
-	<utility>
-	<assert.h>
-
-1386985652 source:/home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/src/Button.cpp
+1387032621 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Button.cpp
 	"Button.h"
 
-1386985630 /home/brehor/Copy/Ludusamo/Programming/SFML/SFML-CodeBase/Platformer/include/Button.h
+1387032608 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Button.h
 	"SFML/Graphics.hpp"
 	"Entity.h"
 
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
-	<iostream>
-	<SFML/Window.hpp>
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entity.h
 	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
+	<iostream>
+
+1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Entity.cpp
+	"Entity.h"
+
+1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeTransition.cpp
+	"FadeTransition.h"
+
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeTransition.h
+	"Transition.h"
+
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Transition.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FileManager.cpp
+	"FileManager.h"
+
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FileManager.h
+	<vector>
+	<string>
+	<fstream>
+	<algorithm>
+	<iostream>
+	<sstream>
+
+1387048506 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/GameScreen.cpp
+	"GameScreen.h"
+
+1387035618 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/GameScreen.h
+	"Screen.h"
 	"ScreenManager.h"
-	"TileData.h"
-	"MapGenerator.h"
+	"Level.h"
+	<SFML/Graphics.hpp>
+
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Screen.h
+	"SFML/Graphics.hpp"
+	"InputManager.h"
+
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/InputManager.h
+	<vector>
+	<SFML/Graphics.hpp>
 
 1387032118 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/ScreenManager.h
 	<SFML/Graphics.hpp>
@@ -826,14 +634,6 @@
 	"GameScreen.h"
 	"FadeTransition.h"
 	"FileManager.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Screen.h
-	"SFML/Graphics.hpp"
-	"InputManager.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/InputManager.h
-	<vector>
-	<SFML/Graphics.hpp>
 
 1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
 	"Screen.h"
@@ -846,107 +646,8 @@
 	"MainMenuScreen.h"
 	<SFML/Graphics.hpp>
 
-1387035618 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/GameScreen.h
-	"Screen.h"
-	"ScreenManager.h"
-	"Level.h"
-	<SFML/Graphics.hpp>
-
-1387044214 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
-	<string>
-	<SFML/Graphics.hpp>
-	"TileData.h"
-	<Tilemap.h>
-	<Player.h>
-	"Rock.h"
-	"MapGenerator.h"
-	<vector>
-	<fstream>
-	<iostream>
-	"InputManager.h"
-
-1387032611 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/TileData.h
-	<stdlib.h>
-	<stdint.h>
-	<stdbool.h>
-	<SFML/Graphics.hpp>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Tilemap.h
-	<SFML/Graphics.hpp>
-	<vector>
-	<iostream>
-
-1387037596 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Player.h
-	<SFML/Graphics.hpp>
-	<Mob.h>
-	"Rock.h"
-
-1387038767 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Mob.h
-	<SFML/Graphics.hpp>
-	<Entity.h>
-	<Animation.h>
-	<iostream>
-	<math.h>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entity.h
-	<SFML/Graphics.hpp>
-	<iostream>
-
-1386993591 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Animation.h
-	<SFML/Graphics.hpp>
-	<iostream>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MapGenerator.h
-	<stdlib.h>
-	<stdint.h>
-	<string>
-	<vector>
-	<fstream>
-	<utility>
-	<assert.h>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeTransition.h
-	"Transition.h"
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Transition.h
-	<SFML/Graphics.hpp>
-	<string>
-
-1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FileManager.h
-	<vector>
-	<string>
-	<fstream>
-	<algorithm>
-	<iostream>
-	<sstream>
-
-1386994012 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Animation.cpp
-	"Animation.h"
-
-1387032621 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Button.cpp
-	"Button.h"
-
-1387032608 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Button.h
-	"SFML/Graphics.hpp"
-	"Entity.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Entity.cpp
-	"Entity.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeTransition.cpp
-	"FadeTransition.h"
-
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FileManager.cpp
-	"FileManager.h"
-
-1387035623 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/GameScreen.cpp
-	"GameScreen.h"
-
 1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/InputManager.cpp
 	"InputManager.h"
-
-1387041623 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
-	"Level.h"
 
 1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Light.cpp
 	"Light.h"
@@ -958,23 +659,17 @@
 	<iostream>
 	"MainMenuScreen.h"
 
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
-	"MapGenerator.h"
-	<stdlib.h>
-	<stdint.h>
-	<string>
-	<vector>
-	<fstream>
-	<utility>
-	<assert.h>
-
-1387038804 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Mob.cpp
+1387048170 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Mob.cpp
 	"Mob.h"
 
-1387039013 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Player.cpp
-	"Player.h"
+1387047033 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Mob.h
+	<SFML/Graphics.hpp>
+	<Entity.h>
+	<Animation.h>
+	<iostream>
+	<math.h>
 
-1387037052 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Rock.cpp
+1387048271 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Rock.cpp
 	"Rock.h"
 
 1387033083 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Rock.h
@@ -990,15 +685,84 @@
 	<iostream>
 	"SplashScreen.h"
 
-1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/TileData.cpp
+1387048671 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/TileData.cpp
 	"TileData.h"
 	<stdlib.h>
 	<stdint.h>
 	<stdbool.h>
 
+1387047323 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/TileData.h
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+	<SFML/Graphics.hpp>
+
 1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Tilemap.cpp
 	"Tilemap.h"
 
+1386986848 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Tilemap.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<iostream>
+
 1386986848 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Transition.cpp
 	"Transition.h"
+
+1387044816 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
+	<iostream>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	"ScreenManager.h"
+	"TileData.h"
+	"MapGenerator.h"
+	"Node.h"
+	"Charger.h"
+
+1387044816 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MapGenerator.h
+	<stdlib.h>
+	<stdint.h>
+	<string>
+	<vector>
+	<fstream>
+	<utility>
+	<assert.h>
+
+1387044816 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Node.h
+	<stdint.h>
+
+1387044816 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Charger.h
+	<SFML/Graphics.hpp>
+	<Enemy.h>
+
+1387044816 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Enemy.h
+	<SFML/Graphics.hpp>
+	<Mob.h>
+	<cmath>
+	"Node.h"
+
+1387044816 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
+	"MapGenerator.h"
+	<stdlib.h>
+	<stdint.h>
+	<string>
+	<vector>
+	<fstream>
+	<utility>
+	<assert.h>
+
+1387044816 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Charger.cpp
+	"Charger.h"
+
+1387044816 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Enemy.cpp
+	"Enemy.h"
+	<iostream>
+
+1387044816 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Node.cpp
+	"Node.h"
+
+1387037596 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Player.h
+	<SFML/Graphics.hpp>
+	<Mob.h>
+	"Rock.h"
 

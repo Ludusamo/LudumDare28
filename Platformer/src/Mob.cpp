@@ -113,8 +113,14 @@ void Mob::collidableTiles(std::vector<std::vector<int>> colMap, int startX, int 
     collidable.clear();
     for (int y = startY / 32; y <= endY / 32; y++) {
         for (int x = startX / 32; x <= endX / 32; x++) {
-            if (colMap[y][x] == 1) {
-                collidable.push_back(sf::FloatRect(x, y, 1, 1));
+            if (flying) {
+                if (colMap[y][x] == 1) {
+                    collidable.push_back(sf::FloatRect(x, y, 1, 1));
+                }
+            } else {
+                if (colMap[y][x] == 1 || colMap[y][x] == 2) {
+                    collidable.push_back(sf::FloatRect(x, y, 1, 1));
+                }
             }
         }
     }

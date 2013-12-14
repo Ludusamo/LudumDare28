@@ -168,6 +168,31 @@ uint32_t MapGenerator::get_solids(void) {
     return count;
 }
 
+void MapGenerator::connect_nodes(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2) {
+    int8_t dx = x2 > x1 ? 1 : -1;
+    int8_t dy = y2 > y1 ? 1 : -1;
+    while(x1 != x2 || y1 != y2) {
+        if(x1 != x2 && y1 != y2) {
+            uint8_t order = std::rand() % 2;
+            if(order == 0) {
+                this->generation[x1+dx][y1] = 2;
+                this->generation[x1+dx][y1+dy] = 2;
+            }else {
+                this->generation[x1][y1+dy] = 2;
+                this->generation[x1+dx][y1+dx] = 2;
+            }
+            x1 += dx;
+            y1 += dy;
+        }else if(x1 != x2) {
+            this->generation[x1+dx][y1] = 2;
+            x1 += dx;
+        }else if(y1 != y2) {
+            this->generation[x1][y1+dy] = 2;
+            y1 += dy;
+        }
+    }
+}
+
 void MapGenerator::check_node(uint32_t x, uint32_t y, bool silent) {
     if(this->generation[x][y] != 1) {
         for(int i = 0; i < this->blacklist.size(); i++)
@@ -189,10 +214,13 @@ void MapGenerator::check_node(uint32_t x, uint32_t y, bool silent) {
 }
 
 void MapGenerator::fix_generation(void) {
-    for(int x = 0; x < this->generation.size(); x++) {
-        for(int y = 0; y < this->generation[0].size(); y++) {
+    for(int x = 0; x < this->generation.size(); x++)
+        for(int y = 0; y < this->generation[0].size(); y++)
             this->check_node(x, y, false);
-        }
+    for(int i = 0; i < this->subsets.size() - 1; i++) {
+        uint32_t pos1 = std::rand() % this->subsets[i].size();
+        uint32_t pos2 = std::rand() % this->subsets[i+1].size();
+        this->connect_nodes(this->subsets[i][pos1].first, this->subsets[i][pos1].second, this->subsets[i+1][pos2].first, this->subsets[i+1][pos2].second);
     }
 }
 

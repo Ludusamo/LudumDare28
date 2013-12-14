@@ -40,7 +40,7 @@ void Level::load() {
 
 void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) {
     sf::Image image;
-    if (!image.loadFromFile("res/lvls/testpng.png"))
+    if (!image.loadFromFile("res/lvls/" + file))
         std::cout << "Cannot Load Level." << std::endl;
     width = image.getSize().x;
     height = image.getSize().y;
@@ -53,6 +53,7 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
                 if (image.getPixel(x, y) == TileData::tiles[i].getLevelColor()) {
                     tiles.push_back(TileData::tiles[i].getId());
                     if (TileData::tiles[i].isSolid()) bufferV.push_back(1);
+                    else if (TileData::tiles[i].isGap()) bufferV.push_back(2);
                     else bufferV.push_back(0);
                     break;
                 }
@@ -60,6 +61,13 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
         }
         colMap.push_back(bufferV);
         bufferV.clear();
+    }
+
+    for (int x= 0; x < width; x++) {
+    for (int y= 0; y < height; y++) {
+    std::cout << colMap[x][y] << " ";
+    }
+    std::cout << std::endl;
     }
 
     if (!tmap.load(tilesetFile, sf::Vector2u(32, 32), tiles, width, height))
@@ -89,6 +97,7 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
         for (int y = 0; y < height; y++) {
             tiles.push_back(TileData::tiles[levelBuffer[x][y]].getId());
             if (TileData::tiles[levelBuffer[x][y]].isSolid()) bufferV.push_back(1);
+            else if (TileData::tiles[levelBuffer[x][y]].isGap()) bufferV.push_back(2);
             else bufferV.push_back(0);
         }
         colMap.push_back(bufferV);
@@ -170,6 +179,11 @@ void Level::render(sf::RenderWindow &window) {
 //}
 
 void Level::switchTime(bool day) {
+
+    sf::Vector2f source = this->player.getPosition();
+    uint32_t srcx = std::floor((source.x +1) / 32);
+    uint32_t srcy = std::floor((source.y + 1) / 32);
+    std::cout << srcx << " " << srcy << std::endl;
     if (day) {
         ambientIntensity = 1.0f;
         ambientColor.x = 1.0f;

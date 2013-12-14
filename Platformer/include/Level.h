@@ -25,13 +25,15 @@ public:
     void loadLevel(const std::string& tilesetFile, const std::string&  file);
     void saveLevel(std::string levelName);
     void generateLevel(const std::string& tilesetFile, int widthB, int heightB);
+
     void unload();
     void update(InputManager input);
     void render(sf::RenderWindow &window);
+
     Player &getPlayer();
     Rock &getRock();
-    std::vector<std::vector<int>> getColMap();
 
+    std::vector<std::vector<int>> getColMap();
     int getWidth();
     int getHeight();
 
@@ -50,6 +52,9 @@ private:
     std::vector<int> tiles;
     Tilemap tmap;
     std::vector<std::vector<int>> colMap;
+
+//    void addEntity(Entity e);
+//    std::vector<Entity> entities;
 
     // Player
     Player player;

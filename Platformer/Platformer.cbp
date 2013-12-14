@@ -56,6 +56,7 @@
 		</Linker>
 		<Unit filename="Input" />
 		<Unit filename="include/Animation.h" />
+		<Unit filename="include/Button.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/FadeTransition.h" />
 		<Unit filename="include/FileManager.h" />
@@ -67,6 +68,7 @@
 		<Unit filename="include/MapGenerator.h" />
 		<Unit filename="include/Mob.h" />
 		<Unit filename="include/Player.h" />
+		<Unit filename="include/Rock.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/ScreenManager.h" />
 		<Unit filename="include/SplashScreen.h" />
@@ -79,6 +81,7 @@
 		<Unit filename="res/shaders/AmbientShader.glsl" />
 		<Unit filename="res/shaders/VertexShader.glsl" />
 		<Unit filename="src/Animation.cpp" />
+		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/FadeTransition.cpp" />
 		<Unit filename="src/FileManager.cpp" />
@@ -90,6 +93,7 @@
 		<Unit filename="src/MapGenerator.cpp" />
 		<Unit filename="src/Mob.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Rock.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/ScreenManager.cpp" />
 		<Unit filename="src/SplashScreen.cpp" />

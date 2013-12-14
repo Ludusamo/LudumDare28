@@ -12,18 +12,18 @@ public:
     static TileData VOID;
     static TileData STONE;
     static TileData GRASS;
+    static TileData GAP;
 
     uint32_t getId();
     sf::Color getLevelColor();
     bool isSolid();
-    bool isEmitter();
-
+    bool isGap();
 private:
     uint32_t id;
     sf::Color levelColor;
-    bool solid, emitter;
+    bool solid, gap;
 
-    TileData(uint32_t id, sf::Color levelColor, bool solid, bool emitter);
+    TileData(uint32_t id, sf::Color levelColor, bool solid, bool gap);
 };
 
 #endif // TILEDATA_H

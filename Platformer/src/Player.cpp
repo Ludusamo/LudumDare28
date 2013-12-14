@@ -26,6 +26,8 @@ void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vec
     bounds.left = getPosition().x + bmX;
     bounds.width = 22;
     bounds.height = 31;
+
+    flying = false;
 }
 
 void Player::unload() {

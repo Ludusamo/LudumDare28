@@ -8,12 +8,13 @@ TileData * TileData::tiles = (TileData*) malloc(sizeof(TileData) * 256);
 TileData TileData::VOID(0, sf::Color(0, 0, 0), true, false);
 TileData TileData::STONE(1, sf::Color(68, 68, 68), true, false);
 TileData TileData::GRASS(2, sf::Color(0, 255, 0), false, false);
+TileData TileData::GAP(3, sf::Color(255, 255, 255), false, true);
 
-TileData::TileData(uint32_t id, sf::Color levelColor, bool solid, bool emitter) {
+TileData::TileData(uint32_t id, sf::Color levelColor, bool solid, bool gap) {
 	this->id = id;
 	this->levelColor = levelColor;
 	this->solid = solid;
-	this->emitter = emitter;
+	this->gap = gap;
 	tiles[id] = *this;
 }
 
@@ -29,7 +30,6 @@ bool TileData::isSolid() {
 	return solid;
 }
 
-bool TileData::isEmitter() {
-    return emitter;
+bool TileData::isGap() {
+    return gap;
 }
-
