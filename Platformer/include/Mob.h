@@ -24,11 +24,13 @@ public:
     void setVelocityX(float v);
     void setVelocityY(float v);
     Animation &getAnimation();
+    sf::FloatRect getCollision();
 protected:
     // Physics
     sf::Vector2f velocity;
     sf::Vector2f acceleration;
     float MAX_VEL;
+    bool collided = false;
 
     // Graphics
     sf::Vector2i mSize;
@@ -39,10 +41,12 @@ protected:
     sf::FloatRect collision;
     sf::FloatRect bounds;
     int startX, endX, startY, endY;
+
+    int currentDir;
+    enum direction { UP, DOWN, LEFT, RIGHT };
 private:
     void collidableTiles(std::vector<std::vector<int>> colMap, int startX, int endX, int startY, int endY);
     bool contains(sf::FloatRect x, sf::FloatRect y);
-    enum direction { UP, DOWN, LEFT, RIGHT };
 };
 
 #endif // MOB_H

@@ -15,8 +15,6 @@ public:
     void unload();
 protected:
 private:
-    sf::Sprite p_sprite;
-    sf::Texture p_tex;
 };
 
 #endif // PLAYER_H

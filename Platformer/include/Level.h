@@ -6,6 +6,7 @@
 #include "TileData.h"
 #include <Tilemap.h>
 #include <Player.h>
+#include "Rock.h"
 #include "MapGenerator.h"
 #include <vector>
 #include <fstream>
@@ -46,6 +47,10 @@ private:
     // Player
     Player player;
     sf::Texture pTex;
+
+    // Rock
+    Rock rock;
+    sf::Texture rTex;
 
     // Shader
     sf::Shader shader;
