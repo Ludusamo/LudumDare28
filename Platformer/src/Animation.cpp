@@ -38,3 +38,11 @@ void Animation::update(sf::VertexArray &vertices, sf::Vector2i mSize) {
 void Animation::setModifier(int x) {
     modifier = x;
 }
+
+void Animation::setIndex(int i) {
+    currentAnimationIndex = i;
+}
+
+int Animation::getIndex() {
+    return currentAnimationIndex;
+}

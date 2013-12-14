@@ -8,8 +8,20 @@ class Rock : public Mob
     public:
         Rock();
         ~Rock();
- protected:
+
+        void load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vector2i mSize);
+        void unload();
+        void update(std::vector<std::vector<int>> colMap);
+        void throwRock(int dir);
+        void extendReach();
+        int getState();
+        void setState(int state);
+
+        int currentState;
+    protected:
     private:
+    Animation movement, extend;
+    enum State { FLYING, HELD, GROUND };
 };
 
 #endif // ROCK_H

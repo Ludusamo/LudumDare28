@@ -25,24 +25,28 @@ void Mob::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector
 }
 
 void Mob::unload() {
-    vertices.clear();
+    Entity::unload();
 }
 
 void Mob::update(std::vector<std::vector<int>> colMap) {
     moveM(colMap);
 
     if (acceleration.y < 0) {
+        currentDir = UP;
         animation.setModifier(UP);
         animation.update(vertices, mSize);
     } else if (acceleration.y > 0) {
+        currentDir = DOWN;
         animation.setModifier(DOWN);
         animation.update(vertices, mSize);
     }
 
     if (acceleration.x < 0) {
+        currentDir = LEFT;
         animation.setModifier(LEFT);
         animation.update(vertices, mSize);
     } else if (acceleration.x > 0) {
+        currentDir = RIGHT;
         animation.setModifier(RIGHT);
         animation.update(vertices, mSize);
     }
@@ -68,6 +72,7 @@ void Mob::checkCollision(std::vector<std::vector<int>> colMap) {
     for (unsigned int i = 0; i < collidable.size(); i++) {
         if (contains(collision, collidable[i])) {
             setVelocityX(0);
+            collided = true;
             break;
         }
     }
@@ -86,6 +91,7 @@ void Mob::checkCollision(std::vector<std::vector<int>> colMap) {
         if (collision.top < collidable[i].top + collidable[i].height || collision.top + collision.height > collidable[i].top
                 || collision.left < collidable[i].left + collidable[i].width || collision.left + collision.width < collidable[i].left) {
             setVelocityY(0);
+            collided = true;
             break;
         }
     }
@@ -122,6 +128,21 @@ bool Mob::contains(sf::FloatRect x, sf::FloatRect y) {
     if (x.top < y.top + y.height || x.top + x.height > y.top || x.left < y.left + y.width || x.left + x.width > y.left)
         return true;
     return false;
+}
+
+void Mob::setTexCoords(int startX, int startY) {
+    vertices[0].texCoords = sf::Vector2f(startX * mSize.x, startY * mSize.y);
+    vertices[1].texCoords = sf::Vector2f((startX + 1) * mSize.x, startY * mSize.y);
+    vertices[2].texCoords = sf::Vector2f((startX + 1) * mSize.x, (startY + 1) * mSize.y);
+    vertices[3].texCoords = sf::Vector2f(startX * mSize.x, (startY + 1) * mSize.y);
+}
+
+sf::FloatRect Mob::getCollision() {
+    return collision;
+}
+
+int Mob::getDir() {
+    return currentDir;
 }
 
 void Mob::setAccelerationX(float a) {

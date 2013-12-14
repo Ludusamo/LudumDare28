@@ -21,6 +21,9 @@ void Level::load() {
 
     pTex.loadFromFile("res/imgs/player.png");
     player.load(sf::Vector2f(2, 2), pTex, 2, sf::Vector2i(32, 32));
+
+    rTex.loadFromFile("res/imgs/rock.png");
+    rock.load(sf::Vector2f(5, 5), rTex, 6, sf::Vector2i(32, 32));
 }
 
 void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) {
@@ -67,7 +70,11 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
     height = heightB;
 
     MapGenerator test("res/lvls/1.comp");
+<<<<<<< HEAD
     std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.2f);
+=======
+    std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.0f);
+>>>>>>> origin/master
 
     std::vector<int> bufferV;
     for (int x = 0; x < width; x++) {
@@ -87,15 +94,31 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
 void Level::unload() {
     tmap.unload();
     player.unload();
+    rock.unload();
 }
 
-void Level::update() {
+void Level::update(InputManager input) {
     player.update(colMap);
+    rock.update(colMap);
+
+    if (input.keyPressed(sf::Keyboard::K)) {
+        if (rock.getState() == 1) {
+            rock.setState(0);
+            rock.throwRock(player.getDir());
+        }
+    }
+    if (player.getCollision().intersects(rock.getCollision()) && rock.getState() == 2) {
+        rock.setState(1);
+    }
+    if (rock.getState() == 1) {
+        rock.setPosition(player.getPosition());
+    }
 }
 
 void Level::render(sf::RenderWindow &window) {
     window.draw(tmap, &shader);
     window.draw(player, &shader);
+    window.draw(rock, &shader);
 }
 
 void Level::switchTime(bool day) {
@@ -121,6 +144,10 @@ void Level::switchTime(bool day) {
 
 Player &Level::getPlayer() {
     return player;
+}
+
+Rock &Level::getRock() {
+    return rock;
 }
 
 std::vector<std::vector<int>> Level::getColMap() {

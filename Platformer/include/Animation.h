@@ -13,6 +13,8 @@ public:
     void unload();
     void update(sf::VertexArray &vertices, sf::Vector2i mSize);
     void setModifier(int x);
+    void setIndex(int i);
+    int getIndex();
 protected:
 private:
     int currentAnimationIndex, totalFrames, startIndexX, startIndexY, modifier;

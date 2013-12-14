@@ -6,10 +6,12 @@
 #include "TileData.h"
 #include <Tilemap.h>
 #include <Player.h>
+#include "Rock.h"
 #include "MapGenerator.h"
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include "InputManager.h"
 
 #define TILE_SIZE 32
 #define SCALE 2.0
@@ -24,9 +26,10 @@ public:
     void saveLevel(std::string levelName);
     void generateLevel(const std::string& tilesetFile, int widthB, int heightB);
     void unload();
-    void update();
+    void update(InputManager input);
     void render(sf::RenderWindow &window);
     Player &getPlayer();
+    Rock &getRock();
     std::vector<std::vector<int>> getColMap();
 
     int getWidth();
@@ -46,6 +49,10 @@ private:
     // Player
     Player player;
     sf::Texture pTex;
+
+    // Rock
+    Rock rock;
+    sf::Texture rTex;
 
     // Shader
     sf::Shader shader;
