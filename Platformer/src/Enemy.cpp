@@ -2,6 +2,7 @@
 #include <iostream>
 
 std::vector<Enemy*> Enemy::enemyList;
+std::vector<Node> Enemy::blacklist;
 
 Enemy::Enemy() {
 
@@ -34,7 +35,14 @@ void Enemy::unload() {
 //
 //}
 
-std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tary, uint32_t tarx, std::vector<std::vector<int16_t> > level) {
+bool Enemy::in_blacklist(uint32_t x, uint32_t y) {
+    for(int i = 0; i < Enemy::blacklist.size(); i++)
+        if(x == Enemy::blacklist[i].x && y == Enemy::blacklist[i].y)
+            return true;
+    return false;
+}
+
+std::vector<Node> Enemy::pathfind(uint32_t srcy, uint32_t srcx, uint32_t tary, uint32_t tarx, std::vector<std::vector<int16_t> > level) {
     for(uint32_t x = 0; x < level.size(); x++)
         for(uint32_t y = 0; y < level[0].size(); y++)
             level[x][y] = level[x][y] == 1 ? -1 : x == srcx && y == srcy ? 0 : 1;
@@ -47,40 +55,44 @@ std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tary, u
     while(x != tarx || y != tary) {
         if(tarx > x && tary >= y)
             priority = "rdul";
-        if(tarx == x && tary > y)
+        else if(tarx == x && tary > y)
             priority = "dlru";
-        if(tarx < x && tary <= y)
+        else if(tarx < x && tary <= y)
             priority = "ldur";
-        if(tarx == x && tary < y)
+        else if(tarx == x && tary < y)
             priority = "ulrd";
         for(int i = 0; i < 4; i++) {
             switch(priority[i]) {
                 case 'l':
-                    if(path[path.size() -1].left && x != 1 && level[x - 1][y] != -1 && (path[path.size() - 1].x != x - 1 || path[path.size() - 1].y != y)) {
+                    if(path[path.size() -1].left && x != 1 && level[x - 1][y] == 1 && !in_blacklist(x-1,y)) {
                         x--;
                         path[path.size() - 1].left = false;
                         path.push_back(Node(x,y));
+                        blacklist.push_back(Node(x,y));
                         goto BREAK;
                     }
                 case 'u':
-                    if(path[path.size() -1].up && y != 1 && level[x][y - 1] != -1 && (path[path.size() - 1].x != x || path[path.size() - 1].y != y - 1)) {
+                    if(path[path.size() -1].up && y != 1 && level[x][y - 1] == 1 && !in_blacklist(x,y-1)) {
                         path[path.size() - 1].up = false;
                         y--;
                         path.push_back(Node(x,y));
+                        blacklist.push_back(Node(x,y));
                         goto BREAK;
                     }
                 case 'r':
-                    if(path[path.size() -1].right && x != level.size() - 2 && level[x+1][y] != -1 && (path[path.size() - 1].x != x + 1 || path[path.size() - 1].y != y)) {
+                    if(path[path.size() -1].right && x != level.size() - 2 && level[x+1][y] == 1 && !in_blacklist(x+1,y)) {
                         path[path.size() - 1].right = false;
                         x++;
                         path.push_back(Node(x,y));
+                        blacklist.push_back(Node(x,y));
                         goto BREAK;
                     }
                 case 'd':
-                    if(path[path.size() -1].down && y != level[0].size() - 2 && level[x][y+1] != -1 && (path[path.size() - 1].x != x || path[path.size() - 1].y != y + 1)) {
+                    if(path[path.size() -1].down && y != level[0].size() - 2 && level[x][y+1] == 1 && !in_blacklist(x,y+1)) {
                         path[path.size() - 1].down = false;
                         y++;
                         path.push_back(Node(x,y));
+                        blacklist.push_back(Node(x,y));
                         goto BREAK;
                     }
             }
@@ -93,15 +105,18 @@ std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tary, u
         BREAK:
         continue;
     }
+    blacklist.clear();
+    for(int i = 0; i < path.size(); i++)
+        path[i].reverse();
     return path;
 }
 
 std::vector<Node> Enemy::pathfind(sf::Vector2f target, std::vector<std::vector<int16_t> > level) {
     sf::Vector2f source = this->getPosition();
-    uint32_t srcx = std::floor((source.x + 1) / 32);
-    uint32_t srcy = std::floor((source.y + 1) / 32);
-    uint32_t tarx = std::floor((target.x + 1) / 32);
-    uint32_t tary = std::floor((target.y + 1) / 32);
+    uint32_t srcx = std::round(source.x / 32);
+    uint32_t srcy = std::round(source.y / 32);
+    uint32_t tarx = std::round(target.x / 32);
+    uint32_t tary = std::round(target.y / 32);
     return this->pathfind(srcx, srcy, tarx, tary, level);
 }
 

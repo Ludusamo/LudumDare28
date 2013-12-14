@@ -12,33 +12,18 @@
 
 int main() {
     MapGenerator test("res/lvls/1.comp");
-    std::vector<std::vector<int16_t> > testvec = test.generate(10, 10, 0.2f);
-    for(int i = 0; i < testvec.size(); i++) {
-        for(int j = 0; j < testvec[0].size(); j++) {
-            std::cout << testvec[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-    std::pair<uint32_t,uint32_t> pos1, pos2;
-    for(int i = 1; i < 10; i++)
-    if(testvec[i][1] == 2) {
-        pos1.first = i;
-        pos1.second = 1;
-        break;
-    }
-    for(int i = 8; i > 0; i--)
-    if(testvec[i][6] == 2) {
-        pos2.first = i;
-        pos2.second = 6;
-        break;
-    }
-
-    std::cout << pos1.first << " " << pos1.second << " " << pos2.first << " " << pos2.second << std::endl;
+    std::vector<std::vector<int16_t> > testvec = test.generate(100, 100, 0.25f);
+    //for(int i = 0; i < testvec.size(); i++) {
+    //    for(int j = 0; j < testvec[0].size(); j++) {
+    //        std::cout << testvec[i][j] << " ";
+    //    }
+    //    std::cout << std::endl;
+    //}
 
     Charger charger;
     std::vector<Node> test_path;
     for(int i = 0; i < MAX; i++)
-        test_path = charger.pathfind(pos1.first, pos1.second, pos2.first, pos2.second, testvec);
+       test_path = charger.pathfind(1, 1, 97, 98, testvec);
     for(int i = 0; i < test_path.size(); i++)
         std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
 

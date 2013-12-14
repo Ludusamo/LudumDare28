@@ -163,8 +163,8 @@ void Level::render(sf::RenderWindow &window) {
 void Level::switchTime(bool day) {
 
     sf::Vector2f source = this->player.getPosition();
-    uint32_t srcx = std::floor((source.x +1) / 32);
-    uint32_t srcy = std::floor((source.y + 1) / 32);
+    uint32_t srcx = std::round(source.x / 32);
+    uint32_t srcy = std::round(source.y / 32);
     std::cout << srcx << " " << srcy << std::endl;
     if (day) {
         ambientIntensity = 1.0f;

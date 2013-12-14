@@ -8,3 +8,9 @@ Node::Node(uint32_t x, uint32_t y) {
     this->right = true;
     this->down  = true;
 }
+
+void Node::reverse() {
+    this->x ^= this->y;
+    this->y ^= this->x;
+    this->x ^= this->y;
+}
