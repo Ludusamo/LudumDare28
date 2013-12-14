@@ -23,6 +23,8 @@ public:
     void setAccelerationY(float a);
     void setVelocityX(float v);
     void setVelocityY(float v);
+    void setTexCoords(int startX, int startY);
+    int getDir();
     Animation &getAnimation();
     sf::FloatRect getCollision();
 protected:

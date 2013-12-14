@@ -11,6 +11,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include "InputManager.h"
 
 #define TILE_SIZE 32
 #define SCALE 2.0
@@ -25,9 +26,10 @@ public:
     void saveLevel(std::string levelName);
     void generateLevel(const std::string& tilesetFile, int widthB, int heightB);
     void unload();
-    void update();
+    void update(InputManager input);
     void render(sf::RenderWindow &window);
     Player &getPlayer();
+    Rock &getRock();
     std::vector<std::vector<int>> getColMap();
 
     int getWidth();

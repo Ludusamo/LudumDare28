@@ -130,8 +130,19 @@ bool Mob::contains(sf::FloatRect x, sf::FloatRect y) {
     return false;
 }
 
+void Mob::setTexCoords(int startX, int startY) {
+    vertices[0].texCoords = sf::Vector2f(startX * mSize.x, startY * mSize.y);
+    vertices[1].texCoords = sf::Vector2f((startX + 1) * mSize.x, startY * mSize.y);
+    vertices[2].texCoords = sf::Vector2f((startX + 1) * mSize.x, (startY + 1) * mSize.y);
+    vertices[3].texCoords = sf::Vector2f(startX * mSize.x, (startY + 1) * mSize.y);
+}
+
 sf::FloatRect Mob::getCollision() {
     return collision;
+}
+
+int Mob::getDir() {
+    return currentDir;
 }
 
 void Mob::setAccelerationX(float a) {

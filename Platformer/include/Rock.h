@@ -12,6 +12,7 @@ class Rock : public Mob
         void load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vector2i mSize);
         void unload();
         void update(std::vector<std::vector<int>> colMap);
+        void throwRock(int dir);
         void extendReach();
         int getState();
         void setState(int state);
