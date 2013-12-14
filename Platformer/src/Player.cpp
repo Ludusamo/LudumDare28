@@ -18,6 +18,14 @@ void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vec
     setTexCoords(0, 0);
 
     animation.load(0, 0, 3, .2);
+
+    bmX = 5;
+    bmY = 1;
+
+    bounds.top = getPosition().y + bmY;
+    bounds.left = getPosition().x + bmX;
+    bounds.width = 22;
+    bounds.height = 31;
 }
 
 void Player::unload() {
@@ -56,9 +64,6 @@ void Player::update(std::vector<std::vector<int>> colMap) {
             coolDownTimer = 0;
         } else attackTimer += .016;
     }
-
-
-    std::cout << getCurrentState() << std::endl;
 }
 
 void Player::throwRock(Rock& rock, int dir) {

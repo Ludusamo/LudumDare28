@@ -44,6 +44,7 @@ protected:
     sf::FloatRect collision;
     sf::FloatRect bounds;
     int startX, endX, startY, endY;
+    int bmX, bmY; // Bound x and y modifiers
 
     // Attributes
     float health;

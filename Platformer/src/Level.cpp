@@ -79,7 +79,7 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
     height = heightB;
 
     MapGenerator test("res/lvls/1.comp");
-    std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.0f);
+    std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.1f);
 
     std::vector<int> bufferV;
     for (int x = 0; x < width; x++) {
