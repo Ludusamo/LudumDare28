@@ -80,11 +80,11 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
     std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.1f);
 
     std::vector<int> bufferV;
-    for (int x = 0; x < width; x++) {
-        for (int y = 0; y < height; y++) {
-            tiles.push_back(TileData::tiles[levelBuffer[x][y]].getId());
-            if (TileData::tiles[levelBuffer[x][y]].isSolid()) bufferV.push_back(1);
-            else if (TileData::tiles[levelBuffer[x][y]].isGap()) bufferV.push_back(2);
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            tiles.push_back(TileData::tiles[levelBuffer[y][x]].getId());
+            if (TileData::tiles[levelBuffer[y][x]].isSolid()) bufferV.push_back(1);
+            else if (TileData::tiles[levelBuffer[y][x]].isGap()) bufferV.push_back(2);
             else bufferV.push_back(0);
         }
         colMap.push_back(bufferV);
@@ -112,16 +112,18 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
 
 void Level::unload() {
     tmap.unload();
-    player.unload();
-    rock.unload();
+    for (int e = 0; e < entities.size(); e++) {
+        entities[e]->unload();
+    }
 }
 
 void Level::update(InputManager input) {
-    player.update(colMap);
-    rock.update(colMap);
+    for (int e = 0; e < entities.size(); e++) {
+        entities[e]->update(colMap);
+    }
 
-    if (((player.getCollision().intersects(rock.getCollision()) && rock.getState() == 2) || rock.getState() == 1) && player.getCurrentState() != 2) {
-        rock.setState(1);
+    if (((player.getCollision().intersects(rock.getCollision()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
+        rock.setCurrentState(1);
         rock.setTexCoords(1, 0);
     }
     if (player.getCurrentState() == 2) {
@@ -139,42 +141,45 @@ void Level::update(InputManager input) {
             rock.setPosition(player.getPosition() + sf::Vector2f(32, 0));
             break;
         }
-    } else if (rock.getState() == 1) {
+    } else if (rock.getCurrentState() == 1) {
         rock.setPosition(player.getPosition());
     }
 
     if (input.keyPressed(sf::Keyboard::J) && player.getCanAttack()) {
-        if (rock.getState() == 1) {
+        if (rock.getCurrentState() == 1) {
             player.attack(rock, player.getDir());
         }
     }
 
     if (input.keyPressed(sf::Keyboard::K)) {
-        if (rock.getState() == 1) {
-            rock.setState(0);
+        if (rock.getCurrentState() == 1) {
+            rock.setCurrentState(0);
             player.throwRock(rock, player.getDir());
         }
     }
 
     // Player movements
-    if (player.getCurrentState() != 2) {
-        if (input.keyPressed(up)) player.setAccelerationY(-2);
-        else if (input.keyPressed(down)) player.setAccelerationY(2);
-        else player.setAccelerationY(0);
+    if (entities[0]->getCurrentState() != 2) {
+        if (input.keyPressed(up)) entities[0]->setAccelerationY(-2);
+        else if (input.keyPressed(down)) entities[0]->setAccelerationY(2);
+        else entities[0]->setAccelerationY(0);
 
-        if (input.keyPressed(left)) player.setAccelerationX(-2);
-        else if (input.keyPressed(right)) player.setAccelerationX(2);
-        else player.setAccelerationX(0);
+        if (input.keyPressed(left)) entities[0]->setAccelerationX(-2);
+        else if (input.keyPressed(right)) entities[0]->setAccelerationX(2);
+        else entities[0]->setAccelerationX(0);
     }
+
+    std::cout << entities[0]->getPosition().x << std::endl;
 }
 
 void Level::render(sf::RenderWindow &window) {
     window.draw(tmap, &shader);
-    window.draw(player, &shader);
-    window.draw(rock, &shader);
+    for (int e = 0; e < entities.size(); e++) {
+        window.draw(*entities[e], &shader);
+    }
 }
 
-void Level::addEntity(Entity* e) {
+void Level::addEntity(Mob* e) {
     entities.push_back(e);
 }
 

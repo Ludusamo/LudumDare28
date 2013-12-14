@@ -6,7 +6,7 @@ class PPAD
 {
     public:
         PPAD();
-        virtual ~PPAD();
+        ~PPAD();
     protected:
     private:
 };

@@ -26,6 +26,9 @@ public:
     void setTexCoords(int startX, int startY);
     void subtractHealth(float dmg);
     int getDir();
+    int getCurrentState();
+    void setCurrentState(int state);
+
     Animation &getAnimation();
     sf::FloatRect getCollision();
 protected:
@@ -45,6 +48,8 @@ protected:
     sf::FloatRect bounds;
     int startX, endX, startY, endY;
     int bmX, bmY; // Bound x and y modifiers
+
+    int currentState;
 
     // Attributes
     float health;

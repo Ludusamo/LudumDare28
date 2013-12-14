@@ -170,3 +170,11 @@ void Mob::setVelocityX(float v) {
 void Mob::setVelocityY(float v) {
     velocity.y = v;
 }
+
+int Mob::getCurrentState() {
+    return currentState;
+}
+
+void Mob::setCurrentState(int state) {
+    currentState = state;
+}

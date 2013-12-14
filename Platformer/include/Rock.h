@@ -12,10 +12,6 @@ public:
     void unload();
     void update(std::vector<std::vector<int>> colMap);
     void extendReach();
-    int getState();
-    void setState(int state);
-
-    int currentState;
 protected:
 private:
     Animation movement, extend;
