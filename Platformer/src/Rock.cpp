@@ -69,16 +69,16 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
 void Rock::throwRock(int dir) {
     switch (dir) {
         case UP:
-            setAccelerationY(-2);
+            setAccelerationY(-4);
             break;
         case DOWN:
-            setAccelerationY(2);
+            setAccelerationY(4);
             break;
         case LEFT:
-            setAccelerationX(-2);
+            setAccelerationX(-4);
             break;
         case RIGHT:
-            setAccelerationX(2);
+            setAccelerationX(4);
             break;
     }
 }
