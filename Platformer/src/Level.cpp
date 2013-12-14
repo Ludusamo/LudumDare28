@@ -25,6 +25,9 @@ void Level::load() {
     rTex.loadFromFile("res/imgs/rock.png");
     rock.load(sf::Vector2f(5, 5), rTex, 6, sf::Vector2i(32, 32));
 
+//    addEntity(player);
+//    addEntity(rock);
+
     up.push_back(sf::Keyboard::Up);
     up.push_back(sf::Keyboard::W);
     down.push_back(sf::Keyboard::Down);
@@ -152,6 +155,8 @@ void Level::update(InputManager input) {
         else if (input.keyPressed(right)) player.setAccelerationX(2);
         else player.setAccelerationX(0);
     }
+
+//    std::cout << entities[1].getPosition().x << std::endl;
 }
 
 void Level::render(sf::RenderWindow &window) {
@@ -159,6 +164,10 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(player, &shader);
     window.draw(rock, &shader);
 }
+
+//void Level::addEntity(Entity e) {
+//    entities.push_back(e);
+//}
 
 void Level::switchTime(bool day) {
     if (day) {
