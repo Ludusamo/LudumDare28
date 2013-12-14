@@ -56,7 +56,6 @@ void GameScreen::update() {
     // TEMPORARY
     if (input.keyPressed(sf::Keyboard::O)) level.switchTime(true);
     if (input.keyPressed(sf::Keyboard::P)) level.switchTime(false);
-    if (input.keyPressed(sf::Keyboard::L)) level.saveLevel("test.png");
 }
 
 void GameScreen::render(sf::RenderWindow &window) {

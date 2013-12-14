@@ -49,7 +49,6 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
         acceleration.y *= .9;
 
         if (abs(acceleration.x) <= .1 && abs(acceleration.y) <= .1) {
-            std::cout << "Resetting a" << std::endl;
             acceleration.x = 0;
             acceleration.y = 0;
         }

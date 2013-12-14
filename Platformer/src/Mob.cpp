@@ -145,6 +145,10 @@ int Mob::getDir() {
     return currentDir;
 }
 
+void Mob::subtractHealth(float dmg) {
+    health -= dmg;
+}
+
 void Mob::setAccelerationX(float a) {
     acceleration.x = a;
 }
