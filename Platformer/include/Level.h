@@ -40,6 +40,11 @@ public:
 protected:
 private:
 
+    std::vector<sf::Keyboard::Key> up;
+    std::vector<sf::Keyboard::Key> down;
+    std::vector<sf::Keyboard::Key> left;
+    std::vector<sf::Keyboard::Key> right;
+
     // Map
     int width, height;
     std::vector<int> tiles;

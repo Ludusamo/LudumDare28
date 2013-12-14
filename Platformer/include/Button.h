@@ -4,25 +4,24 @@
 #include "SFML/Graphics.hpp"
 #include "Entity.h"
 
-class Button : public Entity
-{
-    public:
-        Button();
-        ~Button();
+class Button : public Entity {
+public:
+    Button();
+    ~Button();
 
-        void load(const std::string& message, sf::Vector2f pos, const sf::Texture& sprites, const sf::Font& font);
-        void unload();
-        void update(sf::Vector2i p);
+    void load(const std::string& message, sf::Vector2f pos, const sf::Texture& sprites, const sf::Font& font);
+    void unload();
+    void update(sf::Vector2i p);
 
-        enum State { SAME, HIGHLIGHTED };
-    protected:
+    enum State { SAME, HIGHLIGHTED };
+protected:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
         states.transform *= getTransform();
         states.texture = &sprites;
         target.draw(vertices, states);
         target.draw(message, states);
     }
-    private:
+private:
     void highlight(int change);
     sf::Vector2f pos;
     sf::FloatRect bounds;

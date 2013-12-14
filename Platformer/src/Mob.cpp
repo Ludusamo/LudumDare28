@@ -105,8 +105,8 @@ void Mob::checkCollision(std::vector<std::vector<int>> colMap) {
     if (velocity.y < -MAX_VEL) velocity.y = -MAX_VEL;
 
     move(velocity);
-    bounds.left = getPosition().x;
-    bounds.top = getPosition().y;
+    bounds.left = getPosition().x + bmX;
+    bounds.top = getPosition().y + bmY;
 }
 
 void Mob::collidableTiles(std::vector<std::vector<int>> colMap, int startX, int endX, int startY, int endY) {

@@ -8,12 +8,12 @@
 
 class TileData {
 public:
-	static TileData * tiles;
-	static TileData VOID;
-	static TileData STONE;
-	static TileData GRASS;
+    static TileData * tiles;
+    static TileData VOID;
+    static TileData STONE;
+    static TileData GRASS;
 
-	uint32_t getId();
+    uint32_t getId();
     sf::Color getLevelColor();
     bool isSolid();
     bool isEmitter();

@@ -1,12 +1,10 @@
 #include "Button.h"
 
-Button::Button()
-{
+Button::Button() {
     //ctor
 }
 
-Button::~Button()
-{
+Button::~Button() {
     //dtor
 }
 
@@ -66,7 +64,7 @@ void Button::update(sf::Vector2i p) {
     if (bounds.contains(p.x, p.y)) {
         change = 1;
         highlight(change);
-    } else if (change == 1 && !bounds.contains(p.x, p.y)){
+    } else if (change == 1 && !bounds.contains(p.x, p.y)) {
         change = 0;
         highlight(change);
     }
