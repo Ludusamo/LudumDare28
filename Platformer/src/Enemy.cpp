@@ -34,7 +34,7 @@ void Enemy::unload() {
 //
 //}
 
-std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tarx, uint32_t tary, std::vector<std::vector<int16_t> > level) {
+std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tary, uint32_t tarx, std::vector<std::vector<int16_t> > level) {
     for(uint32_t x = 0; x < level.size(); x++)
         for(uint32_t y = 0; y < level[0].size(); y++)
             level[x][y] = level[x][y] == 1 ? -1 : x == srcx && y == srcy ? 0 : 1;

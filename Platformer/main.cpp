@@ -8,6 +8,8 @@
 #include "Node.h"
 #include "Charger.h"
 
+#define MAX 1
+
 int main() {
     MapGenerator test("res/lvls/1.comp");
     std::vector<std::vector<int16_t> > testvec = test.generate(10, 10, 0.2f);
@@ -18,21 +20,25 @@ int main() {
         std::cout << std::endl;
     }
     std::pair<uint32_t,uint32_t> pos1, pos2;
-    for(int i = 0; i < 10; i++)
-    if(testvec[1][i] == 2) {
-        pos1.first = 1;
-        pos1.second = i;
+    for(int i = 1; i < 10; i++)
+    if(testvec[i][1] == 2) {
+        pos1.first = i;
+        pos1.second = 1;
         break;
     }
-    for(int i = 9; i >= 0; i--)
-    if(testvec[8][i] == 2) {
-        pos2.first = 8;
-        pos2.second = i;
+    for(int i = 8; i > 0; i--)
+    if(testvec[i][6] == 2) {
+        pos2.first = i;
+        pos2.second = 6;
         break;
     }
 
+    std::cout << pos1.first << " " << pos1.second << " " << pos2.first << " " << pos2.second << std::endl;
+
     Charger charger;
-    std::vector<Node> test_path = charger.pathfind(pos1.first, pos1.second, pos2.first, pos2.second, testvec);
+    std::vector<Node> test_path;
+    for(int i = 0; i < MAX; i++)
+        test_path = charger.pathfind(pos1.first, pos1.second, pos2.first, pos2.second, testvec);
     for(int i = 0; i < test_path.size(); i++)
         std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
 
