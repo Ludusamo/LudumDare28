@@ -57,7 +57,6 @@ std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tarx, u
             switch(priority[i]) {
                 case 'l':
                     if(path[path.size() -1].left && x != 1 && level[x - 1][y] != -1 && (path[path.size() - 1].x != x - 1 || path[path.size() - 1].y != y)) {
-                        std::cout << "Moving left\n";
                         x--;
                         path[path.size() - 1].left = false;
                         path.push_back(Node(x,y));
@@ -65,7 +64,6 @@ std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tarx, u
                     }
                 case 'u':
                     if(path[path.size() -1].up && y != 1 && level[x][y - 1] != -1 && (path[path.size() - 1].x != x || path[path.size() - 1].y != y - 1)) {
-                        std::cout << "Moving up\n";
                         path[path.size() - 1].up = false;
                         y--;
                         path.push_back(Node(x,y));
@@ -73,7 +71,6 @@ std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tarx, u
                     }
                 case 'r':
                     if(path[path.size() -1].right && x != level.size() - 2 && level[x+1][y] != -1 && (path[path.size() - 1].x != x + 1 || path[path.size() - 1].y != y)) {
-                        std::cout << "Moving right\n";
                         path[path.size() - 1].right = false;
                         x++;
                         path.push_back(Node(x,y));
@@ -81,7 +78,6 @@ std::vector<Node> Enemy::pathfind(uint32_t srcx, uint32_t srcy, uint32_t tarx, u
                     }
                 case 'd':
                     if(path[path.size() -1].down && y != level[0].size() - 2 && level[x][y+1] != -1 && (path[path.size() - 1].x != x || path[path.size() - 1].y != y + 1)) {
-                        std::cout << "Moving down\n";
                         path[path.size() - 1].down = false;
                         y++;
                         path.push_back(Node(x,y));
