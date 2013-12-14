@@ -26,8 +26,10 @@ void Player::unload() {
 
 void Player::update(std::vector<std::vector<int>> colMap) {
     Mob::update(colMap);
-    if (acceleration.x == 0 && acceleration.y == 0) {
-        switch (currentDir) {
+    if (getCurrentState() != ATTACKING) {
+        if (acceleration.x == 0 && acceleration.y == 0) {
+            setCurrentState(IDLE);
+            switch (currentDir) {
             case UP:
                 setTexCoords(1, 0);
                 break;
@@ -40,6 +42,76 @@ void Player::update(std::vector<std::vector<int>> colMap) {
             case RIGHT:
                 setTexCoords(1, 3);
                 break;
+            }
+        } else {
+            setCurrentState(MOVING);
         }
+
+        if (coolDownTimer >= COOLDOWN) {
+            canAttack = true;
+        } else coolDownTimer += .016;
+    } else {
+        if (attackTimer >= ATTACK_DURATION) {
+            setCurrentState(0);
+            coolDownTimer = 0;
+        } else attackTimer += .016;
     }
+
+
+    std::cout << getCurrentState() << std::endl;
+}
+
+void Player::throwRock(Rock& rock, int dir) {
+    switch (dir) {
+    case UP:
+        rock.setAccelerationY(-4);
+        break;
+    case DOWN:
+        rock.setAccelerationY(4);
+        break;
+    case LEFT:
+        rock.setAccelerationX(-4);
+        break;
+    case RIGHT:
+        rock.setAccelerationX(4);
+        break;
+    }
+}
+
+void Player::attack(Rock& rock, int dir) {
+    setCurrentState(ATTACKING);
+    setAccelerationX(0);
+    setAccelerationY(0);
+    switch (dir) {
+    case UP:
+        rock.setTexCoords(4, 0);
+        rock.setPosition(getPosition() - sf::Vector2f(0, mSize.y));
+        break;
+    case DOWN:
+        rock.setTexCoords(5, 0);
+        rock.setPosition(getPosition() + sf::Vector2f(0, mSize.y));
+        break;
+    case LEFT:
+        rock.setTexCoords(6, 0);
+        rock.setPosition(getPosition() - sf::Vector2f(mSize.x, 0));
+        break;
+    case RIGHT:
+        rock.setTexCoords(7, 0);
+        rock.setPosition(getPosition() + sf::Vector2f(mSize.x, 0));
+        break;
+    }
+    canAttack = false;
+    attackTimer = 0;
+}
+
+bool Player::getCanAttack() {
+    return canAttack;
+}
+
+int Player::getCurrentState() {
+    return currentState;
+}
+
+void Player::setCurrentState(int state) {
+    currentState = state;
 }

@@ -1,12 +1,10 @@
 #include "Rock.h"
 
-Rock::Rock()
-{
+Rock::Rock() {
     //ctor
 }
 
-Rock::~Rock()
-{
+Rock::~Rock() {
     //dtor
 }
 
@@ -60,44 +58,24 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
     if (currentState == GROUND) {
         setTexCoords(0, 0);
     }
-
-    if (currentState == HELD) {
-        setTexCoords(1, 0);
-    }
 }
 
-void Rock::throwRock(int dir) {
-    switch (dir) {
-        case UP:
-            setAccelerationY(-4);
-            break;
-        case DOWN:
-            setAccelerationY(4);
-            break;
-        case LEFT:
-            setAccelerationX(-4);
-            break;
-        case RIGHT:
-            setAccelerationX(4);
-            break;
-    }
-}
 
 void Rock::extendReach() {
     int xModifier, yModifier;
     switch (currentDir) {
-        case UP:
-            yModifier = -64;
-            break;
-        case DOWN:
-            yModifier = 64;
-            break;
-        case LEFT:
-            xModifier = -64;
-            break;
-        case RIGHT:
-            xModifier = 64;
-            break;
+    case UP:
+        yModifier = -64;
+        break;
+    case DOWN:
+        yModifier = 64;
+        break;
+    case LEFT:
+        xModifier = -64;
+        break;
+    case RIGHT:
+        xModifier = 64;
+        break;
     }
 
     sf::FloatRect grabber(getPosition().x + xModifier, getPosition().y + yModifier, mSize.x, mSize.y);

@@ -24,6 +24,15 @@ void Level::load() {
 
     rTex.loadFromFile("res/imgs/rock.png");
     rock.load(sf::Vector2f(5, 5), rTex, 6, sf::Vector2i(32, 32));
+
+    up.push_back(sf::Keyboard::Up);
+    up.push_back(sf::Keyboard::W);
+    down.push_back(sf::Keyboard::Down);
+    down.push_back(sf::Keyboard::S);
+    left.push_back(sf::Keyboard::Left);
+    left.push_back(sf::Keyboard::A);
+    right.push_back(sf::Keyboard::Right);
+    right.push_back(sf::Keyboard::D);
 }
 
 void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) {
@@ -97,17 +106,51 @@ void Level::update(InputManager input) {
     player.update(colMap);
     rock.update(colMap);
 
+    if (((player.getCollision().intersects(rock.getCollision()) && rock.getState() == 2) || rock.getState() == 1) && player.getCurrentState() != 2) {
+        rock.setState(1);
+        rock.setTexCoords(1, 0);
+    }
+    if (player.getCurrentState() == 2) {
+        switch (player.getDir()) {
+        case 0:
+            rock.setPosition(player.getPosition() - sf::Vector2f(0, 32));
+            break;
+        case 1:
+            rock.setPosition(player.getPosition() + sf::Vector2f(0, 32));
+            break;
+        case 2:
+            rock.setPosition(player.getPosition() - sf::Vector2f(32, 0));
+            break;
+        case 3:
+            rock.setPosition(player.getPosition() + sf::Vector2f(32, 0));
+            break;
+        }
+    } else if (rock.getState() == 1) {
+        rock.setPosition(player.getPosition());
+    }
+
+    if (input.keyPressed(sf::Keyboard::J) && player.getCanAttack()) {
+        if (rock.getState() == 1) {
+            player.attack(rock, player.getDir());
+        }
+    }
+
     if (input.keyPressed(sf::Keyboard::K)) {
         if (rock.getState() == 1) {
             rock.setState(0);
-            rock.throwRock(player.getDir());
+            player.throwRock(rock, player.getDir());
         }
     }
-    if (player.getCollision().intersects(rock.getCollision()) && rock.getState() == 2) {
-        rock.setState(1);
-    }
-    if (rock.getState() == 1) {
-        rock.setPosition(player.getPosition());
+
+    // Player movements
+    if (player.getCurrentState() != 2) {
+        if (input.keyPressed(up)) player.setAccelerationY(-2);
+        else if (input.keyPressed(down)) player.setAccelerationY(2);
+        else player.setAccelerationY(0);
+
+        if (input.keyPressed(left)) player.setAccelerationX(-2);
+        else if (input.keyPressed(right)) player.setAccelerationX(2);
+        else player.setAccelerationX(0);
     }
 }
 
