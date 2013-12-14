@@ -67,7 +67,7 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
     height = heightB;
 
     MapGenerator test("res/lvls/1.comp");
-    std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.4f);
+    std::vector<std::vector<int16_t> > levelBuffer = test.generate(width, height, 0.2f);
 
     std::vector<int> bufferV;
     for (int x = 0; x < width; x++) {
@@ -99,6 +99,11 @@ void Level::render(sf::RenderWindow &window) {
 }
 
 void Level::switchTime(bool day) {
+
+    sf::Vector2f source = this->player.getPosition();
+    uint32_t srcx = std::floor((source.x +1) / 32);
+    uint32_t srcy = std::floor((source.y + 1) / 32);
+    std::cout << srcx << " " << srcy << std::endl;
     if (day) {
         ambientIntensity = 1.0f;
         ambientColor.x = 1.0f;

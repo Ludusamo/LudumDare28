@@ -809,3 +809,202 @@
 	"SFML/Graphics.hpp"
 	"Entity.h"
 
+1387027237 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/main.cpp
+	<iostream>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	"ScreenManager.h"
+	"TileData.h"
+	"MapGenerator.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/ScreenManager.h
+	<SFML/Graphics.hpp>
+	"Screen.h"
+	"MainMenuScreen.h"
+	"SplashScreen.h"
+	"GameScreen.h"
+	"FadeTransition.h"
+	"FileManager.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Screen.h
+	"SFML/Graphics.hpp"
+	"InputManager.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/InputManager.h
+	<vector>
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
+	"Screen.h"
+	"ScreenManager.h"
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/SplashScreen.h
+	"Screen.h"
+	"ScreenManager.h"
+	"MainMenuScreen.h"
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/GameScreen.h
+	"Screen.h"
+	"ScreenManager.h"
+	"Level.h"
+	<SFML/Graphics.hpp>
+
+1386995498 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Level.h
+	<string>
+	<SFML/Graphics.hpp>
+	"TileData.h"
+	<Tilemap.h>
+	<Player.h>
+	"MapGenerator.h"
+	<vector>
+	<fstream>
+	<iostream>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/TileData.h
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+	<SFML/Graphics.hpp>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Tilemap.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<iostream>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Player.h
+	<SFML/Graphics.hpp>
+	<Mob.h>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Mob.h
+	<SFML/Graphics.hpp>
+	<Entity.h>
+	<Animation.h>
+	<iostream>
+	<math.h>
+
+1386995234 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Entity.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Animation.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1386995633 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/MapGenerator.h
+	<stdlib.h>
+	<stdint.h>
+	<string>
+	<vector>
+	<fstream>
+	<utility>
+	<assert.h>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/FadeTransition.h
+	"Transition.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Transition.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/FileManager.h
+	<vector>
+	<string>
+	<fstream>
+	<algorithm>
+	<iostream>
+	<sstream>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Animation.cpp
+	"Animation.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Entity.cpp
+	"Entity.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/FadeTransition.cpp
+	"FadeTransition.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/FileManager.cpp
+	"FileManager.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/GameScreen.cpp
+	"GameScreen.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/InputManager.cpp
+	"InputManager.h"
+
+1387027624 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Level.cpp
+	"Level.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Light.cpp
+	"Light.h"
+
+1386992022 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Light.h
+	<Entity.h>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/MainMenuScreen.cpp
+	<iostream>
+	"MainMenuScreen.h"
+
+1386995834 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
+	"MapGenerator.h"
+	<iostream>
+	<stdlib.h>
+	<stdint.h>
+	<string>
+	<vector>
+	<fstream>
+	<utility>
+	<assert.h>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Mob.cpp
+	"Mob.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Player.cpp
+	"Player.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Screen.cpp
+	"Screen.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/ScreenManager.cpp
+	"ScreenManager.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/SplashScreen.cpp
+	<iostream>
+	"SplashScreen.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/TileData.cpp
+	"TileData.h"
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Tilemap.cpp
+	"Tilemap.h"
+
+1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Transition.cpp
+	"Transition.h"
+
+1387029361 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Enemy.cpp
+	"Enemy.h"
+
+1387030553 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Enemy.h
+	<SFML/Graphics.hpp>
+	<Mob.h>
+	<cmath>
+	"Node.h"
+
+1386994348 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Charger.cpp
+	"Charger.h"
+
+1386993522 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Charger.h
+	<SFML/Graphics.hpp>
+	<Enemy.h>
+
+1387030106 /home/alesta/Projects/Games/SFML/LudumDare28/Platformer/include/Node.h
+
+1387029559 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Node.cpp
+	"Node.h"
+
