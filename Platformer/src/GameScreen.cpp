@@ -11,7 +11,7 @@ GameScreen::~GameScreen() {
 void GameScreen::loadContent() {
     level.load();
 //    level.loadLevel("res/imgs/Tilesheet_A.png", "res/lvls/testpng.png");
-    level.generateLevel("res/imgs/Tilesheet_A.png", 10, 10);
+    level.generateLevel("res/imgs/Tilesheet_A.png", 20, 20);
 
     if (level.getPlayer().getPosition().x - (WIDTH / SCALE / 2) < 0) center.x = (WIDTH / SCALE / 2);
     else if (level.getPlayer().getPosition().x + (WIDTH / SCALE / 2) > (level.getWidth() * TILE_SIZE)) center.x = (level.getWidth() * TILE_SIZE) - (WIDTH / SCALE / 2);
@@ -56,7 +56,6 @@ void GameScreen::update() {
     // TEMPORARY
     if (input.keyPressed(sf::Keyboard::O)) level.switchTime(true);
     if (input.keyPressed(sf::Keyboard::P)) level.switchTime(false);
-    if (input.keyPressed(sf::Keyboard::L)) level.saveLevel("test.png");
 }
 
 void GameScreen::render(sf::RenderWindow &window) {

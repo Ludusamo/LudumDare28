@@ -17,6 +17,7 @@ public:
     virtual void unload();
     virtual void attack()=0;
     virtual bool scan()=0;
+    std::vector<Node> pathfind(uint32_t srcx, uint32_t srcy, uint32_t tarx, uint32_t tary, std::vector<std::vector<int16_t> > level);
     std::vector<Node> pathfind(Entity entity, std::vector<std::vector<int16_t> > graph);
     std::vector<Node> pathfind(sf::Vector2f target, std::vector<std::vector<int16_t> > graph);
 protected:

@@ -1,6 +1,5 @@
 #include "MapGenerator.h"
 
-#include <iostream>
 #include <stdlib.h>
 #include <stdint.h>
 #include <string>
@@ -173,7 +172,6 @@ void MapGenerator::connect_nodes(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t
     int8_t dx = x2 > x1 ? 1 : -1;
     int8_t dy = y2 > y1 ? 1 : -1;
     while(x1 != x2 || y1 != y2) {
-        //std::cout << "Didn't crash yet" << std::endl;
         if(x1 != x2 && y1 != y2) {
             uint8_t order = std::rand() % 2;
             if(order == 0) {
@@ -219,11 +217,9 @@ void MapGenerator::fix_generation(void) {
     for(int x = 0; x < this->generation.size(); x++)
         for(int y = 0; y < this->generation[0].size(); y++)
             this->check_node(x, y, false);
-    std::cout << this->subsets.size() << std::endl;
     for(int i = 0; i < this->subsets.size() - 1; i++) {
         uint32_t pos1 = std::rand() % this->subsets[i].size();
         uint32_t pos2 = std::rand() % this->subsets[i+1].size();
-        /// THIS NEEDS TO BE FIXED
         this->connect_nodes(this->subsets[i][pos1].first, this->subsets[i][pos1].second, this->subsets[i+1][pos2].first, this->subsets[i+1][pos2].second);
     }
 }

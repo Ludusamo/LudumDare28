@@ -24,6 +24,7 @@ public:
     void setVelocityX(float v);
     void setVelocityY(float v);
     void setTexCoords(int startX, int startY);
+    void subtractHealth(float dmg);
     int getDir();
     Animation &getAnimation();
     sf::FloatRect getCollision();
@@ -43,6 +44,9 @@ protected:
     sf::FloatRect collision;
     sf::FloatRect bounds;
     int startX, endX, startY, endY;
+
+    // Attributes
+    float health;
 
     int currentDir;
     enum direction { UP, DOWN, LEFT, RIGHT };

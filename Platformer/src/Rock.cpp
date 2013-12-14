@@ -49,7 +49,6 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
         acceleration.y *= .9;
 
         if (abs(acceleration.x) <= .1 && abs(acceleration.y) <= .1) {
-            std::cout << "Resetting a" << std::endl;
             acceleration.x = 0;
             acceleration.y = 0;
         }
@@ -70,16 +69,16 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
 void Rock::throwRock(int dir) {
     switch (dir) {
         case UP:
-            setAccelerationY(-2);
+            setAccelerationY(-4);
             break;
         case DOWN:
-            setAccelerationY(2);
+            setAccelerationY(4);
             break;
         case LEFT:
-            setAccelerationX(-2);
+            setAccelerationX(-4);
             break;
         case RIGHT:
-            setAccelerationX(2);
+            setAccelerationX(4);
             break;
     }
 }
