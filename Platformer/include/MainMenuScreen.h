@@ -3,6 +3,7 @@
 
 #include "Screen.h"
 #include "ScreenManager.h"
+#include "FileManager.h"
 #include <SFML/Graphics.hpp>
 
 class MainMenuScreen : public Screen {

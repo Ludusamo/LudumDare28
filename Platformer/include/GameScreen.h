@@ -3,6 +3,7 @@
 
 #include "Screen.h"
 #include "ScreenManager.h"
+#include "FileManager.h"
 #include "Level.h"
 #include <SFML/Graphics.hpp>
 
@@ -18,9 +19,11 @@ public:
 protected:
 private:
     Level level;
-
     sf::Vector2f center;
     sf::View mainView;
+
+    FileManager file;
+    std::vector<std::vector<std::string>> attributes, contents;
 };
 
 #endif // GAMESCREEN_H

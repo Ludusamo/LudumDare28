@@ -37,14 +37,11 @@ int main() {
 
     Charger charger;
     std::vector<Node> test_path;
-    for(int i = 0; i < MAX; i++)
-        test_path = charger.pathfind(pos1.first, pos1.second, pos2.first, pos2.second, testvec);
     for(int i = 0; i < test_path.size(); i++)
         std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
 
-
     // Window
-    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT, 32), "SFML Platformer");
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT, 32), "LD28");
 
     // Window Manager
     ScreenManager::getInstance().initialize();

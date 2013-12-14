@@ -20,13 +20,7 @@ void Level::load() {
     shader.setParameter("ambientColor", ambientColor.x, ambientColor.y, ambientColor.z, ambientIntensity);
 
     pTex.loadFromFile("res/imgs/player.png");
-    player.load(sf::Vector2f(2, 2), pTex, 2, sf::Vector2i(32, 32));
-
     rTex.loadFromFile("res/imgs/rock.png");
-    rock.load(sf::Vector2f(5, 5), rTex, 6, sf::Vector2i(32, 32));
-
-//    addEntity(player);
-//    addEntity(rock);
 
     up.push_back(sf::Keyboard::Up);
     up.push_back(sf::Keyboard::W);
@@ -61,13 +55,6 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
         }
         colMap.push_back(bufferV);
         bufferV.clear();
-    }
-
-    for (int x= 0; x < width; x++) {
-    for (int y= 0; y < height; y++) {
-    std::cout << colMap[x][y] << " ";
-    }
-    std::cout << std::endl;
     }
 
     if (!tmap.load(tilesetFile, sf::Vector2u(32, 32), tiles, width, height))
@@ -106,6 +93,21 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
 
     if (!tmap.load(tilesetFile, sf::Vector2u(32, 32), tiles, width, height))
         std::cout << "Map could not be loaded." << std::endl;
+}
+
+void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::vector<std::vector<std::string>> contents) {
+    for (int i = 0; i < attributes.size(); i++) {
+        switch (std::stoi(attributes[i][0])) {
+            case 0:
+                player.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), pTex, 2, sf::Vector2i(32, 32));
+                addEntity(&player);
+                break;
+            case 1:
+                rock.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), rTex, 6, sf::Vector2i(32, 32));
+                addEntity(&rock);
+                break;
+        }
+    }
 }
 
 void Level::unload() {
@@ -164,8 +166,6 @@ void Level::update(InputManager input) {
         else if (input.keyPressed(right)) player.setAccelerationX(2);
         else player.setAccelerationX(0);
     }
-
-//    std::cout << entities[1].getPosition().x << std::endl;
 }
 
 void Level::render(sf::RenderWindow &window) {
@@ -174,16 +174,11 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(rock, &shader);
 }
 
-//void Level::addEntity(Entity e) {
-//    entities.push_back(e);
-//}
+void Level::addEntity(Entity* e) {
+    entities.push_back(e);
+}
 
 void Level::switchTime(bool day) {
-
-    sf::Vector2f source = this->player.getPosition();
-    uint32_t srcx = std::floor((source.x +1) / 32);
-    uint32_t srcy = std::floor((source.y + 1) / 32);
-    std::cout << srcx << " " << srcy << std::endl;
     if (day) {
         ambientIntensity = 1.0f;
         ambientColor.x = 1.0f;
