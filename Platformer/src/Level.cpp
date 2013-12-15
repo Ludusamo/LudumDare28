@@ -21,6 +21,7 @@ void Level::load() {
 
     pTex.loadFromFile("res/imgs/player.png");
     rTex.loadFromFile("res/imgs/rock.png");
+    mTex.loadFromFile("res/imgs/mobs.png");
 
     up.push_back(sf::Keyboard::Up);
     up.push_back(sf::Keyboard::W);
@@ -100,11 +101,12 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
         switch (std::stoi(attributes[i][0])) {
             case 0:
                 player.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), pTex, 2, sf::Vector2i(32, 32));
-                addEntity(&player);
                 break;
             case 1:
                 rock.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), rTex, 6, sf::Vector2i(32, 32));
-                addEntity(&rock);
+                break;
+            case 2:
+                ppad.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), sf::Vector2f(std::stoi(contents[i][2]), std::stoi(contents[i][3])), mTex, sf::Vector2i(32, 32), std::stoi(contents[i][4]));
                 break;
         }
     }
@@ -112,15 +114,15 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
 
 void Level::unload() {
     tmap.unload();
-    for (int e = 0; e < entities.size(); e++) {
-        entities[e]->unload();
-    }
+    player.unload();
+    rock.unload();
+    ppad.unload();
 }
 
 void Level::update(InputManager input) {
-    for (int e = 0; e < entities.size(); e++) {
-        entities[e]->update(colMap);
-    }
+    player.update(colMap);
+    rock.update(colMap);
+    ppad.update(colMap, rock);
 
     if (((player.getCollision().intersects(rock.getCollision()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         rock.setCurrentState(1);
@@ -159,28 +161,22 @@ void Level::update(InputManager input) {
     }
 
     // Player movements
-    if (entities[0]->getCurrentState() != 2) {
-        if (input.keyPressed(up)) entities[0]->setAccelerationY(-2);
-        else if (input.keyPressed(down)) entities[0]->setAccelerationY(2);
-        else entities[0]->setAccelerationY(0);
+    if (player.getCurrentState() != 2) {
+        if (input.keyPressed(up)) player.setAccelerationY(-2);
+        else if (input.keyPressed(down)) player.setAccelerationY(2);
+        else player.setAccelerationY(0);
 
-        if (input.keyPressed(left)) entities[0]->setAccelerationX(-2);
-        else if (input.keyPressed(right)) entities[0]->setAccelerationX(2);
-        else entities[0]->setAccelerationX(0);
+        if (input.keyPressed(left)) player.setAccelerationX(-2);
+        else if (input.keyPressed(right)) player.setAccelerationX(2);
+        else player.setAccelerationX(0);
     }
-
-    std::cout << entities[0]->getPosition().x << std::endl;
 }
 
 void Level::render(sf::RenderWindow &window) {
     window.draw(tmap, &shader);
-    for (int e = 0; e < entities.size(); e++) {
-        window.draw(*entities[e], &shader);
-    }
-}
-
-void Level::addEntity(Mob* e) {
-    entities.push_back(e);
+    window.draw(player, &shader);
+    window.draw(rock, &shader);
+    window.draw(ppad, &shader);
 }
 
 void Level::switchTime(bool day) {

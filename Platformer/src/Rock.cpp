@@ -22,6 +22,8 @@ void Rock::load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vecto
 
     currentState = FLYING;
     flying = true;
+    bmX = 0;
+    bmY = 0;
 }
 
 void Rock::unload() {
@@ -60,7 +62,6 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
         setTexCoords(0, 0);
     }
 }
-
 
 void Rock::extendReach() {
     int xModifier, yModifier;

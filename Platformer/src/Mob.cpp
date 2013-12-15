@@ -88,8 +88,7 @@ void Mob::checkCollision(std::vector<std::vector<int>> colMap) {
 
     collision.top += velocity.y;
     for (unsigned int i = 0; i < collidable.size(); i++) {
-        if (collision.top < collidable[i].top + collidable[i].height || collision.top + collision.height > collidable[i].top
-                || collision.left < collidable[i].left + collidable[i].width || collision.left + collision.width < collidable[i].left) {
+        if (contains(collision, collidable[i])) {
             setVelocityY(0);
             collided = true;
             break;
@@ -169,6 +168,10 @@ void Mob::setVelocityX(float v) {
 
 void Mob::setVelocityY(float v) {
     velocity.y = v;
+}
+
+sf::FloatRect &Mob::getBounds() {
+    return bounds;
 }
 
 int Mob::getCurrentState() {
