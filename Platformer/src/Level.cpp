@@ -152,6 +152,7 @@ void Level::unload() {
 void Level::update(InputManager input) {
     player.update(colMap);
     //charger.update(colMap);
+    if (rock.getCurrentState() != 3) player.update(colMap);
     rock.update(colMap);
     ppad.update(colMap, rock);
     kad.update(colMap, rock, player.getDir());
@@ -160,23 +161,43 @@ void Level::update(InputManager input) {
         rock.setCurrentState(1);
         rock.setTexCoords(1, 0);
     }
+
+    if (rock.getCurrentState() == 1) {
+        rock.setPosition(player.getPosition());
+    }
+
     if (player.getCurrentState() == 2) {
         switch (player.getDir()) {
         case 0:
-            rock.setPosition(player.getPosition() - sf::Vector2f(0, 32));
+            rock.setPosition(sf::Vector2f(player.getPosition().x, player.getPosition().y - 32));
             break;
         case 1:
-            rock.setPosition(player.getPosition() + sf::Vector2f(0, 32));
+            rock.setPosition(sf::Vector2f(player.getPosition().x, player.getPosition().y + 32));
             break;
         case 2:
-            rock.setPosition(player.getPosition() - sf::Vector2f(32, 0));
+            rock.setPosition(sf::Vector2f(player.getPosition().x - 32, player.getPosition().y));
             break;
         case 3:
-            rock.setPosition(player.getPosition() + sf::Vector2f(32, 0));
+            rock.setPosition(sf::Vector2f(player.getPosition().x + 32, player.getPosition().y));
             break;
         }
-    } else if (rock.getCurrentState() == 1) {
-        rock.setPosition(player.getPosition());
+    }
+
+    if (rock.getCurrentState() == 3) {
+        switch (player.getDir()) {
+        case 0:
+            rock.setPosition(sf::Vector2f(player.getPosition().x, player.getPosition().y - 96));
+            break;
+        case 1:
+            rock.setPosition(sf::Vector2f(player.getPosition().x, player.getPosition().y + 96));
+            break;
+        case 2:
+            rock.setPosition(sf::Vector2f(player.getPosition().x - 96, player.getPosition().y));
+            break;
+        case 3:
+            rock.setPosition(sf::Vector2f(player.getPosition().x + 96, player.getPosition().y));
+            break;
+        }
     }
 
     if (input.keyPressed(sf::Keyboard::H) && player.getCanAttack()) {
@@ -198,8 +219,14 @@ void Level::update(InputManager input) {
         }
     }
 
+    if (input.keyPressed(sf::Keyboard::L) && player.getAttributes()[2]) {
+        if (rock.getCurrentState() == 1) {
+            player.grab(rock);
+        }
+    }
+
     // Player movements
-    if (player.getCurrentState() != 2) {
+    if (rock.getCurrentState() != 3) {
         if (input.keyPressed(up)) player.setAccelerationY(-2);
         else if (input.keyPressed(down)) player.setAccelerationY(2);
         else player.setAccelerationY(0);
