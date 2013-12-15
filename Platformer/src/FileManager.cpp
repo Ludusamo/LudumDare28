@@ -12,7 +12,7 @@ enum loadState { ATTRIBUTES, CONTENT };
 
 int state;
 
-void FileManager::loadContent(const char* filename, std::vector<std::vector<std::string>> &attributes,
+void FileManager::loadContent(const std::string& filename, std::vector<std::vector<std::string>> &attributes,
                               std::vector<std::vector<std::string>> &contents) {
     std::ifstream openFile(filename);
     if (openFile.is_open()) {

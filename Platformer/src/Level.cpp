@@ -32,6 +32,9 @@ void Level::load() {
     left.push_back(sf::Keyboard::A);
     right.push_back(sf::Keyboard::Right);
     right.push_back(sf::Keyboard::D);
+
+    files.loadContent("res/lvls/hub.dat", attributes, contents);
+    loadEntities(attributes, contents);
 }
 
 void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) {
@@ -141,12 +144,26 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
     }
 }
 
+void Level::switchLevel(const std::string& tilesetFile, const std::string& file, const std::string& splash) {
+    splashImage.loadFromFile(splash);
+    splashScreen.setTexture(splashImage);
+    switchingLevel = true;
+    unload();
+    loadLevel(tilesetFile, file + ".png");
+    files.loadContent("res/lvls/" + file + ".dat", attributes, contents);
+    loadEntities(attributes, contents);
+}
+
 void Level::unload() {
     tmap.unload();
     player.unload();
     rock.unload();
     ppad.unload();
     kad.unload();
+    attributes.clear();
+    contents.clear();
+    tiles.clear();
+    colMap.clear();
 }
 
 void Level::update(InputManager input) {
@@ -223,8 +240,12 @@ void Level::update(InputManager input) {
         }
     }
 
+    if (input.keyPressed(sf::Keyboard::E) && !switchingLevel) {
+        switchLevel("res/imgs/Tilesheet_A.png", "test", "res/imgs/splash.png");
+    }
+
     // Player movements
-    if (rock.getCurrentState() != 3) {
+    if (rock.getCurrentState() != 3 && player.getCurrentState() != 2) {
         if (input.keyPressed(up)) player.setAccelerationY(-2);
         else if (input.keyPressed(down)) player.setAccelerationY(2);
         else player.setAccelerationY(0);
@@ -232,6 +253,15 @@ void Level::update(InputManager input) {
         if (input.keyPressed(left)) player.setAccelerationX(-2);
         else if (input.keyPressed(right)) player.setAccelerationX(2);
         else player.setAccelerationX(0);
+    }
+
+    if (switchingLevel) {
+        if (delta >= 2) {
+            switchingLevel = false;
+            delta = 0;
+        } else {
+            delta += .016;
+        }
     }
 }
 
@@ -241,6 +271,8 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(ppad, &shader);
     window.draw(player, &shader);
     window.draw(rock, &shader);
+
+    if (switchingLevel) window.draw(splashScreen);
 }
 
 void Level::switchTime(bool day) {
