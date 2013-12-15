@@ -46,7 +46,7 @@
 
 1387041442 D
 
-1387081518 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
+1387082352 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
 	<string>
 	<SFML/Graphics.hpp>
 	"TileData.h"
@@ -722,7 +722,7 @@
 1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Transition.cpp
 	"Transition.h"
 
-1387052245 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
+1387081518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
 	<iostream>
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
@@ -770,7 +770,7 @@
 1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Charger.cpp
 	"Charger.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Enemy.cpp
+1387081518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Enemy.cpp
 	"Enemy.h"
 	<iostream>
 
@@ -788,4 +788,15 @@
 1387081329 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/PPAD.h
 	"Mob.h"
 	"Rock.h"
+
+1387082306 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/PathFinder.h
+	<SFML/Graphics.hpp>
+	"Node.h"
+	"Entity.h"
+	<vector>
+
+1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeAnimation.cpp
+	"FadeAnimation.h"
+
+1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeAnimation.h
 
