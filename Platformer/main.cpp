@@ -12,24 +12,21 @@
 
 int main() {
     MapGenerator test("res/lvls/room1.comp");
-    std::vector<std::vector<int16_t> > testvec = test.generate_orderly(4, 3, 1, 2);
+    std::vector<std::vector<int16_t> > testvec = test.generate_orderly(3, 2, 1, 2);
+    //std::vector<std::vector<int16_t> > testvec = test.generate(10,20,0.1f);
     for(int i = 0; i < testvec.size(); i++) {
        for(int j = 0; j < testvec[0].size(); j++) {
             std::cout << testvec[i][j] << " ";
         }
-        std::cout << std::endl;
+       std::cout << std::endl;
     }
 
     //Charger charger;
     //std::vector<Node> test_path;
     //for(int i = 0; i < MAX; i++)
-       //test_path = charger.pathfind(1, 1, 97, 98, testvec);
+    //   test_path = charger.pathfind(1, 2, 1, 8, testvec);
     //for(int i = 0; i < test_path.size(); i++)
-        //std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
-    Charger charger;
-    std::vector<Node> test_path;
-    for(int i = 0; i < test_path.size(); i++)
-        std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
+    //    std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
 
     // Window
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT, 32), "LD28");

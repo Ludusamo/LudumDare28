@@ -96,6 +96,29 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
         std::cout << "Map could not be loaded." << std::endl;
 }
 
+void Level::generateLevel(const std::string& tilesetFile, uint32_t rooms, uint32_t lining, int16_t solid_fill, int16_t nonsolid_fill) {
+
+    MapGenerator test("res/lvls/room1.comp");
+    std::vector<std::vector<int16_t> > levelBuffer = test.generate_orderly(rooms, lining, solid_fill, nonsolid_fill);
+    width = levelBuffer.size();
+    height = levelBuffer[0].size();
+
+    std::vector<int> bufferV;
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            tiles.push_back(TileData::tiles[levelBuffer[y][x]].getId());
+            if (TileData::tiles[levelBuffer[y][x]].isSolid()) bufferV.push_back(1);
+            else if (TileData::tiles[levelBuffer[y][x]].isGap()) bufferV.push_back(2);
+            else bufferV.push_back(0);
+        }
+        colMap.push_back(bufferV);
+        bufferV.clear();
+    }
+
+    if (!tmap.load(tilesetFile, sf::Vector2u(32, 32), tiles, width, height))
+        std::cout << "Map could not be loaded." << std::endl;
+}
+
 void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::vector<std::vector<std::string>> contents) {
     for (int i = 0; i < attributes.size(); i++) {
         switch (std::stoi(attributes[i][0])) {
@@ -185,7 +208,6 @@ void Level::addEntity(Mob* e) {
 }
 
 void Level::switchTime(bool day) {
-    this->addEntity(new Entity());
 
     if (day) {
         ambientIntensity = 1.0f;
@@ -200,12 +222,6 @@ void Level::switchTime(bool day) {
         ambientColor.z = .7f;
         shader.setParameter("ambientColor", ambientColor.x, ambientColor.y, ambientColor.z, ambientIntensity);
     }
-}
-
-void Level::addEntity(Entity * e) {
-    this->entities.push_back(e);
-    sf::Vector2f test = this->entities[0]->getPosition();
-    std::cout << std::round(test.x / 32) << " " << std::round(test.y/32) << std::endl;
 }
 
 Player &Level::getPlayer() {

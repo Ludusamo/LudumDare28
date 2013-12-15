@@ -1,6 +1,7 @@
 #ifndef MAPGENERATOR_H
 #define MAPGENERATOR_H
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <stdlib.h>
 #include <stdint.h>
@@ -9,7 +10,8 @@
 #include <fstream>
 #include <utility>
 #include <assert.h>
-#include "PathFinder.h"
+#include "Entropy.h"
+#include "Node.h"
 
 class MapGenerator {
 private:
@@ -43,8 +45,11 @@ private:
     bool walls;
     std::vector<Component> resources;
     std::vector<std::vector<int16_t> > generation;
-    std::vector<coordinate_t> blacklist;
+    std::vector<Node> blacklist;
+    std::vector<coordinate_t> node_blacklist;
     std::vector<std::vector<coordinate_t> > subsets;
+    bool in_blacklist(uint32_t x, uint32_t y);
+    std::vector<Node> pathfind(uint32_t srcy, uint32_t srcx, uint32_t tary, uint32_t tarx, std::vector<std::vector<int16_t> > level);
 
 public:
 	MapGenerator(void);
