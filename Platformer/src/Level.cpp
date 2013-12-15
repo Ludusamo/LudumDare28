@@ -151,6 +151,7 @@ void Level::unload() {
 
 void Level::update(InputManager input) {
     player.update(colMap);
+    //charger.update(colMap);
     rock.update(colMap);
     ppad.update(colMap, rock);
     kad.update(colMap, rock, player.getDir());

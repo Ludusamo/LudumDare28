@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <Enemy.h>
+#include "Node.h"
 
 
 class Charger : public Enemy {
@@ -11,8 +12,9 @@ public:
     ~Charger();
     void load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize);
     void unload();
-    void pursue();
-    void attack();
+    void update(std::vector<std::vector<int> > colMap);
+    void pursue(Entity * e, std::vector<std::vector<int16_t> > level);
+    void attack(Entity * e);
     bool scan();
 protected:
 private:

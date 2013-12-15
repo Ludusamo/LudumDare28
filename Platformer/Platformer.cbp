@@ -66,6 +66,7 @@
 		<Unit filename="include/FileManager.h" />
 		<Unit filename="include/GameScreen.h" />
 		<Unit filename="include/InputManager.h" />
+		<Unit filename="include/KAD.h" />
 		<Unit filename="include/Level.h" />
 		<Unit filename="include/Light.h" />
 		<Unit filename="include/MainMenuScreen.h" />
@@ -73,7 +74,6 @@
 		<Unit filename="include/Mob.h" />
 		<Unit filename="include/Node.h" />
 		<Unit filename="include/PPAD.h" />
-		<Unit filename="include/PathFinder.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Rock.h" />
 		<Unit filename="include/Screen.h" />
@@ -84,9 +84,19 @@
 		<Unit filename="include/Tilemap.h" />
 		<Unit filename="include/Transition.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="res/lvls/1.comp" />
+		<Unit filename="res/lvls/2.comp" />
 		<Unit filename="res/lvls/big_test.lvl" />
+		<Unit filename="res/lvls/entropy.dat" />
+		<Unit filename="res/lvls/gap.png" />
+		<Unit filename="res/lvls/hub.dat" />
+		<Unit filename="res/lvls/hub.png" />
+		<Unit filename="res/lvls/level-pallete.png" />
+		<Unit filename="res/lvls/mobs.png" />
 		<Unit filename="res/lvls/room1.comp" />
 		<Unit filename="res/lvls/test.lvl" />
+		<Unit filename="res/lvls/test.png" />
+		<Unit filename="res/lvls/testpng.png" />
 		<Unit filename="res/shaders/AmbientShader.glsl" />
 		<Unit filename="res/shaders/VertexShader.glsl" />
 		<Unit filename="src/Animation.cpp" />
@@ -99,6 +109,7 @@
 		<Unit filename="src/FileManager.cpp" />
 		<Unit filename="src/GameScreen.cpp" />
 		<Unit filename="src/InputManager.cpp" />
+		<Unit filename="src/KAD.cpp" />
 		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/Light.cpp" />
 		<Unit filename="src/MainMenuScreen.cpp" />
@@ -106,7 +117,6 @@
 		<Unit filename="src/Mob.cpp" />
 		<Unit filename="src/Node.cpp" />
 		<Unit filename="src/PPAD.cpp" />
-		<Unit filename="src/PathFinder.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Rock.cpp" />
 		<Unit filename="src/Screen.cpp" />

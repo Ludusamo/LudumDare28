@@ -31,6 +31,10 @@ void Enemy::unload() {
     delete this;
 }
 
+void Enemy::update(std::vector<std::vector<int> > colMap) {
+    Mob::update(colMap);
+}
+
 //void Enemy::test() {/
 //
 //}
@@ -120,6 +124,6 @@ std::vector<Node> Enemy::pathfind(sf::Vector2f target, std::vector<std::vector<i
     return this->pathfind(srcx, srcy, tarx, tary, level);
 }
 
-std::vector<Node> Enemy::pathfind(Entity entity, std::vector<std::vector<int16_t> > graph) {
-    return this->pathfind(entity.getPosition(), graph);
+std::vector<Node> Enemy::pathfind(Entity * entity, std::vector<std::vector<int16_t> > graph) {
+    return this->pathfind(entity->getPosition(), graph);
 }

@@ -14,6 +14,7 @@
 #include <fstream>
 #include <iostream>
 #include "InputManager.h"
+#include "Charger.h"
 
 #define TILE_SIZE 32
 #define SCALE 2.0
@@ -62,6 +63,9 @@ private:
     std::vector<Mob*> entities;
     KAD kad;
     PPAD ppad;
+
+    // Test
+    //Charger charger;
 
     // Player
     Player player;
