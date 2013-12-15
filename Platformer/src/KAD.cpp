@@ -40,12 +40,13 @@ void KAD::unload() {
     key.setPosition(-2, -2);
 }
 
-void KAD::update(std::vector<std::vector<int>> &colMap, Rock &rock, int dir) {
+void KAD::update(std::vector<std::vector<int>> &colMap, Rock &rock, int dir, SoundManager& sound) {
     sf::Vector2i kTilePos((key.getPosition().x / 32), (key.getPosition().y / 32));
     if (!inPossesion) {
         if (keyBound.intersects(rock.getBounds())) {
             inPossesion = true;
             key.setTextureRect(sf::IntRect(96, 32, mSize.x, mSize.y));
+            sound.playSound(3);
         }
     } else {
         key.setPosition(rock.getPosition());
@@ -56,24 +57,28 @@ void KAD::update(std::vector<std::vector<int>> &colMap, Rock &rock, int dir) {
             case 0:
                 if ((kTilePos.y - 1 == posD.y) && (kTilePos.x == posD.x)) {
                     open(colMap);
+                    sound.playSound(1);
                     opened = true;
                 }
                 break;
             case 1:
                 if ((kTilePos.y + 1 == posD.y) && (kTilePos.x == posD.x)) {
                     open(colMap);
+                    sound.playSound(1);
                     opened = true;
                 }
                 break;
             case 2:
                 if ((kTilePos.x - 1 == posD.x) && (kTilePos.y == posD.y)) {
                     open(colMap);
+                    sound.playSound(1);
                     opened = true;
                 }
                 break;
             case 3:
                 if ((kTilePos.x + 1 == posD.x) && (kTilePos.y == posD.y)) {
                     open(colMap);
+                    sound.playSound(1);
                     opened = true;
                 }
                 break;
@@ -86,6 +91,5 @@ void KAD::update(std::vector<std::vector<int>> &colMap, Rock &rock, int dir) {
 }
 
 void KAD::open(std::vector<std::vector<int>> &colMap) {
-    std::cout << "Opened" << std::endl;
     door.setTextureRect(sf::IntRect((dir + 4) * 32, 64, mSize.x, mSize.y));
 }

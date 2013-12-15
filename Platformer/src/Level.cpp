@@ -180,14 +180,15 @@ void Level::unload() {
     colMap.clear();
 }
 
-void Level::update(InputManager input) {
+void Level::update(InputManager input, SoundManager& sound) {
     if (rock.getCurrentState() != 3) player.update(colMap);
     rock.update(colMap);
-    ppad.update(colMap, rock);
-    kad.update(colMap, rock, player.getDir());
+    ppad.update(colMap, rock, sound);
+    kad.update(colMap, rock, player.getDir(), sound);
     portal.update(player);
 
     if (((player.getCollision().intersects(rock.getCollision()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
+        if (rock.getCurrentState() != 1) sound.playSound(3);
         rock.setCurrentState(1);
         rock.setTexCoords(1, 0);
     }
@@ -233,6 +234,7 @@ void Level::update(InputManager input) {
     if (input.keyPressed(sf::Keyboard::H) && player.getCanAttack()) {
         if (rock.getCurrentState() == 1) {
             player.attack(rock, player.getDir());
+            sound.playSound(0);
         }
     }
 
@@ -240,18 +242,21 @@ void Level::update(InputManager input) {
         if (rock.getCurrentState() == 1) {
             rock.setCurrentState(0);
             player.throwRock(rock, player.getDir());
+            sound.playSound(6);
         }
     }
 
     if (input.keyPressed(sf::Keyboard::K) && player.getAttributes()[1]) {
         if (rock.getCurrentState() == 2) {
             player.teleport(rock);
+            sound.playSound(5);
         }
     }
 
     if (input.keyPressed(sf::Keyboard::L) && player.getAttributes()[2]) {
         if (rock.getCurrentState() == 1) {
             player.grab(rock);
+            sound.playSound(1);
         }
     }
 

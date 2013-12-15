@@ -18,10 +18,14 @@ void MainMenuScreen::loadContent() {
 
     confirm.push_back(sf::Keyboard::Return);
     confirm.push_back(sf::Keyboard::Space);
+
+    sound.loadContent();
+    sound.playMusic("hub");
 }
 
 void MainMenuScreen::unloadContent() {
     Screen::unloadContent();
+    sound.unloadContent();
 }
 
 void MainMenuScreen::update() {

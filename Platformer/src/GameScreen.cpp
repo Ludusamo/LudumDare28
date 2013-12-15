@@ -19,6 +19,9 @@ void GameScreen::loadContent() {
     if (level.getPlayer().getPosition().y - (HEIGHT / SCALE / 2) < 0) center.y = (HEIGHT / SCALE / 2);
     else if (level.getPlayer().getPosition().y + (HEIGHT / SCALE / 2) > (level.getHeight() * TILE_SIZE)) center.y = (level.getHeight() * TILE_SIZE) - (WIDTH / SCALE / 2);
     else center.y = level.getPlayer().getPosition().y;
+
+    sound.loadContent();
+    sound.playMusic("song");
 }
 
 void GameScreen::unloadContent() {
@@ -26,7 +29,7 @@ void GameScreen::unloadContent() {
 }
 
 void GameScreen::update() {
-    level.update(input);
+    level.update(input, sound);
 
     if (level.getPlayer().getPosition().x - (WIDTH / SCALE / 2) < 0) center.x = (WIDTH / SCALE / 2);
     else if (level.getPlayer().getPosition().x + (WIDTH / SCALE / 2) > (level.getWidth() * TILE_SIZE)) center.x = (level.getWidth() * TILE_SIZE) - (WIDTH / SCALE / 2);

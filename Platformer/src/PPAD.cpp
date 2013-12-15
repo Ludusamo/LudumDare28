@@ -40,11 +40,12 @@ void PPAD::unload() {
     plate.setPosition(-2, -2);
 }
 
-void PPAD::update(std::vector<std::vector<int>> &colMap, Rock& rock) {
+void PPAD::update(std::vector<std::vector<int>> &colMap, Rock& rock, SoundManager& sound) {
     if (plateBound.intersects(rock.getBounds())) {
         plate.setTextureRect(sf::IntRect(32, 32, mSize.x, mSize.y));
         if (!opened) {
             open(colMap);
+            sound.playSound(1);
             opened = true;
         }
     } else if (!opened) {
@@ -53,7 +54,6 @@ void PPAD::update(std::vector<std::vector<int>> &colMap, Rock& rock) {
 }
 
 void PPAD::open(std::vector<std::vector<int>> &colMap) {
-    std::cout << "Opened." << std::endl;
     door.setTextureRect(sf::IntRect((dir + 4) * 32, 0, mSize.x, mSize.y));
     colMap[posD.y][posD.x] = 0;
 }

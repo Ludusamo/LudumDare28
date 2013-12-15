@@ -3,6 +3,7 @@
 
 #include "Entity.h"
 #include "Rock.h"
+#include "SoundManager.h"
 
 class KAD : public Entity
 {
@@ -12,7 +13,7 @@ class KAD : public Entity
 
         void load(sf::Vector2f posK, sf::Vector2f posP, sf::Texture &texture, sf::Vector2i mSize, int dir);
         void unload();
-        void update(std::vector<std::vector<int>> &colMap, Rock &rock, int dir);
+        void update(std::vector<std::vector<int>> &colMap, Rock &rock, int dir, SoundManager& sound);
         void open(std::vector<std::vector<int>> &colMap);
         sf::FloatRect &getBounds();
     protected:

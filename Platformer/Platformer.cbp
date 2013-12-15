@@ -78,6 +78,7 @@
 		<Unit filename="include/Rock.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/ScreenManager.h" />
+		<Unit filename="include/SoundManager.h" />
 		<Unit filename="include/SplashScreen.h" />
 		<Unit filename="include/Tile.h" />
 		<Unit filename="include/TileData.h" />
@@ -112,6 +113,7 @@
 		<Unit filename="src/Rock.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/ScreenManager.cpp" />
+		<Unit filename="src/SoundManager.cpp" />
 		<Unit filename="src/SplashScreen.cpp" />
 		<Unit filename="src/TileData.cpp" />
 		<Unit filename="src/Tilemap.cpp" />

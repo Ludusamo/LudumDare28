@@ -3,6 +3,8 @@
 
 #include "SFML/Graphics.hpp"
 #include "InputManager.h"
+#include "SoundManager.h"
+
 class Screen {
 public:
     Screen();
@@ -14,6 +16,7 @@ public:
     virtual void render(sf::RenderWindow &window);
 protected:
     InputManager input;
+    SoundManager sound;
 private:
 };
 

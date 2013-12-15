@@ -63,6 +63,20 @@ void Player::update(std::vector<std::vector<int>> colMap) {
             canAttack = true;
         } else coolDownTimer += .016;
     } else {
+        switch (currentDir) {
+            case UP:
+                setTexCoords(3, 0);
+                break;
+            case DOWN:
+                setTexCoords(3, 1);
+                break;
+            case LEFT:
+                setTexCoords(3, 2);
+                break;
+            case RIGHT:
+                setTexCoords(3, 3);
+                break;
+            }
         if (attackTimer >= ATTACK_DURATION) {
             setCurrentState(0);
             coolDownTimer = 0;

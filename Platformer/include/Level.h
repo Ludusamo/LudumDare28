@@ -16,6 +16,7 @@
 #include <iostream>
 #include "InputManager.h"
 #include "FileManager.h"
+#include "SoundManager.h"
 
 #define TILE_SIZE 32
 #define SCALE 2.0
@@ -34,7 +35,7 @@ public:
     void switchLevel(const std::string& tilesetFile, const std::string& file, const std::string& splash);
 
     void unload();
-    void update(InputManager input);
+    void update(InputManager input, SoundManager& sound);
     void render(sf::RenderWindow &window);
 
     Player &getPlayer();
