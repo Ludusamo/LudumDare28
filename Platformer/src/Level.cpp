@@ -98,10 +98,12 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
 }
 
 void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::vector<std::vector<std::string>> contents) {
+    std::vector<bool> x;
     for (int i = 0; i < attributes.size(); i++) {
         switch (std::stoi(attributes[i][0])) {
             case 0:
-                player.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), pTex, 2, sf::Vector2i(32, 32));
+                for (int z = 0; z < 3; z++) { if (std::stoi(contents[i][2 + z]) == 1) x.push_back(true); else x.push_back(false); }
+                player.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), pTex, 2, sf::Vector2i(32, 32), x);
                 break;
             case 1:
                 rock.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), rTex, 6, sf::Vector2i(32, 32));
@@ -154,7 +156,7 @@ void Level::update(InputManager input) {
         }
     }
 
-    if (input.keyPressed(sf::Keyboard::K)) {
+    if (input.keyPressed(sf::Keyboard::K) && player.getAttributes()[0]) {
         if (rock.getCurrentState() == 1) {
             rock.setCurrentState(0);
             player.throwRock(rock, player.getDir());
@@ -175,9 +177,9 @@ void Level::update(InputManager input) {
 
 void Level::render(sf::RenderWindow &window) {
     window.draw(tmap, &shader);
+    window.draw(ppad, &shader);
     window.draw(player, &shader);
     window.draw(rock, &shader);
-    window.draw(ppad, &shader);
 }
 
 void Level::switchTime(bool day) {

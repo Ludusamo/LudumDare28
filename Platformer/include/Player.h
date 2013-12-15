@@ -13,7 +13,7 @@ public:
     Player();
     ~Player();
 
-    void load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize);
+    void load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize, std::vector<bool> attributes);
     void unload();
     void update(std::vector<std::vector<int>> colMap);
     void throwRock(Rock& rock, int dir);
@@ -21,9 +21,12 @@ public:
 
     bool getCanAttack();
     bool canAttack = true;
+
+    std::vector<bool> getAttributes();
+    void setAttributes(std::vector<bool> attributes);
+    std::vector<bool> attributes;
 protected:
 private:
-
     float attackTimer, coolDownTimer;
 
     enum State { IDLE, MOVING, ATTACKING };

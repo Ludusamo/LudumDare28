@@ -180,8 +180,9 @@
 1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/InputManager.cpp
 	"InputManager.h"
 
-1387081256 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
+1387082556 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
 	"Level.h"
+	<cmath>
 
 1387041489 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Level.cpp
 
@@ -208,7 +209,7 @@
 1387041442 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Mob.cpp
 	"Mob.h"
 
-1387063345 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Player.cpp
+1387084771 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Player.cpp
 	"Player.h"
 
 1387035737 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Node.cpp
@@ -757,7 +758,7 @@
 	<cmath>
 	"Node.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
+1387081518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
 	"MapGenerator.h"
 	<stdlib.h>
 	<stdint.h>
@@ -774,15 +775,15 @@
 	"Enemy.h"
 	<iostream>
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Node.cpp
+1387081518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Node.cpp
 	"Node.h"
 
-1387063313 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Player.h
+1387084763 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Player.h
 	<SFML/Graphics.hpp>
 	<Mob.h>
 	"Rock.h"
 
-1387081423 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/PPAD.cpp
+1387082644 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/PPAD.cpp
 	"PPAD.h"
 
 1387081329 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/PPAD.h
@@ -799,4 +800,7 @@
 	"FadeAnimation.h"
 
 1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeAnimation.h
+
+1387082291 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/PathFinder.cpp
+	"PathFinder.h"
 

@@ -41,6 +41,7 @@ void PPAD::unload() {
 
 void PPAD::update(std::vector<std::vector<int>> &colMap, Rock& rock) {
     if (plateBound.intersects(rock.getBounds())) {
+        plate.setTextureRect(sf::IntRect(32, 32, mSize.x, mSize.y));
         if (!opened) {
             open(colMap);
             opened = true;

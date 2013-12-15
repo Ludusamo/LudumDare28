@@ -8,7 +8,7 @@ Player::~Player() {
     //dtor
 }
 
-void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize) {
+void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize, std::vector<bool> attributes) {
     Mob::load(pos, texture, MAX_VEL, mSize);
 
     vertices[0].position = sf::Vector2f(0, 0);
@@ -115,4 +115,10 @@ bool Player::getCanAttack() {
     return canAttack;
 }
 
+std::vector<bool> Player::getAttributes() {
+    return attributes;
+}
 
+void Player::setAttributes(std::vector<bool> attributes) {
+    this->attributes = attributes;
+}
