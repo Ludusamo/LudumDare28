@@ -6,6 +6,8 @@
 #include "TileData.h"
 #include <Tilemap.h>
 #include <Player.h>
+#include "PPAD.h"
+#include "KAD.h"
 #include "Rock.h"
 #include "MapGenerator.h"
 #include <vector>
@@ -56,8 +58,13 @@ private:
     Tilemap tmap;
     std::vector<std::vector<int> > colMap;
 
+<<<<<<< HEAD
     void addEntity(Mob* e);
     std::vector<Mob*> entities;
+=======
+    KAD kad;
+    PPAD ppad;
+>>>>>>> origin/master
 
     // Player
     Player player;
@@ -66,6 +73,8 @@ private:
     // Rock
     Rock rock;
     sf::Texture rTex;
+
+    sf::Texture mTex;
 
     // Shader
     sf::Shader shader;

@@ -60,7 +60,11 @@
 		<Unit filename="include/Charger.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
+<<<<<<< HEAD
 		<Unit filename="include/Entropy.h" />
+=======
+		<Unit filename="include/FadeAnimation.h" />
+>>>>>>> origin/master
 		<Unit filename="include/FadeTransition.h" />
 		<Unit filename="include/FileManager.h" />
 		<Unit filename="include/GameScreen.h" />
@@ -78,6 +82,7 @@
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/ScreenManager.h" />
 		<Unit filename="include/SplashScreen.h" />
+		<Unit filename="include/Tile.h" />
 		<Unit filename="include/TileData.h" />
 		<Unit filename="include/Tilemap.h" />
 		<Unit filename="include/Transition.h" />
@@ -92,6 +97,7 @@
 		<Unit filename="src/Charger.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
+		<Unit filename="src/FadeAnimation.cpp" />
 		<Unit filename="src/FadeTransition.cpp" />
 		<Unit filename="src/FileManager.cpp" />
 		<Unit filename="src/GameScreen.cpp" />

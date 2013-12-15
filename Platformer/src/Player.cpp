@@ -8,8 +8,10 @@ Player::~Player() {
     //dtor
 }
 
-void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize) {
+void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize, std::vector<bool> attributes) {
     Mob::load(pos, texture, MAX_VEL, mSize);
+
+    this->attributes = attributes;
 
     vertices[0].position = sf::Vector2f(0, 0);
     vertices[1].position = sf::Vector2f(mSize.x, 0);
@@ -25,7 +27,7 @@ void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vec
     bounds.top = getPosition().y + bmY;
     bounds.left = getPosition().x + bmX;
     bounds.width = 22;
-    bounds.height = 31;
+    bounds.height = 30;
 
     flying = false;
 }
@@ -111,8 +113,36 @@ void Player::attack(Rock& rock, int dir) {
     attackTimer = 0;
 }
 
+void Player::teleport(Rock& rock) {
+    sf::Vector2i pTilePos((getPosition().x / 32), (getPosition().y / 32));
+    sf::Vector2i rTilePos((rock.getPosition().x / 32), (rock.getPosition().y / 32));
+
+    if ((pTilePos.y - 2 == rTilePos.y) && (pTilePos.x == rTilePos.x)) {
+        setPosition(rock.getPosition());
+    }
+    if ((pTilePos.y + 2 == rTilePos.y) && (pTilePos.x == rTilePos.x)) {
+       setPosition(rock.getPosition());
+    }
+    if ((pTilePos.x - 2 == rTilePos.x) && (pTilePos.y == rTilePos.y)){
+        setPosition(rock.getPosition());
+    }
+    if ((pTilePos.x + 2 == rTilePos.x) && (pTilePos.y == rTilePos.y)) {
+        setPosition(rock.getPosition());
+    }
+}
+
+void Player::grab() {
+
+}
+
 bool Player::getCanAttack() {
     return canAttack;
 }
 
+std::vector<bool> Player::getAttributes() {
+    return attributes;
+}
 
+void Player::setAttributes(std::vector<bool> attributes) {
+    this->attributes = attributes;
+}

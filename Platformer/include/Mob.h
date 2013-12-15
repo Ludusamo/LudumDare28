@@ -18,13 +18,20 @@ public:
     virtual void unload();
     virtual void update(std::vector<std::vector<int>> colMap);
     void moveM(std::vector<std::vector<int>> colMap);
+
     void checkCollision(std::vector<std::vector<int>> colMap);
+
     void setAccelerationX(float a);
     void setAccelerationY(float a);
     void setVelocityX(float v);
     void setVelocityY(float v);
+
     void setTexCoords(int startX, int startY);
+
+    sf::FloatRect &getBounds();
+
     void subtractHealth(float dmg);
+
     int getDir();
     int getCurrentState();
     void setCurrentState(int state);
