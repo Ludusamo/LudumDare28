@@ -48,13 +48,14 @@
 
 1387041442 D
 
-1387131425 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
+1387133914 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
 	<string>
 	<SFML/Graphics.hpp>
 	"TileData.h"
 	<Tilemap.h>
 	<Player.h>
 	"PPAD.h"
+	"WarpPortal.h"
 	"KAD.h"
 	"Rock.h"
 	"MapGenerator.h"
@@ -199,7 +200,7 @@
 1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/InputManager.cpp
 	"InputManager.h"
 
-1387131856 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
+1387135835 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
 	"Level.h"
 	<cmath>
 
@@ -697,7 +698,7 @@
 	<iostream>
 	"MainMenuScreen.h"
 
-1387130659 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Mob.cpp
+1387131966 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Mob.cpp
 	"Mob.h"
 
 1387068786 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Mob.h
@@ -861,4 +862,12 @@
 1387126683 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entropy.h
 	<fstream>
 	<cmath>
+
+1387135631 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/WarpPortal.h
+	"Entity.h"
+	"Player.h"
+	"Animation.h"
+
+1387134828 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/WarpPortal.cpp
+	"WarpPortal.h"
 

@@ -7,6 +7,7 @@
 #include <Tilemap.h>
 #include <Player.h>
 #include "PPAD.h"
+#include "WarpPortal.h"
 #include "KAD.h"
 #include "Rock.h"
 #include "MapGenerator.h"
@@ -62,6 +63,7 @@ private:
 
     KAD kad;
     PPAD ppad;
+    WarpPortal portal;
 
     // Switching Levels
     sf::Sprite splashScreen;

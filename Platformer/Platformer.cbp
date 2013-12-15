@@ -74,7 +74,6 @@
 		<Unit filename="include/Mob.h" />
 		<Unit filename="include/Node.h" />
 		<Unit filename="include/PPAD.h" />
-		<Unit filename="include/PathFinder.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Rock.h" />
 		<Unit filename="include/Screen.h" />
@@ -84,6 +83,7 @@
 		<Unit filename="include/TileData.h" />
 		<Unit filename="include/Tilemap.h" />
 		<Unit filename="include/Transition.h" />
+		<Unit filename="include/WarpPortal.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="res/lvls/big_test.lvl" />
 		<Unit filename="res/lvls/room1.comp" />
@@ -108,7 +108,6 @@
 		<Unit filename="src/Mob.cpp" />
 		<Unit filename="src/Node.cpp" />
 		<Unit filename="src/PPAD.cpp" />
-		<Unit filename="src/PathFinder.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Rock.cpp" />
 		<Unit filename="src/Screen.cpp" />
@@ -117,6 +116,7 @@
 		<Unit filename="src/TileData.cpp" />
 		<Unit filename="src/Tilemap.cpp" />
 		<Unit filename="src/Transition.cpp" />
+		<Unit filename="src/WarpPortal.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

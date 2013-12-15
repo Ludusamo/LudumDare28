@@ -125,6 +125,8 @@ void Level::generateLevel(const std::string& tilesetFile, uint32_t rooms, uint32
 
 void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::vector<std::vector<std::string>> contents) {
     std::vector<bool> x;
+    std::string y;
+    std::string z;
     for (int i = 0; i < attributes.size(); i++) {
         switch (std::stoi(attributes[i][0])) {
             case 0:
@@ -139,6 +141,17 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
                 break;
             case 3:
                 kad.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), sf::Vector2f(std::stoi(contents[i][2]), std::stoi(contents[i][3])), mTex, sf::Vector2i(32, 32), std::stoi(contents[i][4]));
+                break;
+            case 4:
+                y = contents[i][2];
+                z = contents[i][3];
+                portal.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
                 break;
         }
     }
@@ -160,6 +173,7 @@ void Level::unload() {
     rock.unload();
     ppad.unload();
     kad.unload();
+    portal.unload();
     attributes.clear();
     contents.clear();
     tiles.clear();
@@ -171,6 +185,7 @@ void Level::update(InputManager input) {
     rock.update(colMap);
     ppad.update(colMap, rock);
     kad.update(colMap, rock, player.getDir());
+    portal.update(player);
 
     if (((player.getCollision().intersects(rock.getCollision()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         rock.setCurrentState(1);
@@ -255,6 +270,10 @@ void Level::update(InputManager input) {
         else player.setAccelerationX(0);
     }
 
+    if (portal.getState() == 1) {
+        switchLevel(portal.getTileset(), portal.getDestination(), "res/imgs/splash.png");
+    }
+
     if (switchingLevel) {
         if (delta >= 2) {
             switchingLevel = false;
@@ -269,6 +288,7 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(tmap, &shader);
     window.draw(kad, &shader);
     window.draw(ppad, &shader);
+    window.draw(portal, &shader);
     window.draw(player, &shader);
     window.draw(rock, &shader);
 
