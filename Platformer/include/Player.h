@@ -19,7 +19,7 @@ public:
     void throwRock(Rock& rock, int dir);
     void attack(Rock& rock, int dir);
     void teleport(Rock& rock);
-    void grab();
+    void grab(Rock& rock);
 
     bool getCanAttack();
     bool canAttack = true;

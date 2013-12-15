@@ -60,6 +60,7 @@
 		<Unit filename="include/Charger.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
+		<Unit filename="include/Entropy.h" />
 		<Unit filename="include/FadeAnimation.h" />
 		<Unit filename="include/FadeTransition.h" />
 		<Unit filename="include/FileManager.h" />

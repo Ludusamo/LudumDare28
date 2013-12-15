@@ -18,7 +18,7 @@ void Rock::load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vecto
     setTexCoords(0, 0);
 
     movement.load(0, 1, 4, .001);
-    extend.load(0, 4, 8, .2);
+    extend.load(0, 2, 8, .2);
 
     currentState = FLYING;
     flying = true;
@@ -34,17 +34,16 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
     moveM(colMap);
 
     if (currentState == FLYING) {
-        animation = movement;
         if (acceleration.y < 0) {
-            animation.update(vertices, mSize);
+            movement.update(vertices, mSize);
         } else if (acceleration.y > 0) {
-            animation.update(vertices, mSize);
+            movement.update(vertices, mSize);
         }
 
         if (acceleration.x < 0) {
-            animation.update(vertices, mSize);
+            movement.update(vertices, mSize);
         } else if (acceleration.x > 0) {
-            animation.update(vertices, mSize);
+            movement.update(vertices, mSize);
         }
         acceleration.x *= .9;
         acceleration.y *= .9;
@@ -61,24 +60,18 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
     if (currentState == GROUND) {
         setTexCoords(0, 0);
     }
-}
 
-void Rock::extendReach() {
-    int xModifier, yModifier;
-    switch (currentDir) {
-    case UP:
-        yModifier = -64;
-        break;
-    case DOWN:
-        yModifier = 64;
-        break;
-    case LEFT:
-        xModifier = -64;
-        break;
-    case RIGHT:
-        xModifier = 64;
-        break;
+    if (currentState == GRABBING) {
+        if (extend.getIndex() == 7) {
+            setCurrentState(HELD);
+            extend.setIndex(0);
+        } else {
+            extend.update(vertices, mSize);
+        }
     }
 
-    sf::FloatRect grabber(getPosition().x + xModifier, getPosition().y + yModifier, mSize.x, mSize.y);
+    bounds.left = getPosition().x;
+    bounds.top = getPosition().y;
 }
+
+

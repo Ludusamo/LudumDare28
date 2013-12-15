@@ -114,7 +114,7 @@ void Player::attack(Rock& rock, int dir) {
 }
 
 void Player::teleport(Rock& rock) {
-    sf::Vector2i pTilePos((getPosition().x / 32), (getPosition().y / 32));
+    sf::Vector2i pTilePos((bounds.left / 32), (bounds.top / 32));
     sf::Vector2i rTilePos((rock.getPosition().x / 32), (rock.getPosition().y / 32));
 
     if ((pTilePos.y - 2 == rTilePos.y) && (pTilePos.x == rTilePos.x)) {
@@ -131,8 +131,8 @@ void Player::teleport(Rock& rock) {
     }
 }
 
-void Player::grab() {
-
+void Player::grab(Rock& rock) {
+    rock.setCurrentState(3);
 }
 
 bool Player::getCanAttack() {
