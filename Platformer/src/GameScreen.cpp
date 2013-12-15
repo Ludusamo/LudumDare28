@@ -16,6 +16,7 @@ void GameScreen::loadContent() {
 //    level.generateLevel("res/imgs/Tilesheet_A.png", 30, 20);
     file.loadContent("res/lvls/hub.dat", attributes, contents);
     level.loadEntities(attributes, contents);
+//    level.generateLevel("res/imgs/Tilesheet_A.png", 20, 20);
 
     if (level.getPlayer().getPosition().x - (WIDTH / SCALE / 2) < 0) center.x = (WIDTH / SCALE / 2);
     else if (level.getPlayer().getPosition().x + (WIDTH / SCALE / 2) > (level.getWidth() * TILE_SIZE)) center.x = (level.getWidth() * TILE_SIZE) - (WIDTH / SCALE / 2);

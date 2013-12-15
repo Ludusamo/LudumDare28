@@ -83,6 +83,7 @@
 		<Unit filename="include/TileData.h" />
 		<Unit filename="include/Tilemap.h" />
 		<Unit filename="include/Transition.h" />
+		<Unit filename="include/WarpPortal.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="res/lvls/1.comp" />
 		<Unit filename="res/lvls/2.comp" />
@@ -125,6 +126,7 @@
 		<Unit filename="src/TileData.cpp" />
 		<Unit filename="src/Tilemap.cpp" />
 		<Unit filename="src/Transition.cpp" />
+		<Unit filename="src/WarpPortal.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

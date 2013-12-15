@@ -13,7 +13,7 @@ public:
     FileManager();
     ~FileManager();
 
-    void loadContent(const char* filename, std::vector<std::vector<std::string>> &attributes,
+    void loadContent(const std::string& filename, std::vector<std::vector<std::string>> &attributes,
                      std::vector<std::vector<std::string>> &contents);
 protected:
 private:
