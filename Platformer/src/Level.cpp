@@ -23,6 +23,7 @@ void Level::load() {
     pTex.loadFromFile("res/imgs/player.png");
     rTex.loadFromFile("res/imgs/rock.png");
     mTex.loadFromFile("res/imgs/mobs.png");
+    tTex.loadFromFile("res/imgs/player.png");
 
     up.push_back(sf::Keyboard::Up);
     up.push_back(sf::Keyboard::W);
@@ -151,7 +152,7 @@ void Level::unload() {
 
 void Level::update(InputManager input) {
     player.update(colMap);
-    //charger.update(colMap);
+    charger.pursue(&player, colMap);
     if (rock.getCurrentState() != 3) player.update(colMap);
     rock.update(colMap);
     ppad.update(colMap, rock);
@@ -227,13 +228,34 @@ void Level::update(InputManager input) {
 
     // Player movements
     if (rock.getCurrentState() != 3) {
-        if (input.keyPressed(up)) player.setAccelerationY(-2);
-        else if (input.keyPressed(down)) player.setAccelerationY(2);
-        else player.setAccelerationY(0);
-
-        if (input.keyPressed(left)) player.setAccelerationX(-2);
-        else if (input.keyPressed(right)) player.setAccelerationX(2);
-        else player.setAccelerationX(0);
+        if(input.keyPressed(up) && input.keyPressed(right)) {
+            player.setAccelerationX(std::sqrt(2));
+            player.setAccelerationY(-1 * std::sqrt(2));
+        }else if(input.keyPressed(up) && input.keyPressed(left)) {
+            player.setAccelerationX(-1 * std::sqrt(2));
+            player.setAccelerationY(-1 * std::sqrt(2));
+        }else if(input.keyPressed(down) && input.keyPressed(right)) {
+            player.setAccelerationX(std::sqrt(2));
+            player.setAccelerationY(std::sqrt(2));
+        }else if(input.keyPressed(down) && input.keyPressed(left)) {
+            player.setAccelerationX(-1 * std::sqrt(2));
+            player.setAccelerationY(std::sqrt(2));
+        }else if (input.keyPressed(up)) {
+            player.setAccelerationX(0);
+            player.setAccelerationY(-2);
+        }else if (input.keyPressed(down)) {
+            player.setAccelerationX(0);
+            player.setAccelerationY(2);
+        }else if(input.keyPressed(left)) {
+            player.setAccelerationX(-2);
+            player.setAccelerationY(0);
+        }else if(input.keyPressed(right)) {
+            player.setAccelerationX(2);
+            player.setAccelerationY(0);
+        }else {
+            player.setAccelerationX(0);
+            player.setAccelerationY(0);
+        }
     }
 }
 

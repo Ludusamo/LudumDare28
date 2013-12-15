@@ -1,7 +1,8 @@
 #include "Charger.h"
 
 Charger::Charger() {
-
+    this->toggle_omniscience();
+    this->set_radius(3);
 }
 
 Charger::~Charger() {
@@ -13,7 +14,7 @@ void Charger::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Ve
 }
 
 void Charger::unload() {
-    delete this;
+    Enemy::unload();
 }
 
 void Charger::update(std::vector<std::vector<int> > colMap) {
@@ -21,22 +22,26 @@ void Charger::update(std::vector<std::vector<int> > colMap) {
 }
 
 
-void Charger::pursue(Entity * e, std::vector<std::vector<int16_t> > level) {
-    Node first = this->pathfind(e, level)[0];
-    sf::Vector2f curPos = this->getPosition();
-    sf::Vector2f nxtPos = sf::Vector2f(first.x * 32, first.y * 32);
-    this->setVelocityX(nxtPos.x - curPos.x > 0 ? 1 : nxtPos.x == curPos.x ? 0 : -1);
-    this->setVelocityY(nxtPos.y - curPos.y > 0 ? 1 : nxtPos.y == curPos.y ? 0 : -1);
+void Charger::pursue(Entity * e, std::vector<std::vector<int32_t> > level) {
+    if(this->scan(e)) {
+        std::vector<std::vector<int16_t> > buffer(level.size(), std::vector<int16_t>(level[0].size()));
+        for(int i = 0; i < buffer.size(); i++)
+            for(int j = 0; j < buffer[0].size(); j++)
+                buffer[i][j] = level[i][j];
+        Node first = this->pathfind(e, buffer)[1];
+        first = std::round(this->getPosition().x/32) + 5 == std::round(e->getPosition().x/32) && std::round(this->getPosition().y/32) + 5 == std::round(e->getPosition().y/32) ? Node(std::round(this->getPosition().x/32) + 5, std::round(this->getPosition().y/32) + 5) : first;
+        std::cout << std::round(e->getPosition().x/32) << " " << std::round(e->getPosition().y/32) << "\t" << first.x << " " << first.y << std::endl;
+    }
 }
 
 void Charger::attack(Entity * e) {
 
 }
 
-bool Charger::scan() {
-    if(omniscient)
+bool Charger::scan(Entity * e) {
+    if(this->is_omniscient())
         return true;
     else {
-
+        return Enemy::scan(e);
     }
 }

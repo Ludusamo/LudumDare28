@@ -12,10 +12,10 @@ public:
     ~Charger();
     void load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vector2i mSize);
     void unload();
-    void update(std::vector<std::vector<int> > colMap);
-    void pursue(Entity * e, std::vector<std::vector<int16_t> > level);
     void attack(Entity * e);
-    bool scan();
+    void update(std::vector<std::vector<int> > colMap);
+    void pursue(Entity * e, std::vector<std::vector<int32_t> > level);
+    bool scan(Entity * e);
 protected:
 private:
 

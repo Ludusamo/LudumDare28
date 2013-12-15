@@ -65,7 +65,9 @@ private:
     PPAD ppad;
 
     // Test
-    //Charger charger;
+    Charger charger;
+
+    sf::Texture tTex;
 
     // Player
     Player player;
