@@ -19,10 +19,6 @@ public:
     void throwRock(Rock& rock, int dir);
     void attack(Rock& rock, int dir);
 
-    int getCurrentState();
-    void setCurrentState(int state);
-    int currentState;
-
     bool getCanAttack();
     bool canAttack = true;
 protected:

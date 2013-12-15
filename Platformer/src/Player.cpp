@@ -115,10 +115,4 @@ bool Player::getCanAttack() {
     return canAttack;
 }
 
-int Player::getCurrentState() {
-    return currentState;
-}
 
-void Player::setCurrentState(int state) {
-    currentState = state;
-}

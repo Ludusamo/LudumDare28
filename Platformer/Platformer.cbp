@@ -71,6 +71,7 @@
 		<Unit filename="include/Mob.h" />
 		<Unit filename="include/Node.h" />
 		<Unit filename="include/PathFinder.h" />
+		<Unit filename="include/PPAD.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Rock.h" />
 		<Unit filename="include/Screen.h" />
@@ -101,6 +102,7 @@
 		<Unit filename="src/Mob.cpp" />
 		<Unit filename="src/Node.cpp" />
 		<Unit filename="src/PathFinder.cpp" />
+		<Unit filename="src/PPAD.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Rock.cpp" />
 		<Unit filename="src/Screen.cpp" />

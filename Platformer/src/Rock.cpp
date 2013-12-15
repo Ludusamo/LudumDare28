@@ -53,7 +53,7 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
         }
 
         if ((abs(velocity.x) == 0 && abs(velocity.y) == 0))
-            setState(GROUND);
+            setCurrentState(GROUND);
     }
 
     if (currentState == GROUND) {
@@ -80,12 +80,4 @@ void Rock::extendReach() {
     }
 
     sf::FloatRect grabber(getPosition().x + xModifier, getPosition().y + yModifier, mSize.x, mSize.y);
-}
-
-int Rock::getState() {
-    return currentState;
-}
-
-void Rock::setState(int state) {
-    currentState = state;
 }
