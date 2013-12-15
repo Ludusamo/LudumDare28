@@ -54,9 +54,16 @@ private:
     std::vector<int> tiles;
 
     Tilemap tmap;
-    std::vector<std::vector<int>> colMap;
+    std::vector<std::vector<int> > colMap;
 
+<<<<<<< HEAD
     PPAD ppad;
+=======
+    void addEntity(Entity * e);
+    std::vector<Entity*> entities;
+    void addEntity(Mob* e);
+    std::vector<Mob*> entities;
+>>>>>>> 195711f4177a46c7eea42c4c5329596ddeabb36c
 
     // Player
     Player player;

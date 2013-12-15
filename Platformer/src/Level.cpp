@@ -1,4 +1,5 @@
 #include "Level.h"
+#include <cmath>
 
 Level::Level() {
 
@@ -180,6 +181,8 @@ void Level::render(sf::RenderWindow &window) {
 }
 
 void Level::switchTime(bool day) {
+    this->addEntity(new Entity());
+
     if (day) {
         ambientIntensity = 1.0f;
         ambientColor.x = 1.0f;
@@ -193,6 +196,12 @@ void Level::switchTime(bool day) {
         ambientColor.z = .7f;
         shader.setParameter("ambientColor", ambientColor.x, ambientColor.y, ambientColor.z, ambientIntensity);
     }
+}
+
+void Level::addEntity(Entity * e) {
+    this->entities.push_back(e);
+    sf::Vector2f test = this->entities[0]->getPosition();
+    std::cout << std::round(test.x / 32) << " " << std::round(test.y/32) << std::endl;
 }
 
 Player &Level::getPlayer() {

@@ -46,7 +46,7 @@
 
 1387041442 D
 
-1387077999 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
+1387081518 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
 	<string>
 	<SFML/Graphics.hpp>
 	"TileData.h"
@@ -733,7 +733,8 @@
 	"Node.h"
 	"Charger.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MapGenerator.h
+1387081518 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MapGenerator.h
+	<SFML/Graphics.hpp>
 	<stdlib.h>
 	<stdint.h>
 	<string>
@@ -741,15 +742,16 @@
 	<fstream>
 	<utility>
 	<assert.h>
+	"PathFinder.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Node.h
+1387081518 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Node.h
 	<stdint.h>
 
 1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Charger.h
 	<SFML/Graphics.hpp>
 	<Enemy.h>
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Enemy.h
+1387081518 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Enemy.h
 	<SFML/Graphics.hpp>
 	<Mob.h>
 	<cmath>
