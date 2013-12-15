@@ -218,10 +218,6 @@ void Level::render(sf::RenderWindow &window) {
 }
 
 void Level::switchTime(bool day) {
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     if (day) {
         ambientIntensity = 1.0f;
         ambientColor.x = 1.0f;
