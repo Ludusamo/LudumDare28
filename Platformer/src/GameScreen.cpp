@@ -10,13 +10,10 @@ GameScreen::~GameScreen() {
 
 void GameScreen::loadContent() {
     level.load();
-<<<<<<< HEAD
 //    level.loadLevel("res/imgs/Tilesheet_A.png", "hub.png");
     level.generateLevel("res/imgs/Tilesheet_A.png", 20,20);
-=======
     level.loadLevel("res/imgs/Tilesheet_A.png", "hub.png");
 //    level.generateLevel("res/imgs/Tilesheet_A.png", 30, 20);
->>>>>>> origin/master
     file.loadContent("res/lvls/hub.dat", attributes, contents);
     level.loadEntities(attributes, contents);
 
