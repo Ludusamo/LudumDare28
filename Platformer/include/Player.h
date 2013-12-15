@@ -6,7 +6,7 @@
 #include "Rock.h"
 
 #define ATTACK_DURATION .5
-#define COOLDOWN 1
+#define COOLDOWN .5
 
 class Player : public Mob {
 public:
@@ -19,6 +19,7 @@ public:
     void throwRock(Rock& rock, int dir);
     void attack(Rock& rock, int dir);
     void teleport(Rock& rock);
+    void grab();
 
     bool getCanAttack();
     bool canAttack = true;

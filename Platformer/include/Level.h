@@ -7,6 +7,7 @@
 #include <Tilemap.h>
 #include <Player.h>
 #include "PPAD.h"
+#include "KAD.h"
 #include "Rock.h"
 #include "MapGenerator.h"
 #include <vector>
@@ -56,6 +57,7 @@ private:
     Tilemap tmap;
     std::vector<std::vector<int> > colMap;
 
+    KAD kad;
     PPAD ppad;
 
     // Player

@@ -1,10 +1,10 @@
 #ifndef PPAD_H
 #define PPAD_H
 
-#include "Mob.h"
+#include "Entity.h"
 #include "Rock.h"
 
-class PPAD : public Mob
+class PPAD : public Entity
 {
     public:
         PPAD();
@@ -20,7 +20,8 @@ class PPAD : public Mob
         sf::Sprite plate, door;
         sf::FloatRect plateBound, doorBound;
         sf::Vector2f posD, posP;
-        int dir, xModifier;
+        sf::Vector2i mSize;
+        int dir;
         bool opened = false;
 
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {

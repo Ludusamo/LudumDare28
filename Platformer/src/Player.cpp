@@ -131,6 +131,10 @@ void Player::teleport(Rock& rock) {
     }
 }
 
+void Player::grab() {
+
+}
+
 bool Player::getCanAttack() {
     return canAttack;
 }

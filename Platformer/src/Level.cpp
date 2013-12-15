@@ -111,6 +111,9 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
             case 2:
                 ppad.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), sf::Vector2f(std::stoi(contents[i][2]), std::stoi(contents[i][3])), mTex, sf::Vector2i(32, 32), std::stoi(contents[i][4]));
                 break;
+            case 3:
+                kad.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), sf::Vector2f(std::stoi(contents[i][2]), std::stoi(contents[i][3])), mTex, sf::Vector2i(32, 32), std::stoi(contents[i][4]));
+                break;
         }
     }
 }
@@ -120,12 +123,14 @@ void Level::unload() {
     player.unload();
     rock.unload();
     ppad.unload();
+    kad.unload();
 }
 
 void Level::update(InputManager input) {
     player.update(colMap);
     rock.update(colMap);
     ppad.update(colMap, rock);
+    kad.update(colMap, rock, player.getDir());
 
     if (((player.getCollision().intersects(rock.getCollision()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         rock.setCurrentState(1);
@@ -163,7 +168,7 @@ void Level::update(InputManager input) {
         }
     }
 
-    if (input.keyPressed(sf::Keyboard::K) && player.getAttributes()[0]) {
+    if (input.keyPressed(sf::Keyboard::K) && player.getAttributes()[1]) {
         if (rock.getCurrentState() == 2) {
             player.teleport(rock);
         }
@@ -183,6 +188,7 @@ void Level::update(InputManager input) {
 
 void Level::render(sf::RenderWindow &window) {
     window.draw(tmap, &shader);
+    window.draw(kad, &shader);
     window.draw(ppad, &shader);
     window.draw(player, &shader);
     window.draw(rock, &shader);
