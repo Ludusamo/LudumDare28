@@ -58,13 +58,10 @@ private:
     Tilemap tmap;
     std::vector<std::vector<int> > colMap;
 
-<<<<<<< HEAD
     void addEntity(Mob* e);
     std::vector<Mob*> entities;
-=======
     KAD kad;
     PPAD ppad;
->>>>>>> origin/master
 
     // Player
     Player player;
