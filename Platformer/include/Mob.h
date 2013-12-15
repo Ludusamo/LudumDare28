@@ -48,7 +48,7 @@ protected:
 
     // Attributes
     float health;
-    bool invincible = false;
+    bool invincible = false, flying = false;
 
     int currentDir;
     enum direction { UP, DOWN, LEFT, RIGHT };

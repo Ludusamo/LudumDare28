@@ -17,10 +17,11 @@ void Rock::load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vecto
     vertices[3].position = sf::Vector2f(0, mSize.y);
     setTexCoords(0, 0);
 
-    movement.load(4, 0, 4, .2);
+    movement.load(0, 1, 4, .001);
     extend.load(0, 4, 8, .2);
 
     currentState = FLYING;
+    flying = true;
 }
 
 void Rock::unload() {

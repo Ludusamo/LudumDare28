@@ -11,21 +11,21 @@
 #define MAX 1
 
 int main() {
-    MapGenerator test("res/lvls/1.comp");
-    std::vector<std::vector<int16_t> > testvec = test.generate(100, 100, 0.25f);
-    //for(int i = 0; i < testvec.size(); i++) {
-    //    for(int j = 0; j < testvec[0].size(); j++) {
-    //        std::cout << testvec[i][j] << " ";
-    //    }
-    //    std::cout << std::endl;
-    //}
+    MapGenerator test("res/lvls/room1.comp");
+    std::vector<std::vector<int16_t> > testvec = test.generate_orderly(4, 3, 1, 2);
+    for(int i = 0; i < testvec.size(); i++) {
+       for(int j = 0; j < testvec[0].size(); j++) {
+            std::cout << testvec[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 
-    Charger charger;
-    std::vector<Node> test_path;
-    for(int i = 0; i < MAX; i++)
-       test_path = charger.pathfind(1, 1, 97, 98, testvec);
-    for(int i = 0; i < test_path.size(); i++)
-        std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
+    //Charger charger;
+    //std::vector<Node> test_path;
+    //for(int i = 0; i < MAX; i++)
+       //test_path = charger.pathfind(1, 1, 97, 98, testvec);
+    //for(int i = 0; i < test_path.size(); i++)
+        //std::cout << test_path[i].x << " " << test_path[i].y << std::endl;
 
 
     // Window

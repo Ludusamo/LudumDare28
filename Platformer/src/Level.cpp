@@ -1,4 +1,5 @@
 #include "Level.h"
+#include <cmath>
 
 Level::Level() {
 
@@ -25,6 +26,9 @@ void Level::load() {
     rTex.loadFromFile("res/imgs/rock.png");
     rock.load(sf::Vector2f(5, 5), rTex, 6, sf::Vector2i(32, 32));
 
+//    addEntity(player);
+//    addEntity(rock);
+
     up.push_back(sf::Keyboard::Up);
     up.push_back(sf::Keyboard::W);
     down.push_back(sf::Keyboard::Down);
@@ -37,7 +41,7 @@ void Level::load() {
 
 void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) {
     sf::Image image;
-    if (!image.loadFromFile("res/lvls/testpng.png"))
+    if (!image.loadFromFile("res/lvls/" + file))
         std::cout << "Cannot Load Level." << std::endl;
     width = image.getSize().x;
     height = image.getSize().y;
@@ -50,6 +54,7 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
                 if (image.getPixel(x, y) == TileData::tiles[i].getLevelColor()) {
                     tiles.push_back(TileData::tiles[i].getId());
                     if (TileData::tiles[i].isSolid()) bufferV.push_back(1);
+                    else if (TileData::tiles[i].isGap()) bufferV.push_back(2);
                     else bufferV.push_back(0);
                     break;
                 }
@@ -57,6 +62,13 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
         }
         colMap.push_back(bufferV);
         bufferV.clear();
+    }
+
+    for (int x= 0; x < width; x++) {
+    for (int y= 0; y < height; y++) {
+    std::cout << colMap[x][y] << " ";
+    }
+    std::cout << std::endl;
     }
 
     if (!tmap.load(tilesetFile, sf::Vector2u(32, 32), tiles, width, height))
@@ -86,6 +98,7 @@ void Level::generateLevel(const std::string& tilesetFile, int widthB, int height
         for (int y = 0; y < height; y++) {
             tiles.push_back(TileData::tiles[levelBuffer[x][y]].getId());
             if (TileData::tiles[levelBuffer[x][y]].isSolid()) bufferV.push_back(1);
+            else if (TileData::tiles[levelBuffer[x][y]].isGap()) bufferV.push_back(2);
             else bufferV.push_back(0);
         }
         colMap.push_back(bufferV);
@@ -152,6 +165,8 @@ void Level::update(InputManager input) {
         else if (input.keyPressed(right)) player.setAccelerationX(2);
         else player.setAccelerationX(0);
     }
+
+//    std::cout << entities[1].getPosition().x << std::endl;
 }
 
 void Level::render(sf::RenderWindow &window) {
@@ -160,12 +175,13 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(rock, &shader);
 }
 
-void Level::switchTime(bool day) {
+//void Level::addEntity(Entity e) {
+//    entities.push_back(e);
+//}
 
-    sf::Vector2f source = this->player.getPosition();
-    uint32_t srcx = std::round(source.x / 32);
-    uint32_t srcy = std::round(source.y / 32);
-    std::cout << srcx << " " << srcy << std::endl;
+void Level::switchTime(bool day) {
+    this->addEntity(new Entity());
+
     if (day) {
         ambientIntensity = 1.0f;
         ambientColor.x = 1.0f;
@@ -179,6 +195,12 @@ void Level::switchTime(bool day) {
         ambientColor.z = .7f;
         shader.setParameter("ambientColor", ambientColor.x, ambientColor.y, ambientColor.z, ambientIntensity);
     }
+}
+
+void Level::addEntity(Entity * e) {
+    this->entities.push_back(e);
+    sf::Vector2f test = this->entities[0]->getPosition();
+    std::cout << std::round(test.x / 32) << " " << std::round(test.y/32) << std::endl;
 }
 
 Player &Level::getPlayer() {
