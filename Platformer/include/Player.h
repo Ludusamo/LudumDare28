@@ -18,6 +18,7 @@ public:
     void update(std::vector<std::vector<int>> colMap);
     void throwRock(Rock& rock, int dir);
     void attack(Rock& rock, int dir);
+    void teleport(Rock& rock);
 
     bool getCanAttack();
     bool canAttack = true;

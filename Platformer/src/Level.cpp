@@ -150,16 +150,22 @@ void Level::update(InputManager input) {
         rock.setPosition(player.getPosition());
     }
 
-    if (input.keyPressed(sf::Keyboard::J) && player.getCanAttack()) {
+    if (input.keyPressed(sf::Keyboard::H) && player.getCanAttack()) {
         if (rock.getCurrentState() == 1) {
             player.attack(rock, player.getDir());
         }
     }
 
-    if (input.keyPressed(sf::Keyboard::K) && player.getAttributes()[0]) {
+    if (input.keyPressed(sf::Keyboard::J) && player.getAttributes()[0]) {
         if (rock.getCurrentState() == 1) {
             rock.setCurrentState(0);
             player.throwRock(rock, player.getDir());
+        }
+    }
+
+    if (input.keyPressed(sf::Keyboard::K) && player.getAttributes()[0]) {
+        if (rock.getCurrentState() == 2) {
+            player.teleport(rock);
         }
     }
 
