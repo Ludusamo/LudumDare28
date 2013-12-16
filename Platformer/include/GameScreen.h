@@ -21,6 +21,11 @@ private:
     Level level;
     sf::Vector2f center;
     sf::View mainView, signView;
+
+    sf::Font font;
+    sf::Text text;
+    std::string instructions;
+    bool pause = false;
 };
 
 #endif // GAMESCREEN_H
