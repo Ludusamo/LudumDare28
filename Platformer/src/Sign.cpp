@@ -35,7 +35,6 @@ void Sign::load(sf::Vector2f pos, sf::Texture& texture, std::string msg) {
 
 void Sign::unload() {
     sign.setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
-    sign.setPosition(0, 0);
 }
 
 void Sign::update(Player& player) {

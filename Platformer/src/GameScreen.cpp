@@ -45,7 +45,8 @@ void GameScreen::update() {
 void GameScreen::render(sf::RenderWindow &window) {
     level.render(window);
     mainView = window.getDefaultView();
-    if (!level.isSwitching())mainView.setCenter(center);
+    if (!level.isSwitching()) mainView.setCenter(center);
+    else mainView.setCenter(200, 150);
     mainView.zoom(1 / SCALE);
     window.setView(mainView);
     if (level.isReading()) {

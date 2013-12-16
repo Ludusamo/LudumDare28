@@ -251,6 +251,7 @@ void Level::unload() {
 
 void Level::update(InputManager input, SoundManager& sound) {
     rock.update(colMap);
+    std::cout << "Loaded" << std::endl;
     if (rock.getCurrentState() != 3) player.update(colMap);
     ppad.update(colMap, rock, sound);
     kad.update(colMap, rock, player.getDir(), sound);

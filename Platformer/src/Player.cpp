@@ -33,7 +33,7 @@ void Player::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vec
 }
 
 void Player::unload() {
-
+    Mob::unload();
 }
 
 void Player::update(std::vector<std::vector<int>> colMap) {

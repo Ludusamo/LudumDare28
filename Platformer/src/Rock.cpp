@@ -25,8 +25,6 @@ void Rock::load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vecto
     bmX = 4;
     bmY = 4;
 
-    bounds.top = getPosition().y + bmY;
-    bounds.left = getPosition().x + bmX;
     bounds.width = 27;
     bounds.height = 27;
 }
