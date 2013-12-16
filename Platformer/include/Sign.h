@@ -21,6 +21,7 @@ class Sign : public Entity
         bool active = false;
 
         sf::FloatRect &getBounds();
+        sf::Sprite& getSign();
     protected:
     private:
         sf::Sprite sign, popUp;

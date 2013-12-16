@@ -20,10 +20,15 @@ void Rock::load(sf::Vector2f pos, sf::Texture& texture, float MAX_VEL, sf::Vecto
     movement.load(0, 1, 4, .001);
     extend.load(0, 2, 8, .2);
 
-    currentState = FLYING;
+    currentState = GROUND;
     flying = true;
-    bmX = 0;
-    bmY = 0;
+    bmX = 4;
+    bmY = 4;
+
+    bounds.top = getPosition().y + bmY;
+    bounds.left = getPosition().x + bmX;
+    bounds.width = 27;
+    bounds.height = 27;
 }
 
 void Rock::unload() {

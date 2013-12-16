@@ -41,6 +41,8 @@ public:
     void render(sf::RenderWindow &window);
 
     bool isReading();
+    bool isSwitching();
+    bool isGameOver();
 
     Player &getPlayer();
     Rock &getRock();
@@ -77,7 +79,7 @@ private:
     sf::Texture splashImage;
     sf::Font font;
     sf::Text text, quote;
-    bool switchingLevel = false;
+    bool switchingLevel = false, gameOver = false;
     float delta = 0;
 
     // Test

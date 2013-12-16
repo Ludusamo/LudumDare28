@@ -44,6 +44,7 @@ void Level::load() {
     quote.setCharacterSize(14);
     quote.setPosition(10, 100);
 
+    loadLevel("res/imgs/Tilesheet_A.png", "hub.png");
     files.loadContent("res/lvls/hub.dat", attributes, contents);
     loadEntities(attributes, contents);
 }
@@ -54,6 +55,7 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
         std::cout << "Cannot Load Level." << std::endl;
     width = image.getSize().x;
     height = image.getSize().y;
+    std::cout << width << " " << height << std::endl;
 
     // Loading Map
     std::vector<int> bufferV;
@@ -161,7 +163,6 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
             case 5:
                 y = contents[i][2];
                 z = contents[i][3];
-                std::cout << contents[i][0] << std::endl;
                 portal1.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
             case 6:
@@ -175,42 +176,53 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
                 portal3.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
             case 8:
-                y = contents[i][2] + '\n' +contents[i][3];
+                y = contents[i][2] + '\n' + contents[i][3];
                 sign.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 9:
-                sign1.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign1.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 10:
-                sign2.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign2.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 11:
-                sign3.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign3.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 12:
-                sign4.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign4.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 13:
-                sign5.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign5.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 14:
-                sign6.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign6.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
             case 15:
-                sign7.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                y = contents[i][2] + '\n' + contents[i][3];
+                sign7.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
                 break;
         }
     }
 }
 
 void Level::switchLevel(const std::string& tilesetFile, const std::string& file, const std::string& splash) {
-    splashImage.loadFromFile(splash);
-    splashScreen.setTexture(splashImage);
-    switchingLevel = true;
-    unload();
-    loadLevel(tilesetFile, file + ".png");
-    files.loadContent("res/lvls/" + file + ".dat", attributes, contents);
-    loadEntities(attributes, contents);
+    if (file == "end") {
+        gameOver = true;
+    } else {
+        splashImage.loadFromFile(splash);
+        splashScreen.setTexture(splashImage);
+        switchingLevel = true;
+        unload();
+        loadLevel(tilesetFile, file + ".png");
+        files.loadContent("res/lvls/" + file + ".dat", attributes, contents);
+        loadEntities(attributes, contents);
+    }
 }
 
 void Level::unload() {
@@ -223,6 +235,14 @@ void Level::unload() {
     portal1.unload();
     portal2.unload();
     portal3.unload();
+    sign.unload();
+    sign1.unload();
+    sign2.unload();
+    sign3.unload();
+    sign4.unload();
+    sign5.unload();
+    sign6.unload();
+    sign7.unload();
     attributes.clear();
     contents.clear();
     tiles.clear();
@@ -239,6 +259,13 @@ void Level::update(InputManager input, SoundManager& sound) {
     portal2.update(player);
     portal3.update(player);
     sign.update(player);
+    sign1.update(player);
+    sign2.update(player);
+    sign3.update(player);
+    sign4.update(player);
+    sign5.update(player);
+    sign6.update(player);
+    sign7.update(player);
 
     if (((player.getBounds().intersects(rock.getBounds()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         if (rock.getCurrentState() != 1) sound.playSound(3);
@@ -350,9 +377,32 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(player, &shader);
     window.draw(rock, &shader);
     window.draw(sign, &shader);
+    window.draw(sign1, &shader);
+    window.draw(sign2, &shader);
+    window.draw(sign3, &shader);
+    window.draw(sign4, &shader);
+    window.draw(sign5, &shader);
+    window.draw(sign6, &shader);
+    window.draw(sign7, &shader);
     if (sign.isActive() || sign1.isActive() || sign2.isActive() || sign3.isActive() || sign4.isActive() || sign5.isActive() || sign6.isActive() || sign7.isActive()) {
         read = true;
+        sign.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign1.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign2.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign3.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign4.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign5.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign6.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+        sign7.getSign().setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
     } else {
+        sign.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign1.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign2.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign3.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign4.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign5.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign6.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
+        sign7.getSign().setTextureRect(sf::IntRect(0, 128, 32, 32));
         read = false;
     }
 
@@ -401,4 +451,12 @@ int Level::getHeight() {
 
 bool Level::isReading() {
     return read;
+}
+
+bool Level::isSwitching() {
+    return switchingLevel;
+}
+
+bool Level::isGameOver() {
+    return gameOver;
 }

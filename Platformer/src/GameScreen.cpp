@@ -10,7 +10,6 @@ GameScreen::~GameScreen() {
 
 void GameScreen::loadContent() {
     level.load();
-    level.loadLevel("res/imgs/Tilesheet_A.png", "hub.png");
 
     if (level.getPlayer().getPosition().x - (WIDTH / SCALE / 2) < 0) center.x = (WIDTH / SCALE / 2);
     else if (level.getPlayer().getPosition().x + (WIDTH / SCALE / 2) > (level.getWidth() * TILE_SIZE)) center.x = (level.getWidth() * TILE_SIZE) - (WIDTH / SCALE / 2);
@@ -24,11 +23,16 @@ void GameScreen::loadContent() {
 }
 
 void GameScreen::unloadContent() {
+    Screen::unloadContent();
     level.unload();
 }
 
 void GameScreen::update() {
     level.update(input, sound);
+    if (level.isGameOver()) {
+        ScreenManager::getInstance().addScreen(new MainMenuScreen);
+        sound.stopMusic();
+    }
 
     if (level.getPlayer().getPosition().x - (WIDTH / SCALE / 2) < 0) center.x = (WIDTH / SCALE / 2);
     else if (level.getPlayer().getPosition().x + (WIDTH / SCALE / 2) > (level.getWidth() * TILE_SIZE)) center.x = (level.getWidth() * TILE_SIZE) - (WIDTH / SCALE / 2);
@@ -41,7 +45,7 @@ void GameScreen::update() {
 void GameScreen::render(sf::RenderWindow &window) {
     level.render(window);
     mainView = window.getDefaultView();
-    mainView.setCenter(center);
+    if (!level.isSwitching())mainView.setCenter(center);
     mainView.zoom(1 / SCALE);
     window.setView(mainView);
     if (level.isReading()) {
