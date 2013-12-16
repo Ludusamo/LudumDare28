@@ -36,7 +36,7 @@ void WarpPortal::load(sf::Vector2f pos, sf::Texture& texture, std::string& desti
 
 void WarpPortal::unload() {
     vertices.clear();
-    setPosition(0, 0);
+    setPosition(32, 32);
     state = NOTHING;
 }
 

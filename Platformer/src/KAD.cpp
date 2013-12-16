@@ -38,6 +38,8 @@ void KAD::load(sf::Vector2f posD, sf::Vector2f posK, sf::Texture &texture, sf::V
 void KAD::unload() {
     door.setTextureRect(sf::IntRect(3 * 32, 32, mSize.x, mSize.y));
     key.setTextureRect(sf::IntRect(3 * 32, 32, mSize.x, mSize.y));
+    door.setPosition(32, 32);
+    key.setPosition(32, 32);
 
     inPossesion = false;
     opened = false;

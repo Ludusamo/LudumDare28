@@ -21,12 +21,9 @@ void GameScreen::loadContent() {
     sound.loadContent();
     sound.playMusic("song");
 
-    font.loadFromFile("res/fonts/Bellerose.ttf");
-    text.setFont(font);
-    instructions = "Instructions: WASD For Directional H For Attack (Useless) J For Throw K For Teleport L For Grab *You Teleport With 1 Block Distance Between You And The Rock *You Grab With Two Blocks Distance Between You And The Rock";
-    text.setString(instructions);
-    text.setCharacterSize(9);
-    text.setPosition(0, 0);
+    instructionsT.loadFromFile("res/imgs/instructions.png");
+    instructions.setTexture(instructionsT);
+    instructions.setPosition(0, 0);
 }
 
 void GameScreen::unloadContent() {
@@ -58,7 +55,7 @@ void GameScreen::render(sf::RenderWindow &window) {
     level.render(window);
     if (pause) {
         window.clear();
-        window.draw(text);
+        window.draw(instructions);
     }
     mainView = window.getDefaultView();
     if (!level.isSwitching() && !pause) mainView.setCenter(center);

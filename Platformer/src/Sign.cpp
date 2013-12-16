@@ -27,14 +27,15 @@ void Sign::load(sf::Vector2f pos, sf::Texture& texture, std::string msg) {
     text.setString(msg);
     text.setPosition(125, 100);
 
-    bounds.left = sign.getPosition().x;
-    bounds.top = sign.getPosition().y;
-    bounds.width = 32;
-    bounds.height = 32;
+    bounds.left = sign.getPosition().x + 15;
+    bounds.top = sign.getPosition().y +  15;
+    bounds.width = 1;
+    bounds.height = 1;
 }
 
 void Sign::unload() {
     sign.setTextureRect(sf::IntRect(3 * 32, 32, 32, 32));
+    sign.setPosition(32, 32);
 }
 
 void Sign::update(Player& player) {

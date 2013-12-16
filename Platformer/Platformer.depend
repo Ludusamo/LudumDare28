@@ -48,7 +48,7 @@
 
 1387041442 D
 
-1387177469 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
 	<string>
 	<SFML/Graphics.hpp>
 	"TileData.h"
@@ -203,7 +203,7 @@
 1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/InputManager.cpp
 	"InputManager.h"
 
-1387178373 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
 	"Level.h"
 	<cmath>
 
@@ -235,7 +235,7 @@
 1387072239 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Mob.cpp
 	"Mob.h"
 
-1387178544 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Player.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Player.cpp
 	"Player.h"
 
 1387082769 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Node.cpp
@@ -269,14 +269,14 @@
 1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/Transition.cpp
 	"Transition.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Animation.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Animation.cpp
 	"Animation.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Animation.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Animation.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1385847422 /usr/local/include/SFML/Graphics.hpp
+1385533994 /usr/local/include/SFML/Graphics.hpp
 	<SFML/Window.hpp>
 	<SFML/Graphics/BlendMode.hpp>
 	<SFML/Graphics/Color.hpp>
@@ -299,7 +299,7 @@
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/Graphics/View.hpp>
 
-1385847422 /usr/local/include/SFML/Window.hpp
+1385533994 /usr/local/include/SFML/Window.hpp
 	<SFML/System.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/Window/ContextSettings.hpp>
@@ -311,7 +311,7 @@
 	<SFML/Window/Window.hpp>
 	<SFML/Window/WindowStyle.hpp>
 
-1385847422 /usr/local/include/SFML/System.hpp
+1385533994 /usr/local/include/SFML/System.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Clock.hpp>
 	<SFML/System/Err.hpp>
@@ -327,48 +327,48 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Vector3.hpp>
 
-1385847422 /usr/local/include/SFML/Config.hpp
+1385533994 /usr/local/include/SFML/Config.hpp
 
-1385847422 /usr/local/include/SFML/System/Clock.hpp
+1385533994 /usr/local/include/SFML/System/Clock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
-1385847422 /usr/local/include/SFML/System/Export.hpp
+1385533994 /usr/local/include/SFML/System/Export.hpp
 	<SFML/Config.hpp>
 
-1385847422 /usr/local/include/SFML/System/Time.hpp
+1385533994 /usr/local/include/SFML/System/Time.hpp
 	<SFML/System/Export.hpp>
 
-1385847422 /usr/local/include/SFML/System/Err.hpp
+1385533994 /usr/local/include/SFML/System/Err.hpp
 	<SFML/System/Export.hpp>
 	<ostream>
 
-1385847422 /usr/local/include/SFML/System/InputStream.hpp
+1385533994 /usr/local/include/SFML/System/InputStream.hpp
 	<SFML/Config.hpp>
 
-1385847422 /usr/local/include/SFML/System/Lock.hpp
+1385533994 /usr/local/include/SFML/System/Lock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1385847422 /usr/local/include/SFML/System/NonCopyable.hpp
+1385533994 /usr/local/include/SFML/System/NonCopyable.hpp
 	<SFML/System/Export.hpp>
 
-1385847422 /usr/local/include/SFML/System/Mutex.hpp
+1385533994 /usr/local/include/SFML/System/Mutex.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1385847422 /usr/local/include/SFML/System/Sleep.hpp
+1385533994 /usr/local/include/SFML/System/Sleep.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
-1385847422 /usr/local/include/SFML/System/String.hpp
+1385533994 /usr/local/include/SFML/System/String.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Utf.hpp>
 	<locale>
 	<string>
 	<SFML/System/String.inl>
 
-1385847422 /usr/local/include/SFML/System/Utf.hpp
+1385533994 /usr/local/include/SFML/System/Utf.hpp
 	<SFML/Config.hpp>
 	<algorithm>
 	<locale>
@@ -376,74 +376,74 @@
 	<cstdlib>
 	<SFML/System/Utf.inl>
 
-1385847422 /usr/local/include/SFML/System/Utf.inl
+1385533994 /usr/local/include/SFML/System/Utf.inl
 
-1385847422 /usr/local/include/SFML/System/String.inl
+1385533994 /usr/local/include/SFML/System/String.inl
 
-1385847422 /usr/local/include/SFML/System/Thread.hpp
+1385533994 /usr/local/include/SFML/System/Thread.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 	<SFML/System/Thread.inl>
 
-1385847422 /usr/local/include/SFML/System/Thread.inl
+1385533994 /usr/local/include/SFML/System/Thread.inl
 
-1385847422 /usr/local/include/SFML/System/ThreadLocal.hpp
+1385533994 /usr/local/include/SFML/System/ThreadLocal.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 
-1385847422 /usr/local/include/SFML/System/ThreadLocalPtr.hpp
+1385533994 /usr/local/include/SFML/System/ThreadLocalPtr.hpp
 	<SFML/System/ThreadLocal.hpp>
 	<SFML/System/ThreadLocalPtr.inl>
 
-1385847422 /usr/local/include/SFML/System/ThreadLocalPtr.inl
+1385533994 /usr/local/include/SFML/System/ThreadLocalPtr.inl
 
-1385847422 /usr/local/include/SFML/System/Vector2.hpp
+1385533994 /usr/local/include/SFML/System/Vector2.hpp
 	<SFML/System/Vector2.inl>
 
-1385847422 /usr/local/include/SFML/System/Vector2.inl
+1385533994 /usr/local/include/SFML/System/Vector2.inl
 
-1385847422 /usr/local/include/SFML/System/Vector3.hpp
+1385533994 /usr/local/include/SFML/System/Vector3.hpp
 	<SFML/System/Vector3.inl>
 
-1385847422 /usr/local/include/SFML/System/Vector3.inl
+1385533994 /usr/local/include/SFML/System/Vector3.inl
 
-1385847422 /usr/local/include/SFML/Window/Context.hpp
+1385533994 /usr/local/include/SFML/Window/Context.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/Window/GlResource.hpp>
 	<SFML/Window/ContextSettings.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1385847422 /usr/local/include/SFML/Window/Export.hpp
+1385533994 /usr/local/include/SFML/Window/Export.hpp
 	<SFML/Config.hpp>
 
-1385847422 /usr/local/include/SFML/Window/GlResource.hpp
+1385533994 /usr/local/include/SFML/Window/GlResource.hpp
 	<SFML/Window/Export.hpp>
 
-1385847422 /usr/local/include/SFML/Window/ContextSettings.hpp
+1385533994 /usr/local/include/SFML/Window/ContextSettings.hpp
 
-1385847422 /usr/local/include/SFML/Window/Event.hpp
+1385533994 /usr/local/include/SFML/Window/Event.hpp
 	<SFML/Config.hpp>
 	<SFML/Window/Joystick.hpp>
 	<SFML/Window/Keyboard.hpp>
 	<SFML/Window/Mouse.hpp>
 
-1385847422 /usr/local/include/SFML/Window/Joystick.hpp
+1385533994 /usr/local/include/SFML/Window/Joystick.hpp
 	<SFML/Window/Export.hpp>
 
-1385847422 /usr/local/include/SFML/Window/Keyboard.hpp
+1385533994 /usr/local/include/SFML/Window/Keyboard.hpp
 	<SFML/Window/Export.hpp>
 
-1385847422 /usr/local/include/SFML/Window/Mouse.hpp
+1385533994 /usr/local/include/SFML/Window/Mouse.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/System/Vector2.hpp>
 
-1385847422 /usr/local/include/SFML/Window/VideoMode.hpp
+1385533994 /usr/local/include/SFML/Window/VideoMode.hpp
 	<SFML/Window/Export.hpp>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Window/Window.hpp
+1385533994 /usr/local/include/SFML/Window/Window.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/Window/ContextSettings.hpp>
 	<SFML/Window/VideoMode.hpp>
@@ -455,20 +455,20 @@
 	<SFML/System/NonCopyable.hpp>
 	<SFML/System/String.hpp>
 
-1385847422 /usr/local/include/SFML/Window/WindowHandle.hpp
+1385533994 /usr/local/include/SFML/Window/WindowHandle.hpp
 	<SFML/Config.hpp>
 
-1385847422 /usr/local/include/SFML/Window/WindowStyle.hpp
+1385533994 /usr/local/include/SFML/Window/WindowStyle.hpp
 
-1385847422 /usr/local/include/SFML/Graphics/BlendMode.hpp
+1385533994 /usr/local/include/SFML/Graphics/BlendMode.hpp
 
-1385847422 /usr/local/include/SFML/Graphics/Color.hpp
+1385533994 /usr/local/include/SFML/Graphics/Color.hpp
 	<SFML/Graphics/Export.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Export.hpp
+1385533994 /usr/local/include/SFML/Graphics/Export.hpp
 	<SFML/Config.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Font.hpp
+1385533994 /usr/local/include/SFML/Graphics/Font.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Glyph.hpp>
 	<SFML/Graphics/Texture.hpp>
@@ -479,45 +479,45 @@
 	<string>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Graphics/Glyph.hpp
+1385533994 /usr/local/include/SFML/Graphics/Glyph.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Rect.hpp
+1385533994 /usr/local/include/SFML/Graphics/Rect.hpp
 	<SFML/System/Vector2.hpp>
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
 
-1385847422 /usr/local/include/SFML/Graphics/Rect.inl
+1385533994 /usr/local/include/SFML/Graphics/Rect.inl
 
-1385847422 /usr/local/include/SFML/Graphics/Texture.hpp
+1385533994 /usr/local/include/SFML/Graphics/Texture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Image.hpp
+1385533994 /usr/local/include/SFML/Graphics/Image.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<string>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Graphics/RenderStates.hpp
+1385533994 /usr/local/include/SFML/Graphics/RenderStates.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/BlendMode.hpp>
 	<SFML/Graphics/Transform.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Transform.hpp
+1385533994 /usr/local/include/SFML/Graphics/Transform.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/System/Vector2.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/RenderTexture.hpp
+1385533994 /usr/local/include/SFML/Graphics/RenderTexture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/RenderTarget.hpp
+1385533994 /usr/local/include/SFML/Graphics/RenderTarget.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
@@ -529,27 +529,27 @@
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/View.hpp
+1385533994 /usr/local/include/SFML/Graphics/View.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Transform.hpp>
 	<SFML/System/Vector2.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/PrimitiveType.hpp
+1385533994 /usr/local/include/SFML/Graphics/PrimitiveType.hpp
 
-1385847422 /usr/local/include/SFML/Graphics/Vertex.hpp
+1385533994 /usr/local/include/SFML/Graphics/Vertex.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/System/Vector2.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/RenderWindow.hpp
+1385533994 /usr/local/include/SFML/Graphics/RenderWindow.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/Window.hpp>
 	<string>
 
-1385847422 /usr/local/include/SFML/Graphics/Shader.hpp
+1385533994 /usr/local/include/SFML/Graphics/Shader.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Transform.hpp>
 	<SFML/Graphics/Color.hpp>
@@ -560,22 +560,22 @@
 	<map>
 	<string>
 
-1385847422 /usr/local/include/SFML/Graphics/Shape.hpp
+1385533994 /usr/local/include/SFML/Graphics/Shape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/System/Vector2.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Drawable.hpp
+1385533994 /usr/local/include/SFML/Graphics/Drawable.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderStates.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Transformable.hpp
+1385533994 /usr/local/include/SFML/Graphics/Transformable.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Transform.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/VertexArray.hpp
+1385533994 /usr/local/include/SFML/Graphics/VertexArray.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/Graphics/PrimitiveType.hpp>
@@ -583,27 +583,27 @@
 	<SFML/Graphics/Drawable.hpp>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Graphics/CircleShape.hpp
+1385533994 /usr/local/include/SFML/Graphics/CircleShape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/RectangleShape.hpp
+1385533994 /usr/local/include/SFML/Graphics/RectangleShape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/ConvexShape.hpp
+1385533994 /usr/local/include/SFML/Graphics/ConvexShape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Graphics/Sprite.hpp
+1385533994 /usr/local/include/SFML/Graphics/Sprite.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1385847422 /usr/local/include/SFML/Graphics/Text.hpp
+1385533994 /usr/local/include/SFML/Graphics/Text.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
@@ -614,34 +614,34 @@
 	<string>
 	<vector>
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Button.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Button.cpp
 	"Button.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Button.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Button.h
 	"SFML/Graphics.hpp"
 	"Entity.h"
 
-1387062659 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entity.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entity.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1387062663 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Entity.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Entity.cpp
 	"Entity.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeTransition.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeTransition.cpp
 	"FadeTransition.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeTransition.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeTransition.h
 	"Transition.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Transition.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Transition.h
 	<SFML/Graphics.hpp>
 	<string>
 
-1387129127 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FileManager.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FileManager.cpp
 	"FileManager.h"
 
-1387129138 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FileManager.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FileManager.h
 	<vector>
 	<string>
 	<fstream>
@@ -649,26 +649,26 @@
 	<iostream>
 	<sstream>
 
-1387181207 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/GameScreen.cpp
+1387208454 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/GameScreen.cpp
 	"GameScreen.h"
 
-1387181245 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/GameScreen.h
+1387208378 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/GameScreen.h
 	"Screen.h"
 	"ScreenManager.h"
 	"FileManager.h"
 	"Level.h"
 	<SFML/Graphics.hpp>
 
-1387147657 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Screen.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Screen.h
 	"SFML/Graphics.hpp"
 	"InputManager.h"
 	"SoundManager.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/InputManager.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/InputManager.h
 	<vector>
 	<SFML/Graphics.hpp>
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/ScreenManager.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/ScreenManager.h
 	<SFML/Graphics.hpp>
 	"Screen.h"
 	"MainMenuScreen.h"
@@ -677,81 +677,81 @@
 	"FadeTransition.h"
 	"FileManager.h"
 
-1387054304 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
 	"Screen.h"
 	"ScreenManager.h"
 	"FileManager.h"
 	<SFML/Graphics.hpp>
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/SplashScreen.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/SplashScreen.h
 	"Screen.h"
 	"ScreenManager.h"
 	"MainMenuScreen.h"
 	<SFML/Graphics.hpp>
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/InputManager.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/InputManager.cpp
 	"InputManager.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Light.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Light.cpp
 	"Light.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Light.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Light.h
 	<Entity.h>
 
-1387148841 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MainMenuScreen.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MainMenuScreen.cpp
 	<iostream>
 	"MainMenuScreen.h"
 
-1387131966 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Mob.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Mob.cpp
 	"Mob.h"
 
-1387068786 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Mob.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Mob.h
 	<SFML/Graphics.hpp>
 	<Entity.h>
 	<Animation.h>
 	<iostream>
 	<math.h>
 
-1387178426 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Rock.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Rock.cpp
 	"Rock.h"
 
-1387121405 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Rock.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Rock.h
 	"Mob.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Screen.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Screen.cpp
 	"Screen.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/ScreenManager.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/ScreenManager.cpp
 	"ScreenManager.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/SplashScreen.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/SplashScreen.cpp
 	<iostream>
 	"SplashScreen.h"
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/TileData.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/TileData.cpp
 	"TileData.h"
 	<stdlib.h>
 	<stdint.h>
 	<stdbool.h>
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/TileData.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/TileData.h
 	<stdlib.h>
 	<stdint.h>
 	<stdbool.h>
 	<SFML/Graphics.hpp>
 
-1387130151 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Tilemap.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Tilemap.cpp
 	"Tilemap.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Tilemap.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Tilemap.h
 	<SFML/Graphics.hpp>
 	<vector>
 	<iostream>
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Transition.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Transition.cpp
 	"Transition.h"
 
-1387126683 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
 	<iostream>
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
@@ -762,7 +762,7 @@
 	"Node.h"
 	"Charger.h"
 
-1387126683 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MapGenerator.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MapGenerator.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdlib.h>
@@ -775,21 +775,21 @@
 	"Entropy.h"
 	"Node.h"
 
-1387081518 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Node.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Node.h
 	<stdint.h>
 
-1387150953 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Charger.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Charger.h
 	<SFML/Graphics.hpp>
 	<Enemy.h>
 	"Node.h"
 
-1387150953 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Enemy.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Enemy.h
 	<SFML/Graphics.hpp>
 	<Mob.h>
 	<cmath>
 	"Node.h"
 
-1387126683 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MapGenerator.cpp
 	"MapGenerator.h"
 	<stdlib.h>
 	<stdint.h>
@@ -800,25 +800,25 @@
 	<assert.h>
 	"Entropy.h"
 
-1387150953 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Charger.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Charger.cpp
 	"Charger.h"
 
-1387150953 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Enemy.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Enemy.cpp
 	"Enemy.h"
 	<iostream>
 
-1387081518 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Node.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Node.cpp
 	"Node.h"
 
-1387120445 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Player.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Player.h
 	<SFML/Graphics.hpp>
 	<Mob.h>
 	"Rock.h"
 
-1387178027 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/PPAD.cpp
+1387206950 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/PPAD.cpp
 	"PPAD.h"
 
-1387150603 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/PPAD.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/PPAD.h
 	"Entity.h"
 	"Rock.h"
 	"SoundManager.h"
@@ -829,18 +829,18 @@
 	"Entity.h"
 	<vector>
 
-1387050511 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeAnimation.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/FadeAnimation.cpp
 	"FadeAnimation.h"
 
-1387050511 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeAnimation.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/FadeAnimation.h
 
 1387082291 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/PathFinder.cpp
 	"PathFinder.h"
 
-1387174827 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/KAD.cpp
+1387206966 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/KAD.cpp
 	"KAD.h"
 
-1387149855 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/KAD.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/KAD.h
 	"Entity.h"
 	"Rock.h"
 	"SoundManager.h"
@@ -866,26 +866,26 @@
 	<fstream>
 	<cmath>
 
-1387126683 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entropy.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Entropy.h
 	<fstream>
 	<cmath>
 
-1387135631 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/WarpPortal.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/WarpPortal.h
 	"Entity.h"
 	"Player.h"
 	"Animation.h"
 
-1387156643 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/WarpPortal.cpp
+1387206931 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/WarpPortal.cpp
 	"WarpPortal.h"
 
-1387148835 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/SoundManager.cpp
+1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/SoundManager.cpp
 	"SoundManager.h"
 
-1387147474 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/SoundManager.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/SoundManager.h
 	"SFML/Audio.hpp"
 	"string"
 
-1385847422 /usr/local/include/SFML/Audio.hpp
+1385533994 /usr/local/include/SFML/Audio.hpp
 	<SFML/System.hpp>
 	<SFML/Audio/Listener.hpp>
 	<SFML/Audio/Music.hpp>
@@ -895,14 +895,14 @@
 	<SFML/Audio/SoundRecorder.hpp>
 	<SFML/Audio/SoundStream.hpp>
 
-1385847422 /usr/local/include/SFML/Audio/Listener.hpp
+1385533994 /usr/local/include/SFML/Audio/Listener.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Vector3.hpp>
 
-1385847422 /usr/local/include/SFML/Audio/Export.hpp
+1385533994 /usr/local/include/SFML/Audio/Export.hpp
 	<SFML/Config.hpp>
 
-1385847422 /usr/local/include/SFML/Audio/Music.hpp
+1385533994 /usr/local/include/SFML/Audio/Music.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundStream.hpp>
 	<SFML/System/Mutex.hpp>
@@ -910,49 +910,49 @@
 	<string>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Audio/SoundStream.hpp
+1385533994 /usr/local/include/SFML/Audio/SoundStream.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundSource.hpp>
 	<SFML/System/Thread.hpp>
 	<SFML/System/Time.hpp>
 	<cstdlib>
 
-1385847422 /usr/local/include/SFML/Audio/SoundSource.hpp
+1385533994 /usr/local/include/SFML/Audio/SoundSource.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Vector3.hpp>
 
-1385847422 /usr/local/include/SFML/Audio/Sound.hpp
+1385533994 /usr/local/include/SFML/Audio/Sound.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundSource.hpp>
 	<SFML/System/Time.hpp>
 	<cstdlib>
 
-1385847422 /usr/local/include/SFML/Audio/SoundBuffer.hpp
+1385533994 /usr/local/include/SFML/Audio/SoundBuffer.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Time.hpp>
 	<string>
 	<vector>
 	<set>
 
-1385847422 /usr/local/include/SFML/Audio/SoundBufferRecorder.hpp
+1385533994 /usr/local/include/SFML/Audio/SoundBufferRecorder.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 	<SFML/Audio/SoundRecorder.hpp>
 	<vector>
 
-1385847422 /usr/local/include/SFML/Audio/SoundRecorder.hpp
+1385533994 /usr/local/include/SFML/Audio/SoundRecorder.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Thread.hpp>
 	<SFML/System/Time.hpp>
 	<vector>
 	<string>
 
-1387172415 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Sign.h
+1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Sign.h
 	"SFML/Graphics.hpp"
 	"Entity.h"
 	"string"
 	"Player.h"
 
-1387178012 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Sign.cpp
+1387208486 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Sign.cpp
 	"Sign.h"
 

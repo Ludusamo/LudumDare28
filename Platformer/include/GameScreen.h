@@ -22,9 +22,8 @@ private:
     sf::Vector2f center;
     sf::View mainView, signView;
 
-    sf::Font font;
-    sf::Text text;
-    std::string instructions;
+    sf::Sprite instructions;
+    sf::Texture instructionsT;
     bool pause = false;
 };
 

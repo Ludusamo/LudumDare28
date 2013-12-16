@@ -10,11 +10,12 @@ MainMenuScreen::~MainMenuScreen() {
 }
 
 void MainMenuScreen::loadContent() {
-    if (!font.loadFromFile("res/fonts/Zenzai Itachi.ttf"))
+    if (!font.loadFromFile("res/fonts/Bellerose.ttf"))
         std::cout << "Could Not Find Specified Font." << std::endl;
 
     text.setFont(font);
-    text.setString("MainMenuScreen");
+    text.setString("Click Return To Start");
+    text.setPosition(280, 500);
 
     confirm.push_back(sf::Keyboard::Return);
     confirm.push_back(sf::Keyboard::Space);
