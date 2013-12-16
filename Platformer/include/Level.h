@@ -18,6 +18,7 @@
 #include "Charger.h"
 #include "FileManager.h"
 #include "SoundManager.h"
+#include "Sign.h"
 
 #define TILE_SIZE 32
 #define SCALE 2.0
@@ -38,6 +39,8 @@ public:
     void unload();
     void update(InputManager input, SoundManager& sound);
     void render(sf::RenderWindow &window);
+
+    bool isReading();
 
     Player &getPlayer();
     Rock &getRock();
@@ -66,6 +69,8 @@ private:
     KAD kad;
     PPAD ppad;
     WarpPortal portal, portal1, portal2, portal3;
+    Sign sign, sign1, sign2, sign3, sign4, sign5, sign6, sign7;
+    bool read;
 
     // Switching Levels
     sf::Sprite splashScreen;

@@ -20,7 +20,7 @@ protected:
 private:
     Level level;
     sf::Vector2f center;
-    sf::View mainView;
+    sf::View mainView, signView;
 };
 
 #endif // GAMESCREEN_H

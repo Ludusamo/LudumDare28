@@ -174,6 +174,31 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
                 z = contents[i][3];
                 portal3.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
+            case 8:
+                y = contents[i][2] + '\n' +contents[i][3];
+                sign.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y);
+                break;
+            case 9:
+                sign1.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
+            case 10:
+                sign2.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
+            case 11:
+                sign3.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
+            case 12:
+                sign4.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
+            case 13:
+                sign5.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
+            case 14:
+                sign6.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
+            case 15:
+                sign7.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, contents[i][2]);
+                break;
         }
     }
 }
@@ -213,6 +238,7 @@ void Level::update(InputManager input, SoundManager& sound) {
     portal1.update(player);
     portal2.update(player);
     portal3.update(player);
+    sign.update(player);
 
     if (((player.getBounds().intersects(rock.getBounds()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         if (rock.getCurrentState() != 1) sound.playSound(3);
@@ -323,6 +349,12 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(portal3, &shader);
     window.draw(player, &shader);
     window.draw(rock, &shader);
+    window.draw(sign, &shader);
+    if (sign.isActive() || sign1.isActive() || sign2.isActive() || sign3.isActive() || sign4.isActive() || sign5.isActive() || sign6.isActive() || sign7.isActive()) {
+        read = true;
+    } else {
+        read = false;
+    }
 
     if (switchingLevel) {
         window.draw(splashScreen);
@@ -365,4 +397,8 @@ int Level::getWidth() {
 
 int Level::getHeight() {
     return height;
+}
+
+bool Level::isReading() {
+    return read;
 }

@@ -44,4 +44,10 @@ void GameScreen::render(sf::RenderWindow &window) {
     mainView.setCenter(center);
     mainView.zoom(1 / SCALE);
     window.setView(mainView);
+    if (level.isReading()) {
+        signView = window.getDefaultView();
+        signView.setCenter(200, 150);
+        signView.zoom(1 / SCALE);
+        window.setView(signView);
+    }
 }

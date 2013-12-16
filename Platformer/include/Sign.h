@@ -24,6 +24,7 @@ class Sign : public Entity
     protected:
     private:
         sf::Sprite sign, popUp;
+        sf::Texture popUpT;
         sf::FloatRect bounds;
         sf::Font font;
         sf::Text text;
@@ -31,7 +32,11 @@ class Sign : public Entity
             states.transform *= getTransform();
             states.texture = &tex;
             target.draw(sign, states);
-            if (active) target.draw(popUp, states);
+            if (active) {
+                target.clear();
+                target.draw(popUp, states);
+                target.draw(text, states);
+            }
         }
 };
 
