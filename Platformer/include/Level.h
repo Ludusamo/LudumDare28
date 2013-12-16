@@ -15,6 +15,7 @@
 #include <fstream>
 #include <iostream>
 #include "InputManager.h"
+#include "Charger.h"
 #include "FileManager.h"
 #include "SoundManager.h"
 
@@ -71,6 +72,11 @@ private:
     sf::Texture splashImage;
     bool switchingLevel = false;
     float delta = 0;
+
+    // Test
+    Charger charger;
+
+    sf::Texture tTex;
 
     // Player
     Player player;

@@ -5,7 +5,7 @@ std::vector<Enemy*> Enemy::enemyList;
 std::vector<Node> Enemy::blacklist;
 
 Enemy::Enemy() {
-
+    this->omniscient = false;
 }
 
 Enemy::~Enemy() {
@@ -28,7 +28,35 @@ void Enemy::load(sf::Vector2f pos, sf::Texture &texture, float MAX_VEL, sf::Vect
 }
 
 void Enemy::unload() {
-    delete this;
+    Mob::unload();
+}
+
+void Enemy::set_radius(uint8_t r) {
+    this->radius = r;
+}
+
+void Enemy::toggle_omniscience(void) {
+    this->omniscient ^= 1;
+}
+
+uint8_t Enemy::get_radius(void) {
+    return this->radius;
+}
+
+bool Enemy::is_omniscient(void) {
+    return this->omniscient;
+}
+
+void Enemy::update(std::vector<std::vector<int> > colMap) {
+    Mob::update(colMap);
+}
+
+bool Enemy::scan(Entity * e) {
+    for(int i = std::max((int) std::round(this->getPosition().x/32) + 5 - this->radius, 0); i < std::min((int) std::round(this->getPosition().x/32) + 5 + this-> radius, 20); i++)
+        for(int j = std::max((int) std::round(this->getPosition().y/32) + 5 - this->radius, 0); j < std::min((int) std::round(this->getPosition().x/32) + 5 + this->radius, 20); j++)
+            if(std::round(e->getPosition().x/32) == i && std::round(e->getPosition().y/32) == j)
+                return true;
+    return false;
 }
 
 //void Enemy::test() {/
@@ -45,7 +73,7 @@ bool Enemy::in_blacklist(uint32_t x, uint32_t y) {
 std::vector<Node> Enemy::pathfind(uint32_t srcy, uint32_t srcx, uint32_t tary, uint32_t tarx, std::vector<std::vector<int16_t> > level) {
     for(uint32_t x = 0; x < level.size(); x++)
         for(uint32_t y = 0; y < level[0].size(); y++)
-            level[x][y] = level[x][y] == 1 ? -1 : x == srcx && y == srcy ? 0 : 1;
+            level[x][y] = level[x][y] == 1 || level[x][y] == 2 ? -1 : x == srcx && y == srcy ? 0 : 1;
     std::vector<Node> path;
     path.push_back(Node(srcx, srcy));
     if(srcx == tarx && srcy == tary)
@@ -53,14 +81,22 @@ std::vector<Node> Enemy::pathfind(uint32_t srcy, uint32_t srcx, uint32_t tary, u
     std::string priority;
     uint32_t x = srcx, y = srcy;
     while(x != tarx || y != tary) {
-        if(tarx > x && tary >= y)
+        if(tarx > x && tary > y)
             priority = "rdul";
         else if(tarx == x && tary > y)
             priority = "dlru";
-        else if(tarx < x && tary <= y)
-            priority = "ldur";
+        else if (tarx > x && tary == y)
+            priority = "dlru";
+        else if(tarx < x && tary < y)
+            priority = "ludr";
         else if(tarx == x && tary < y)
             priority = "ulrd";
+        else if(tarx < x && tary == y)
+            priority = "ludr";
+        else if(tarx < x && tary > y)
+            priority = "ldur";
+        else if(tarx > x && tary < y)
+            priority = "rdul";
         for(int i = 0; i < 4; i++) {
             switch(priority[i]) {
                 case 'l':
@@ -113,13 +149,14 @@ std::vector<Node> Enemy::pathfind(uint32_t srcy, uint32_t srcx, uint32_t tary, u
 
 std::vector<Node> Enemy::pathfind(sf::Vector2f target, std::vector<std::vector<int16_t> > level) {
     sf::Vector2f source = this->getPosition();
-    uint32_t srcx = std::round(source.x / 32);
-    uint32_t srcy = std::round(source.y / 32);
+    uint32_t srcx = std::round(source.x / 32) + 5;
+    uint32_t srcy = std::round(source.y / 32) + 5;
     uint32_t tarx = std::round(target.x / 32);
     uint32_t tary = std::round(target.y / 32);
+    //std::cout << srcx << " " << srcy << " " << tarx << " " << tary << std::endl;
     return this->pathfind(srcx, srcy, tarx, tary, level);
 }
 
-std::vector<Node> Enemy::pathfind(Entity entity, std::vector<std::vector<int16_t> > graph) {
-    return this->pathfind(entity.getPosition(), graph);
+std::vector<Node> Enemy::pathfind(Entity * entity, std::vector<std::vector<int16_t> > graph) {
+    return this->pathfind(entity->getPosition(), graph);
 }

@@ -23,6 +23,7 @@ void Level::load() {
     pTex.loadFromFile("res/imgs/player.png");
     rTex.loadFromFile("res/imgs/rock.png");
     mTex.loadFromFile("res/imgs/mobs.png");
+    tTex.loadFromFile("res/imgs/player.png");
 
     up.push_back(sf::Keyboard::Up);
     up.push_back(sf::Keyboard::W);
@@ -181,13 +182,15 @@ void Level::unload() {
 }
 
 void Level::update(InputManager input, SoundManager& sound) {
-    if (rock.getCurrentState() != 3) player.update(colMap);
     rock.update(colMap);
+    if (rock.getCurrentState() != 3) player.update(colMap);
     ppad.update(colMap, rock, sound);
     kad.update(colMap, rock, player.getDir(), sound);
     portal.update(player);
 
-    if (((player.getCollision().intersects(rock.getCollision()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
+    std::cout << rock.getCurrentState() <<std::endl;
+
+    if (((player.getBounds().intersects(rock.getBounds()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         if (rock.getCurrentState() != 1) sound.playSound(3);
         rock.setCurrentState(1);
         rock.setTexCoords(1, 0);
@@ -258,10 +261,6 @@ void Level::update(InputManager input, SoundManager& sound) {
             player.grab(rock);
             sound.playSound(1);
         }
-    }
-
-    if (input.keyPressed(sf::Keyboard::E) && !switchingLevel) {
-        switchLevel("res/imgs/Tilesheet_A.png", "test", "res/imgs/splash.png");
     }
 
     // Player movements
