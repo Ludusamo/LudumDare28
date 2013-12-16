@@ -24,7 +24,7 @@ void WarpPortal::load(sf::Vector2f pos, sf::Texture& texture, std::string& desti
     vertices[2].texCoords = sf::Vector2f((0 + 1) * 32, (3 + 1) * 32);
     vertices[3].texCoords = sf::Vector2f(0 * 32, (3 + 1) * 32);
 
-    animation.load(0, 3, 8, .5);
+    animation.load(0, 3, 2, .5);
 
     bounds.left = getPosition().x;
     bounds.top = getPosition().y;
@@ -35,6 +35,7 @@ void WarpPortal::load(sf::Vector2f pos, sf::Texture& texture, std::string& desti
 }
 
 void WarpPortal::unload() {
+    vertices.clear();
     setPosition(0, 0);
     state = NOTHING;
 }
@@ -42,7 +43,6 @@ void WarpPortal::unload() {
 void WarpPortal::update(Player& player) {
     if (bounds.intersects(player.getBounds())) {
         state = SWITCHING;
-        std::cout << "TELEPORT" << std::endl;
     }
     animation.update(vertices, sf::Vector2i(32, 32));
 }

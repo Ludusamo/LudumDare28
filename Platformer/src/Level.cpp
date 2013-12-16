@@ -34,6 +34,16 @@ void Level::load() {
     right.push_back(sf::Keyboard::Right);
     right.push_back(sf::Keyboard::D);
 
+    font.loadFromFile("res/fonts/Bellerose.ttf");
+    text.setFont(font);
+    text.setString("Loading...");
+    text.setCharacterSize(28);
+    text.setPosition(5, 10);
+    quote.setFont(font);
+    quote.setString("\"You only get one life, enjoy it.\"");
+    quote.setCharacterSize(14);
+    quote.setPosition(10, 100);
+
     files.loadContent("res/lvls/hub.dat", attributes, contents);
     loadEntities(attributes, contents);
 }
@@ -149,10 +159,20 @@ void Level::loadEntities(std::vector<std::vector<std::string>> attributes, std::
                 portal.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
             case 5:
+                y = contents[i][2];
+                z = contents[i][3];
+                std::cout << contents[i][0] << std::endl;
+                portal1.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
             case 6:
+                y = contents[i][2];
+                z = contents[i][3];
+                portal2.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
             case 7:
+                y = contents[i][2];
+                z = contents[i][3];
+                portal3.load(sf::Vector2f(std::stoi(contents[i][0]), std::stoi(contents[i][1])), mTex, y, z);
                 break;
         }
     }
@@ -175,6 +195,9 @@ void Level::unload() {
     ppad.unload();
     kad.unload();
     portal.unload();
+    portal1.unload();
+    portal2.unload();
+    portal3.unload();
     attributes.clear();
     contents.clear();
     tiles.clear();
@@ -187,8 +210,9 @@ void Level::update(InputManager input, SoundManager& sound) {
     ppad.update(colMap, rock, sound);
     kad.update(colMap, rock, player.getDir(), sound);
     portal.update(player);
-
-    std::cout << rock.getCurrentState() <<std::endl;
+    portal1.update(player);
+    portal2.update(player);
+    portal3.update(player);
 
     if (((player.getBounds().intersects(rock.getBounds()) && rock.getCurrentState() == 2) || rock.getCurrentState() == 1) && player.getCurrentState() != 2) {
         if (rock.getCurrentState() != 1) sound.playSound(3);
@@ -274,12 +298,13 @@ void Level::update(InputManager input, SoundManager& sound) {
         else player.setAccelerationX(0);
     }
 
-    if (portal.getState() == 1) {
-        switchLevel(portal.getTileset(), portal.getDestination(), "res/imgs/splash.png");
-    }
+    if (portal.getState() == 1) switchLevel(portal.getTileset(), portal.getDestination(), "res/imgs/splash.png");
+    if (portal1.getState() == 1) switchLevel(portal1.getTileset(), portal1.getDestination(), "res/imgs/splash.png");
+    if (portal2.getState() == 1) switchLevel(portal2.getTileset(), portal2.getDestination(), "res/imgs/splash.png");
+    if (portal3.getState() == 1) switchLevel(portal3.getTileset(), portal3.getDestination(), "res/imgs/splash.png");
 
     if (switchingLevel) {
-        if (delta >= 2) {
+        if (delta >= 4) {
             switchingLevel = false;
             delta = 0;
         } else {
@@ -293,10 +318,17 @@ void Level::render(sf::RenderWindow &window) {
     window.draw(kad, &shader);
     window.draw(ppad, &shader);
     window.draw(portal, &shader);
+    window.draw(portal1, &shader);
+    window.draw(portal2, &shader);
+    window.draw(portal3, &shader);
     window.draw(player, &shader);
     window.draw(rock, &shader);
 
-    if (switchingLevel) window.draw(splashScreen);
+    if (switchingLevel) {
+        window.draw(splashScreen);
+        window.draw(text);
+        window.draw(quote);
+    }
 }
 
 void Level::switchTime(bool day) {

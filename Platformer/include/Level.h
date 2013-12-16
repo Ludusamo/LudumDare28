@@ -65,11 +65,13 @@ private:
 
     KAD kad;
     PPAD ppad;
-    WarpPortal portal;
+    WarpPortal portal, portal1, portal2, portal3;
 
     // Switching Levels
     sf::Sprite splashScreen;
     sf::Texture splashImage;
+    sf::Font font;
+    sf::Text text, quote;
     bool switchingLevel = false;
     float delta = 0;
 

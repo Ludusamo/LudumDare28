@@ -36,8 +36,8 @@ void PPAD::load(sf::Vector2f posD, sf::Vector2f posP, sf::Texture &texture, sf::
 }
 
 void PPAD::unload() {
-    door.setPosition(-2, -2);
-    plate.setPosition(-2, -2);
+    door.setTextureRect(sf::IntRect(3 * 32, 32, mSize.x, mSize.y));
+    plate.setTextureRect(sf::IntRect(3 * 32, 32, mSize.x, mSize.y));
 }
 
 void PPAD::update(std::vector<std::vector<int>> &colMap, Rock& rock, SoundManager& sound) {
