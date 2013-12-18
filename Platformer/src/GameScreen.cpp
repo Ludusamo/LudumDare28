@@ -29,13 +29,14 @@ void GameScreen::loadContent() {
 void GameScreen::unloadContent() {
     Screen::unloadContent();
     level.unload();
+    sound.stopMusic();
+    sound.unloadContent();
 }
 
 void GameScreen::update() {
     level.update(input, sound);
     if (level.isGameOver()) {
-        ScreenManager::getInstance().addScreen(new MainMenuScreen);
-        sound.stopMusic();
+        ScreenManager::getInstance().addScreen(new CreditsScreen);
     }
 
     if (level.getPlayer().getPosition().x - (WIDTH / SCALE / 2) < 0) center.x = (WIDTH / SCALE / 2);

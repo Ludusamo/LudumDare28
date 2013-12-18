@@ -99,8 +99,10 @@ private:
 
     // Shader
     sf::Shader shader;
-    float ambientIntensity = .7f;
+    float ambientIntensity = 1;
     sf::Vector3f ambientColor;
+
+    std::string currLevel;
 
     FileManager files;
     std::vector<std::vector<std::string>> attributes, contents;

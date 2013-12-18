@@ -16,9 +16,15 @@ void MainMenuScreen::loadContent() {
     text.setFont(font);
     text.setString("Click Return To Start");
     text.setPosition(280, 500);
+    title.setFont(font);
+    title.setString("Vita");
+    title.setPosition(375, 200);
 
     confirm.push_back(sf::Keyboard::Return);
     confirm.push_back(sf::Keyboard::Space);
+
+    texture.loadFromFile("res/imgs/mainmenu.png");
+    sprite.setTexture(texture);
 
     sound.loadContent();
     sound.playMusic("hub");
@@ -35,5 +41,7 @@ void MainMenuScreen::update() {
 }
 
 void MainMenuScreen::render(sf::RenderWindow &window) {
+    window.draw(sprite);
     window.draw(text);
+    window.draw(title);
 }

@@ -48,7 +48,7 @@
 
 1387041442 D
 
-1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
+1387234334 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Level.h
 	<string>
 	<SFML/Graphics.hpp>
 	"TileData.h"
@@ -203,7 +203,7 @@
 1386992022 source:/home/alesta/Projects/Games/SFML/LudumDare28/Platformer/src/InputManager.cpp
 	"InputManager.h"
 
-1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
+1387236587 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Level.cpp
 	"Level.h"
 	<cmath>
 
@@ -649,12 +649,13 @@
 	<iostream>
 	<sstream>
 
-1387208454 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/GameScreen.cpp
+1387237363 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/GameScreen.cpp
 	"GameScreen.h"
 
-1387208378 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/GameScreen.h
+1387218418 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/GameScreen.h
 	"Screen.h"
 	"ScreenManager.h"
+	"CreditsScreen.h"
 	"FileManager.h"
 	"Level.h"
 	<SFML/Graphics.hpp>
@@ -677,11 +678,12 @@
 	"FadeTransition.h"
 	"FileManager.h"
 
-1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
+1387237284 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/MainMenuScreen.h
 	"Screen.h"
 	"ScreenManager.h"
 	"FileManager.h"
 	<SFML/Graphics.hpp>
+	"CreditsScreen.h"
 
 1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/SplashScreen.h
 	"Screen.h"
@@ -698,7 +700,7 @@
 1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Light.h
 	<Entity.h>
 
-1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MainMenuScreen.cpp
+1387237430 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/MainMenuScreen.cpp
 	<iostream>
 	"MainMenuScreen.h"
 
@@ -712,10 +714,10 @@
 	<iostream>
 	<math.h>
 
-1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Rock.cpp
+1387233418 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Rock.cpp
 	"Rock.h"
 
-1387206375 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Rock.h
+1387233288 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/Rock.h
 	"Mob.h"
 
 1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Screen.cpp
@@ -751,7 +753,7 @@
 1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Transition.cpp
 	"Transition.h"
 
-1387206375 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
+1387237514 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/main.cpp
 	<iostream>
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
@@ -955,4 +957,12 @@
 
 1387208486 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/Sign.cpp
 	"Sign.h"
+
+1387235992 source:/home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/src/CreditsScreen.cpp
+	"CreditsScreen.h"
+
+1387235908 /home/brehor/Copy/Ludusamo/Programming/SFML/LudumDare28/Platformer/include/CreditsScreen.h
+	"Screen.h"
+	"SFML/Graphics.hpp"
+	"Player.h"
 

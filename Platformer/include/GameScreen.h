@@ -3,6 +3,7 @@
 
 #include "Screen.h"
 #include "ScreenManager.h"
+#include "CreditsScreen.h"
 #include "FileManager.h"
 #include "Level.h"
 #include <SFML/Graphics.hpp>

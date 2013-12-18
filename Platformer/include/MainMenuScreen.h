@@ -5,6 +5,7 @@
 #include "ScreenManager.h"
 #include "FileManager.h"
 #include <SFML/Graphics.hpp>
+#include "CreditsScreen.h"
 
 class MainMenuScreen : public Screen {
 public:
@@ -17,8 +18,10 @@ public:
     void render(sf::RenderWindow &window);
 protected:
 private:
-    sf::Text text;
+    sf::Text text, title;
     sf::Font font;
+    sf::Sprite sprite;
+    sf::Texture texture;
     std::vector<sf::Keyboard::Key> confirm;
 };
 

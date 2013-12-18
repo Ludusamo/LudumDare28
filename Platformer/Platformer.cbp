@@ -58,6 +58,7 @@
 		<Unit filename="include/Animation.h" />
 		<Unit filename="include/Button.h" />
 		<Unit filename="include/Charger.h" />
+		<Unit filename="include/CreditsScreen.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/Entropy.h" />
@@ -105,6 +106,7 @@
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Charger.cpp" />
+		<Unit filename="src/CreditsScreen.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/FadeAnimation.cpp" />

@@ -14,9 +14,9 @@ void Level::load() {
         if (!shader.loadFromFile("res/shaders/AmbientShader.glsl", sf::Shader::Fragment))
             std::cout << "Cannot load shader." << std::endl;
     shader.setParameter("texture", sf::Shader::CurrentTexture);
-    ambientColor.x = 0.3f;
-    ambientColor.y = 0.3f;
-    ambientColor.z = 0.7f;
+    ambientColor.x = 1;
+    ambientColor.y = 1;
+    ambientColor.z = 1;
 
     shader.setParameter("ambientColor", ambientColor.x, ambientColor.y, ambientColor.z, ambientIntensity);
 
@@ -47,6 +47,7 @@ void Level::load() {
     loadLevel("res/imgs/Tilesheet_A.png", "hub.png");
     files.loadContent("res/lvls/hub.dat", attributes, contents);
     loadEntities(attributes, contents);
+    currLevel = "hub";
 }
 
 void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) {
@@ -55,7 +56,6 @@ void Level::loadLevel(const std::string& tilesetFile, const std::string&  file) 
         std::cout << "Cannot Load Level." << std::endl;
     width = image.getSize().x;
     height = image.getSize().y;
-    std::cout << width << " " << height << std::endl;
 
     // Loading Map
     std::vector<int> bufferV;
@@ -222,6 +222,7 @@ void Level::switchLevel(const std::string& tilesetFile, const std::string& file,
         loadLevel(tilesetFile, file + ".png");
         files.loadContent("res/lvls/" + file + ".dat", attributes, contents);
         loadEntities(attributes, contents);
+        currLevel = file;
     }
 }
 
@@ -275,6 +276,20 @@ void Level::update(InputManager input, SoundManager& sound) {
 
     if (rock.getCurrentState() == 1) {
         rock.setPosition(player.getPosition());
+        switch (player.getDir()) {
+        case 0:
+            rock.setBounds(sf::Vector2f(player.getPosition().x, player.getPosition().y - 32));
+            break;
+        case 1:
+            rock.setBounds(sf::Vector2f(player.getPosition().x, player.getPosition().y + 32));
+            break;
+        case 2:
+            rock.setBounds(sf::Vector2f(player.getPosition().x - 32, player.getPosition().y));
+            break;
+        case 3:
+            rock.setBounds(sf::Vector2f(player.getPosition().x + 32, player.getPosition().y));
+            break;
+        }
     }
 
     if (player.getCurrentState() == 2) {
@@ -340,6 +355,10 @@ void Level::update(InputManager input, SoundManager& sound) {
         }
     }
 
+    if (input.keyPressed(sf::Keyboard::R)) {
+        switchLevel("res/imgs/Tilesheet_A.png", currLevel, "res/imgs/splash.png");
+    }
+
     // Player movements
     if (rock.getCurrentState() != 3 && player.getCurrentState() != 2) {
         if (input.keyPressed(up)) player.setAccelerationY(-2);
@@ -357,7 +376,7 @@ void Level::update(InputManager input, SoundManager& sound) {
     if (portal3.getState() == 1) switchLevel(portal3.getTileset(), portal3.getDestination(), "res/imgs/splash.png");
 
     if (switchingLevel) {
-        if (delta >= 4) {
+        if (delta >= 2) {
             switchingLevel = false;
             delta = 0;
         } else {

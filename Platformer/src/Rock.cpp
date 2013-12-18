@@ -77,4 +77,7 @@ void Rock::update(std::vector<std::vector<int>> colMap) {
     bounds.top = getPosition().y;
 }
 
-
+void Rock::setBounds(sf::Vector2f bounds) {
+    this->bounds.left = bounds.x;
+    this->bounds.top = bounds.y;
+}
